@@ -1,1 +1,4 @@
-﻿
+﻿00 00 - add [rax], al
+00 01 - add [rcx], al
+00 02 - add [rdx], al
+00 03 - add [rbx], al
