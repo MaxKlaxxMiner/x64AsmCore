@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+// ReSharper disable ConvertToConstant.Local
 #endregion
 
 namespace OpCodeGenerator
@@ -19,12 +20,50 @@ namespace OpCodeGenerator
     }
 
     /// <summary>
+    /// gibt eine bestimmte Anzahl von Bytes in hexadezimale Schreibweise zurück und endet mit einem Bindestrich (z.B. "00 04 f4 - ")
+    /// </summary>
+    /// <param name="bytes">Bytes, welche ausgelesen werden sollen</param>
+    /// <param name="count">Anzahl der Bytes, welche ausgelesen werden sollen</param>
+    /// <returns></returns>
+    static string StrB(byte[] bytes, int count)
+    {
+      return string.Join(" ", bytes.Take(count).Select(b => b.ToString("x2"))) + " - ";
+    }
+
+    /// <summary>
+    /// gibt eine 64-Bit Adressierung zurück mit Leerzeichen am Anfang (z.B. " [rsi]")
+    /// </summary>
+    /// <param name="index">Index auf den Register (z.B. 2: "rdx")</param>
+    /// <returns>fertige Adressierung</returns>
+    static string R64Addr(int index)
+    {
+      return " [" + Asm.RegistersR64[index] + "]";
+    }
+
+    /// <summary>
+    /// gibt einen 8-Bit Register zurück mit Leerzeichen am Anfang (z.B. " al")
+    /// </summary>
+    /// <param name="index">index auf den Register (z.B. 2: "dl")</param>
+    /// <returns>fertiger Register</returns>
+    static string R8(int index)
+    {
+      return " " + Asm.RegistersR8[index];
+    }
+
+    /// <summary>
     /// generiert alle OpCodes anhand bestimmter Regeln
     /// </summary>
     /// <returns>Enumerable der Zeilen, welche generiert wurden</returns>
     static IEnumerable<string> GenerateOpCodes()
     {
-      yield break;
+      var opCode = new byte[2];
+      int opCodeLen = 2;
+
+      for (int i = 0; i < 4; i++)
+      {
+        yield return StrB(opCode, opCodeLen) + Asm.Instructions[0] + R64Addr(i) + ',' + R8(0);
+        opCode[opCodeLen - 1]++;
+      }
     }
 
     /// <summary>
