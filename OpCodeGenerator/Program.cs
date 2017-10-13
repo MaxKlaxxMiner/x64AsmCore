@@ -308,10 +308,14 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 6300;
+    const int StartView = 12700;
 
-    static void Main(string[] args)
+    static void Main()
     {
+      TextHelper.SwapOperands("KnownOpCodes/00.txt", "tmp.txt");
+      TextHelper.ReplaceFirstOpcodes("tmp.txt", "tmp2.txt", "02");
+      return;
+
       var known = ReadKnownOpCodes().ToArray();
       var gen = GenerateOpCodes().ToArray();
       int count = Math.Min(known.Length, gen.Length);
