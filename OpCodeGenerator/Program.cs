@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 // ReSharper disable ConvertToConstant.Local
+// ReSharper disable RedundantAssignment
 #endregion
 
 namespace OpCodeGenerator
@@ -24,20 +25,48 @@ namespace OpCodeGenerator
     /// </summary>
     /// <param name="bytes">Bytes, welche ausgelesen werden sollen</param>
     /// <param name="count">Anzahl der Bytes, welche ausgelesen werden sollen</param>
+    /// <param name="constBytes">optionale zusätzliche Bytes für eine direkte Konstante</param>
     /// <returns></returns>
-    static string StrB(byte[] bytes, int count)
+    static string StrB(byte[] bytes, int count, int constBytes = 0)
     {
-      return string.Join(" ", bytes.Take(count).Select(b => b.ToString("x2"))) + " - ";
+      return string.Join(" ", bytes.Take(count).Select(b => b.ToString("x2")).Concat(Enumerable.Range(0, constBytes).Select(i => "xx"))) + " - ";
     }
 
     /// <summary>
-    /// gibt eine 64-Bit Adressierung zurück mit Leerzeichen am Anfang (z.B. " [rsi]")
+    /// gibt eine 64-Bit Adressierung zurück, mit Leerzeichen am Anfang (z.B. " [rsi]")
     /// </summary>
     /// <param name="index">Index auf den Register (z.B. 2: "rdx")</param>
     /// <returns>fertige Adressierung</returns>
     static string R64Addr(int index)
     {
       return " [" + Asm.RegistersR64[index] + "]";
+    }
+
+    /// <summary>
+    /// gibt eine mehrteilige 64-Bit Adressierung zurück, mit Leerzeichen am Anfang (z.B. "[rsi + rcx * 4]")
+    /// </summary>
+    /// <param name="index1">Index auf den ersten Register (z.B. 6: "rsi")</param>
+    /// <param name="index2">Index auf den zweiten Register (z.B. 1: "rcx")</param>
+    /// <param name="mulShift2">Shiftwert für die Multiplikation des zweiten Registers (z.B. 2: "rcx * 4")</param>
+    /// <param name="constBytes">optionaler Wert für eine zusätzliche Konstante</param>
+    /// <returns>fertige Adressierung</returns>
+    static string R64Addr(int index1, int index2, int mulShift2, int constBytes = 0)
+    {
+      string t1 = constBytes == 0 || index1 != 5 ? Asm.RegistersR64[index1] : "";
+
+      string t2 = index2 != 4 ? Asm.RegistersR64[index2] : "";
+      if (mulShift2 != 0 && t2 != "") t2 += " * " + (1 << mulShift2);
+
+      string t3 = constBytes > 0 ? "x" : "";
+
+      string str = t1;
+      if (str != "" && t2 != "") str += " + ";
+      str += t2;
+      if (str != "" && t3 != "") str += " + ";
+      str += t3;
+      if (str == "") str = "0";
+
+      return " [" + str + "]";
     }
 
     /// <summary>
@@ -56,7 +85,7 @@ namespace OpCodeGenerator
     /// <returns>Enumerable der Zeilen, welche generiert wurden</returns>
     static IEnumerable<string> GenerateOpCodes()
     {
-      var opCode = new byte[2];
+      var opCode = new byte[3];
       int opCodeLen = 2;
 
       for (int i = 0; i < 4; i++)
@@ -64,6 +93,23 @@ namespace OpCodeGenerator
         yield return StrB(opCode, opCodeLen) + Asm.Instructions[0] + R64Addr(i) + ',' + R8(0);
         opCode[opCodeLen - 1]++;
       }
+      opCode[opCodeLen++] = 0;
+      for (int i = 0; i < 256; i++)
+      {
+        int r1 = i & 7;
+        int r2 = i / 8 & 7;
+        int mul = i / 64 & 3;
+        if (r1 == 5)
+        {
+          yield return StrB(opCode, opCodeLen, 4) + Asm.Instructions[0] + R64Addr(r1, r2, mul, 4) + ',' + R8(0);
+        }
+        else
+        {
+          yield return StrB(opCode, opCodeLen) + Asm.Instructions[0] + R64Addr(r1, r2, mul) + ',' + R8(0);
+        }
+        opCode[opCodeLen - 1]++;
+      }
+
     }
 
     /// <summary>
@@ -85,6 +131,7 @@ namespace OpCodeGenerator
         {
           Console.WriteLine();
           Console.WriteLine("Different found:");
+          Console.WriteLine();
           Console.WriteLine("  [known] " + known[i]);
           Console.WriteLine("    [gen] " + gen[i]);
           break;

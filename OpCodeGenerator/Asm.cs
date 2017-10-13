@@ -8,7 +8,7 @@
     /// <summary>
     /// Namen der 64-Bit Basis-Register
     /// </summary>
-    public static readonly string[] RegistersR64 = { "rax", "rcx", "rdx", "rbx" };
+    public static readonly string[] RegistersR64 = { "rax", "rcx", "rdx", "rbx", "rsp", "rbp", "rsi", "rdi" };
 
     /// <summary>
     /// Namen der 8-Bit Basis-Register
