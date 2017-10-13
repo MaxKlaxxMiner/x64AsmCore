@@ -17,7 +17,7 @@ namespace OpCodeGenerator
     /// <returns>Enumerable der Zeilen, welche gelesen wurden</returns>
     static IEnumerable<string> ReadKnownOpCodes()
     {
-      string[] files = { "00", "01" };
+      string[] files = { "00", "01", "02" };
       foreach (var file in files)
       {
         foreach (var line in File.ReadLines("KnownOpCodes/" + file + ".txt")) if (!string.IsNullOrWhiteSpace(line) && line.Trim()[0] != '#') yield return line.Trim();
@@ -141,6 +141,7 @@ namespace OpCodeGenerator
       var opCode = new byte[3];
       int pos = 1;
 
+      // --- ADD - mit Byte-Registern ---
       #region # // 00 00 - 00 3f
       for (int y = 0; y < 64; y++)
       {
@@ -222,6 +223,7 @@ namespace OpCodeGenerator
       #endregion
       opCode[pos - 1]++;
 
+      // --- ADD - gleiche wie "00", jedoch mit 32-Bit Registern ---
       #region # // 01 00 - 01 3f
       for (int y = 0; y < 64; y++)
       {
@@ -301,6 +303,89 @@ namespace OpCodeGenerator
         opCode[pos]++;
       }
       #endregion
+      opCode[pos - 1]++;
+
+      // --- ADD - gleiche wie "00", nur mit getauschten Operanden ---
+      #region # // 02 00 - 02 3f
+      for (int y = 0; y < 64; y++)
+      {
+        int rr = opCode[pos] / 8;
+        switch (opCode[pos] & 7)
+        {
+          default: yield return StrB(opCode, pos) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(opCode[pos] & 7); break;
+
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              int r1 = opCode[pos] & 7;
+              yield return StrB(opCode, pos, r1 == 5 ? 4 : 0) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(r1, opCode[pos] / 8 & 7, opCode[pos] / 64, AddrExt.Rbp1ToC4 | AddrExt.Rsp2Skip);
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
+
+          case 5:
+          {
+            yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(opCode[pos] & 7, 21, 0, AddrExt.Rbp1ToC4);
+          } break;
+        }
+        opCode[pos]++;
+      }
+      #endregion
+      #region # // 02 40 - 02 7f
+      for (int y = 0; y < 64; y++)
+      {
+        int rr = opCode[pos] / 8 & 7;
+        switch (opCode[pos] & 7)
+        {
+          default: yield return StrB(opCode, pos, 1) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(opCode[pos] & 7, 4, 0, AddrExt.C1 | AddrExt.Rsp2Skip); break;
+
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              yield return StrB(opCode, pos, 1) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(opCode[pos] & 7, opCode[pos] / 8 & 7, opCode[pos] / 64 & 3, AddrExt.C1 | AddrExt.Rsp2Skip);
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
+        }
+        opCode[pos]++;
+      }
+      #endregion
+      #region # // 02 80 - 02 bf
+      for (int y = 0; y < 64; y++)
+      {
+        int rr = opCode[pos] / 8 & 7;
+        switch (opCode[pos] & 7)
+        {
+          default: yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(opCode[pos] & 7, 4, 0, AddrExt.C4 | AddrExt.Rsp2Skip); break;
+
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R8(rr) + ',' + R64Addr(opCode[pos] & 7, opCode[pos] / 8 & 7, opCode[pos] / 64 & 3, AddrExt.C4 | AddrExt.Rsp2Skip);
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
+        }
+        opCode[pos]++;
+      }
+      #endregion
+      #region # // 02 c0 - 02 ff
+      for (int y = 0; y < 64; y++)
+      {
+        yield return StrB(opCode, pos) + Asm.Instructions[0] + R8(opCode[pos] / 8 & 7) + ',' + R8(opCode[pos] & 7);
+        opCode[pos]++;
+      }
+      #endregion
+      opCode[pos - 1]++;
     }
 
     /// <summary>
