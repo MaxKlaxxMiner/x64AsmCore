@@ -312,9 +312,9 @@ namespace OpCodeGenerator
 
     static void Main()
     {
-      TextHelper.SwapOperands("KnownOpCodes/00.txt", "tmp.txt");
-      TextHelper.ReplaceFirstOpcodes("tmp.txt", "tmp2.txt", "02");
-      return;
+      //TextHelper.SwapOperands("KnownOpCodes/00.txt", "tmp.txt");
+      //TextHelper.ReplaceFirstOpcodes("tmp.txt", "tmp2.txt", "02");
+      //return;
 
       var known = ReadKnownOpCodes().ToArray();
       var gen = GenerateOpCodes().ToArray();
