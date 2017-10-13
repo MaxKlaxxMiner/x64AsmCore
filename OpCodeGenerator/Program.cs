@@ -90,38 +90,39 @@ namespace OpCodeGenerator
       var opCode = new byte[3];
       int pos = 1;
 
-      // 00 00 - 00 04
-      for (int i = 0; i < 4; i++)
+      // 00 00 - 00 07
+      for (int y = 0; y < 32; y++)
       {
-        yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos]) + ',' + R8(0);
-        opCode[pos]++;
-      }
-      // 00 04 xx
-      opCode[++pos] = 0;
-      for (int i = 0; i < 256; i++)
-      {
-        int r1 = opCode[pos] & 7;
-        int r2 = opCode[pos] / 8 & 7;
-        int mul = opCode[pos] / 64 & 3;
-        if (r1 == 5)
+        int rr = opCode[pos] / 8;
+        switch (opCode[pos] & 7)
         {
-          yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(r1, r2, mul, 4) + ',' + R8(0);
-        }
-        else
-        {
-          yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(r1, r2, mul) + ',' + R8(0);
-        }
-        opCode[pos]++;
-      }
-      opCode[--pos]++;
-      // 00 05 - 00 07
-      yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos], opCode[pos] + 16, 0, 4) + ',' + R8(0);
-      opCode[pos]++;
-      yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos]) + ',' + R8(0);
-      opCode[pos]++;
-      yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos]) + ',' + R8(0);
-      opCode[pos]++;
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              int r1 = opCode[pos] & 7;
+              int r2 = opCode[pos] / 8 & 7;
+              int mul = opCode[pos] / 64 & 3;
+              if (r1 == 5)
+              {
+                yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(r1, r2, mul, 4) + ',' + R8(rr);
+              }
+              else
+              {
+                yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(r1, r2, mul) + ',' + R8(rr);
+              }
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
 
+          case 5: yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, (opCode[pos] & 7) + 16, 0, 4) + ',' + R8(rr); break;
+
+          default: yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7) + ',' + R8(rr); break;
+        }
+        opCode[pos]++;
+      }
     }
 
     /// <summary>
