@@ -1,0 +1,4 @@
+﻿04 xx - add al, xx
+05 xx xx xx xx - add eax, xx xx xx xx
+06 - ???
+07 - ???
