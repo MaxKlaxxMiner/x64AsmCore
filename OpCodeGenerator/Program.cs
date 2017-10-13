@@ -90,8 +90,8 @@ namespace OpCodeGenerator
       var opCode = new byte[3];
       int pos = 1;
 
-      // 00 00 - 00 07
-      for (int y = 0; y < 32; y++)
+      // 00 00 - 00 3f
+      for (int y = 0; y < 64; y++)
       {
         int rr = opCode[pos] / 8;
         switch (opCode[pos] & 7)
@@ -130,6 +130,8 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
+    const int StartView = 1000;
+
     static void Main(string[] args)
     {
       var known = ReadKnownOpCodes().ToArray();
@@ -139,7 +141,7 @@ namespace OpCodeGenerator
       // --- bekannte OpCodes mit den generierten Version vergleichen und beim ersten Fehler stoppen
       for (int i = 0; i < count; i++)
       {
-        Console.WriteLine("  ok: " + gen[i]);
+        if (i >= StartView) Console.WriteLine("  ok: " + gen[i]);
         if (gen[i] != known[i])
         {
           Console.WriteLine();

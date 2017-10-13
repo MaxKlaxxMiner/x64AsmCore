@@ -18,7 +18,7 @@
     /// <summary>
     /// Namen der 8-Bit Basis-Register
     /// </summary>
-    public static readonly string[] RegistersR8 = { "al", "cl", "dl", "bl" };
+    public static readonly string[] RegistersR8 = { "al", "cl", "dl", "bl", "ah", "ch", "dh", "bh" };
 
     /// <summary>
     /// Namen der Assembler-Befehle
