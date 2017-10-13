@@ -2,7 +2,6 @@
 00 01 - add [rcx], al
 00 02 - add [rdx], al
 00 03 - add [rbx], al
-
 00 04 00 - add [rax + rax], al
 00 04 01 - add [rcx + rax], al
 00 04 02 - add [rdx + rax], al
@@ -67,7 +66,6 @@
 00 04 3d xx xx xx xx - add [rdi + x], al
 00 04 3e - add [rsi + rdi], al
 00 04 3f - add [rdi + rdi], al
-
 00 04 40 - add [rax + rax * 2], al
 00 04 41 - add [rcx + rax * 2], al
 00 04 42 - add [rdx + rax * 2], al
@@ -132,7 +130,6 @@
 00 04 7d xx xx xx xx - add [rdi * 2 + x], al
 00 04 7e - add [rsi + rdi * 2], al
 00 04 7f - add [rdi + rdi * 2], al
-
 00 04 80 - add [rax + rax * 4], al
 00 04 81 - add [rcx + rax * 4], al
 00 04 82 - add [rdx + rax * 4], al
@@ -197,7 +194,6 @@
 00 04 bd xx xx xx xx - add [rdi * 4 + x], al
 00 04 be - add [rsi + rdi * 4], al
 00 04 bf - add [rdi + rdi * 4], al
-
 00 04 c0 - add [rax + rax * 8], al
 00 04 c1 - add [rcx + rax * 8], al
 00 04 c2 - add [rdx + rax * 8], al
@@ -262,7 +258,6 @@
 00 04 fd xx xx xx xx - add [rdi * 8 + x], al
 00 04 fe - add [rsi + rdi * 8], al
 00 04 ff - add [rdi + rdi * 8], al
-
 00 05 xx xx xx xx - add [rip + x], al
 00 06 - add [rsi], al
 00 07 - add [rdi], al
@@ -271,7 +266,6 @@
 00 09 - add [rcx], cl
 00 0a - add [rdx], cl
 00 0b - add [rbx], cl
-
 00 0c 00 - add [rax + rax], cl
 00 0c 01 - add [rcx + rax], cl
 00 0c 02 - add [rdx + rax], cl
@@ -336,7 +330,6 @@
 00 0c 3d xx xx xx xx - add [rdi + x], cl
 00 0c 3e - add [rsi + rdi], cl
 00 0c 3f - add [rdi + rdi], cl
-
 00 0c 40 - add [rax + rax * 2], cl
 00 0c 41 - add [rcx + rax * 2], cl
 00 0c 42 - add [rdx + rax * 2], cl
@@ -401,7 +394,6 @@
 00 0c 7d xx xx xx xx - add [rdi * 2 + x], cl
 00 0c 7e - add [rsi + rdi * 2], cl
 00 0c 7f - add [rdi + rdi * 2], cl
-
 00 0c 80 - add [rax + rax * 4], cl
 00 0c 81 - add [rcx + rax * 4], cl
 00 0c 82 - add [rdx + rax * 4], cl
@@ -466,7 +458,6 @@
 00 0c bd xx xx xx xx - add [rdi * 4 + x], cl
 00 0c be - add [rsi + rdi * 4], cl
 00 0c bf - add [rdi + rdi * 4], cl
-
 00 0c c0 - add [rax + rax * 8], cl
 00 0c c1 - add [rcx + rax * 8], cl
 00 0c c2 - add [rdx + rax * 8], cl
@@ -531,7 +522,6 @@
 00 0c fd xx xx xx xx - add [rdi * 8 + x], cl
 00 0c fe - add [rsi + rdi * 8], cl
 00 0c ff - add [rdi + rdi * 8], cl
-
 00 0d xx xx xx xx - add [rip + x], cl
 00 0e - add [rsi], cl
 00 0f - add [rdi], cl
@@ -540,7 +530,6 @@
 00 11 - add [rcx], dl
 00 12 - add [rdx], dl
 00 13 - add [rbx], dl
-
 00 14 00 - add [rax + rax], dl
 00 14 01 - add [rcx + rax], dl
 00 14 02 - add [rdx + rax], dl
@@ -605,7 +594,6 @@
 00 14 3d xx xx xx xx - add [rdi + x], dl
 00 14 3e - add [rsi + rdi], dl
 00 14 3f - add [rdi + rdi], dl
-
 00 14 40 - add [rax + rax * 2], dl
 00 14 41 - add [rcx + rax * 2], dl
 00 14 42 - add [rdx + rax * 2], dl
@@ -670,7 +658,6 @@
 00 14 7d xx xx xx xx - add [rdi * 2 + x], dl
 00 14 7e - add [rsi + rdi * 2], dl
 00 14 7f - add [rdi + rdi * 2], dl
-
 00 14 80 - add [rax + rax * 4], dl
 00 14 81 - add [rcx + rax * 4], dl
 00 14 82 - add [rdx + rax * 4], dl
@@ -735,7 +722,6 @@
 00 14 bd xx xx xx xx - add [rdi * 4 + x], dl
 00 14 be - add [rsi + rdi * 4], dl
 00 14 bf - add [rdi + rdi * 4], dl
-
 00 14 c0 - add [rax + rax * 8], dl
 00 14 c1 - add [rcx + rax * 8], dl
 00 14 c2 - add [rdx + rax * 8], dl
@@ -800,7 +786,6 @@
 00 14 fd xx xx xx xx - add [rdi * 8 + x], dl
 00 14 fe - add [rsi + rdi * 8], dl
 00 14 ff - add [rdi + rdi * 8], dl
-
 00 15 xx xx xx xx - add [rip + x], dl
 00 16 - add [rsi], dl
 00 17 - add [rdi], dl
@@ -809,7 +794,6 @@
 00 19 - add [rcx], bl
 00 1a - add [rdx], bl
 00 1b - add [rbx], bl
-
 00 1c 00 - add [rax + rax], bl
 00 1c 01 - add [rcx + rax], bl
 00 1c 02 - add [rdx + rax], bl
@@ -874,7 +858,6 @@
 00 1c 3d xx xx xx xx - add [rdi + x], bl
 00 1c 3e - add [rsi + rdi], bl
 00 1c 3f - add [rdi + rdi], bl
-
 00 1c 40 - add [rax + rax * 2], bl
 00 1c 41 - add [rcx + rax * 2], bl
 00 1c 42 - add [rdx + rax * 2], bl
@@ -939,7 +922,6 @@
 00 1c 7d xx xx xx xx - add [rdi * 2 + x], bl
 00 1c 7e - add [rsi + rdi * 2], bl
 00 1c 7f - add [rdi + rdi * 2], bl
-
 00 1c 80 - add [rax + rax * 4], bl
 00 1c 81 - add [rcx + rax * 4], bl
 00 1c 82 - add [rdx + rax * 4], bl
@@ -1004,7 +986,6 @@
 00 1c bd xx xx xx xx - add [rdi * 4 + x], bl
 00 1c be - add [rsi + rdi * 4], bl
 00 1c bf - add [rdi + rdi * 4], bl
-
 00 1c c0 - add [rax + rax * 8], bl
 00 1c c1 - add [rcx + rax * 8], bl
 00 1c c2 - add [rdx + rax * 8], bl
@@ -1069,7 +1050,6 @@
 00 1c fd xx xx xx xx - add [rdi * 8 + x], bl
 00 1c fe - add [rsi + rdi * 8], bl
 00 1c ff - add [rdi + rdi * 8], bl
-
 00 1d xx xx xx xx - add [rip + x], bl
 00 1e - add [rsi], bl
 00 1f - add [rdi], bl
@@ -1078,7 +1058,6 @@
 00 21 - add [rcx], ah
 00 22 - add [rdx], ah
 00 23 - add [rbx], ah
-
 00 24 00 - add [rax + rax], ah
 00 24 01 - add [rcx + rax], ah
 00 24 02 - add [rdx + rax], ah
@@ -1143,7 +1122,6 @@
 00 24 3d xx xx xx xx - add [rdi + x], ah
 00 24 3e - add [rsi + rdi], ah
 00 24 3f - add [rdi + rdi], ah
-
 00 24 40 - add [rax + rax * 2], ah
 00 24 41 - add [rcx + rax * 2], ah
 00 24 42 - add [rdx + rax * 2], ah
@@ -1208,7 +1186,6 @@
 00 24 7d xx xx xx xx - add [rdi * 2 + x], ah
 00 24 7e - add [rsi + rdi * 2], ah
 00 24 7f - add [rdi + rdi * 2], ah
-
 00 24 80 - add [rax + rax * 4], ah
 00 24 81 - add [rcx + rax * 4], ah
 00 24 82 - add [rdx + rax * 4], ah
@@ -1273,7 +1250,6 @@
 00 24 bd xx xx xx xx - add [rdi * 4 + x], ah
 00 24 be - add [rsi + rdi * 4], ah
 00 24 bf - add [rdi + rdi * 4], ah
-
 00 24 c0 - add [rax + rax * 8], ah
 00 24 c1 - add [rcx + rax * 8], ah
 00 24 c2 - add [rdx + rax * 8], ah
@@ -1338,7 +1314,6 @@
 00 24 fd xx xx xx xx - add [rdi * 8 + x], ah
 00 24 fe - add [rsi + rdi * 8], ah
 00 24 ff - add [rdi + rdi * 8], ah
-
 00 25 xx xx xx xx - add [rip + x], ah
 00 26 - add [rsi], ah
 00 27 - add [rdi], ah
@@ -1347,7 +1322,6 @@
 00 29 - add [rcx], ch
 00 2a - add [rdx], ch
 00 2b - add [rbx], ch
-
 00 2c 00 - add [rax + rax], ch
 00 2c 01 - add [rcx + rax], ch
 00 2c 02 - add [rdx + rax], ch
@@ -1412,7 +1386,6 @@
 00 2c 3d xx xx xx xx - add [rdi + x], ch
 00 2c 3e - add [rsi + rdi], ch
 00 2c 3f - add [rdi + rdi], ch
-
 00 2c 40 - add [rax + rax * 2], ch
 00 2c 41 - add [rcx + rax * 2], ch
 00 2c 42 - add [rdx + rax * 2], ch
@@ -1477,7 +1450,6 @@
 00 2c 7d xx xx xx xx - add [rdi * 2 + x], ch
 00 2c 7e - add [rsi + rdi * 2], ch
 00 2c 7f - add [rdi + rdi * 2], ch
-
 00 2c 80 - add [rax + rax * 4], ch
 00 2c 81 - add [rcx + rax * 4], ch
 00 2c 82 - add [rdx + rax * 4], ch
@@ -1542,7 +1514,6 @@
 00 2c bd xx xx xx xx - add [rdi * 4 + x], ch
 00 2c be - add [rsi + rdi * 4], ch
 00 2c bf - add [rdi + rdi * 4], ch
-
 00 2c c0 - add [rax + rax * 8], ch
 00 2c c1 - add [rcx + rax * 8], ch
 00 2c c2 - add [rdx + rax * 8], ch
@@ -1607,7 +1578,6 @@
 00 2c fd xx xx xx xx - add [rdi * 8 + x], ch
 00 2c fe - add [rsi + rdi * 8], ch
 00 2c ff - add [rdi + rdi * 8], ch
-
 00 2d xx xx xx xx - add [rip + x], ch
 00 2e - add [rsi], ch
 00 2f - add [rdi], ch
@@ -1616,7 +1586,6 @@
 00 31 - add [rcx], dh
 00 32 - add [rdx], dh
 00 33 - add [rbx], dh
-
 00 34 00 - add [rax + rax], dh
 00 34 01 - add [rcx + rax], dh
 00 34 02 - add [rdx + rax], dh
@@ -1681,7 +1650,6 @@
 00 34 3d xx xx xx xx - add [rdi + x], dh
 00 34 3e - add [rsi + rdi], dh
 00 34 3f - add [rdi + rdi], dh
-
 00 34 40 - add [rax + rax * 2], dh
 00 34 41 - add [rcx + rax * 2], dh
 00 34 42 - add [rdx + rax * 2], dh
@@ -1746,7 +1714,6 @@
 00 34 7d xx xx xx xx - add [rdi * 2 + x], dh
 00 34 7e - add [rsi + rdi * 2], dh
 00 34 7f - add [rdi + rdi * 2], dh
-
 00 34 80 - add [rax + rax * 4], dh
 00 34 81 - add [rcx + rax * 4], dh
 00 34 82 - add [rdx + rax * 4], dh
@@ -1811,7 +1778,6 @@
 00 34 bd xx xx xx xx - add [rdi * 4 + x], dh
 00 34 be - add [rsi + rdi * 4], dh
 00 34 bf - add [rdi + rdi * 4], dh
-
 00 34 c0 - add [rax + rax * 8], dh
 00 34 c1 - add [rcx + rax * 8], dh
 00 34 c2 - add [rdx + rax * 8], dh
@@ -1876,7 +1842,6 @@
 00 34 fd xx xx xx xx - add [rdi * 8 + x], dh
 00 34 fe - add [rsi + rdi * 8], dh
 00 34 ff - add [rdi + rdi * 8], dh
-
 00 35 xx xx xx xx - add [rip + x], dh
 00 36 - add [rsi], dh
 00 37 - add [rdi], dh
@@ -1885,7 +1850,6 @@
 00 39 - add [rcx], bh
 00 3a - add [rdx], bh
 00 3b - add [rbx], bh
-
 00 3c 00 - add [rax + rax], bh
 00 3c 01 - add [rcx + rax], bh
 00 3c 02 - add [rdx + rax], bh
@@ -1950,7 +1914,6 @@
 00 3c 3d xx xx xx xx - add [rdi + x], bh
 00 3c 3e - add [rsi + rdi], bh
 00 3c 3f - add [rdi + rdi], bh
-
 00 3c 40 - add [rax + rax * 2], bh
 00 3c 41 - add [rcx + rax * 2], bh
 00 3c 42 - add [rdx + rax * 2], bh
@@ -2015,7 +1978,6 @@
 00 3c 7d xx xx xx xx - add [rdi * 2 + x], bh
 00 3c 7e - add [rsi + rdi * 2], bh
 00 3c 7f - add [rdi + rdi * 2], bh
-
 00 3c 80 - add [rax + rax * 4], bh
 00 3c 81 - add [rcx + rax * 4], bh
 00 3c 82 - add [rdx + rax * 4], bh
@@ -2080,7 +2042,6 @@
 00 3c bd xx xx xx xx - add [rdi * 4 + x], bh
 00 3c be - add [rsi + rdi * 4], bh
 00 3c bf - add [rdi + rdi * 4], bh
-
 00 3c c0 - add [rax + rax * 8], bh
 00 3c c1 - add [rcx + rax * 8], bh
 00 3c c2 - add [rdx + rax * 8], bh
@@ -2145,8 +2106,2111 @@
 00 3c fd xx xx xx xx - add [rdi * 8 + x], bh
 00 3c fe - add [rsi + rdi * 8], bh
 00 3c ff - add [rdi + rdi * 8], bh
-
 00 3d xx xx xx xx - add [rip + x], bh
 00 3e - add [rsi], bh
 00 3f - add [rdi], bh
 
+00 40 xx - add [rax + x], al
+00 41 xx - add [rcx + x], al
+00 42 xx - add [rdx + x], al
+00 43 xx - add [rbx + x], al
+00 44 00 xx - add [rax + rax + x], al
+00 44 01 xx - add [rcx + rax + x], al
+00 44 02 xx - add [rdx + rax + x], al
+00 44 03 xx - add [rbx + rax + x], al
+00 44 04 xx - add [rsp + rax + x], al
+00 44 05 xx - add [rbp + rax + x], al
+00 44 06 xx - add [rsi + rax + x], al
+00 44 07 xx - add [rdi + rax + x], al
+00 44 08 xx - add [rax + rcx + x], al
+00 44 09 xx - add [rcx + rcx + x], al
+00 44 0a xx - add [rdx + rcx + x], al
+00 44 0b xx - add [rbx + rcx + x], al
+00 44 0c xx - add [rsp + rcx + x], al
+00 44 0d xx - add [rbp + rcx + x], al
+00 44 0e xx - add [rsi + rcx + x], al
+00 44 0f xx - add [rdi + rcx + x], al
+00 44 10 xx - add [rax + rdx + x], al
+00 44 11 xx - add [rcx + rdx + x], al
+00 44 12 xx - add [rdx + rdx + x], al
+00 44 13 xx - add [rbx + rdx + x], al
+00 44 14 xx - add [rsp + rdx + x], al
+00 44 15 xx - add [rbp + rdx + x], al
+00 44 16 xx - add [rsi + rdx + x], al
+00 44 17 xx - add [rdi + rdx + x], al
+00 44 18 xx - add [rax + rbx + x], al
+00 44 19 xx - add [rcx + rbx + x], al
+00 44 1a xx - add [rdx + rbx + x], al
+00 44 1b xx - add [rbx + rbx + x], al
+00 44 1c xx - add [rsp + rbx + x], al
+00 44 1d xx - add [rbp + rbx + x], al
+00 44 1e xx - add [rsi + rbx + x], al
+00 44 1f xx - add [rdi + rbx + x], al
+00 44 20 xx - add [rax + x], al
+00 44 21 xx - add [rcx + x], al
+00 44 22 xx - add [rdx + x], al
+00 44 23 xx - add [rbx + x], al
+00 44 24 xx - add [rsp + x], al
+00 44 25 xx - add [rbp + x], al
+00 44 26 xx - add [rsi + x], al
+00 44 27 xx - add [rdi + x], al
+00 44 28 xx - add [rax + rbp + x], al
+00 44 29 xx - add [rcx + rbp + x], al
+00 44 2a xx - add [rdx + rbp + x], al
+00 44 2b xx - add [rbx + rbp + x], al
+00 44 2c xx - add [rsp + rbp + x], al
+00 44 2d xx - add [rbp + rbp + x], al
+00 44 2e xx - add [rsi + rbp + x], al
+00 44 2f xx - add [rdi + rbp + x], al
+00 44 30 xx - add [rax + rsi + x], al
+00 44 31 xx - add [rcx + rsi + x], al
+00 44 32 xx - add [rdx + rsi + x], al
+00 44 33 xx - add [rbx + rsi + x], al
+00 44 34 xx - add [rsp + rsi + x], al
+00 44 35 xx - add [rbp + rsi + x], al
+00 44 36 xx - add [rsi + rsi + x], al
+00 44 37 xx - add [rdi + rsi + x], al
+00 44 38 xx - add [rax + rdi + x], al
+00 44 39 xx - add [rcx + rdi + x], al
+00 44 3a xx - add [rdx + rdi + x], al
+00 44 3b xx - add [rbx + rdi + x], al
+00 44 3c xx - add [rsp + rdi + x], al
+00 44 3d xx - add [rbp + rdi + x], al
+00 44 3e xx - add [rsi + rdi + x], al
+00 44 3f xx - add [rdi + rdi + x], al
+00 44 40 xx - add [rax + rax * 2 + x], al
+00 44 41 xx - add [rcx + rax * 2 + x], al
+00 44 42 xx - add [rdx + rax * 2 + x], al
+00 44 43 xx - add [rbx + rax * 2 + x], al
+00 44 44 xx - add [rsp + rax * 2 + x], al
+00 44 45 xx - add [rbp + rax * 2 + x], al
+00 44 46 xx - add [rsi + rax * 2 + x], al
+00 44 47 xx - add [rdi + rax * 2 + x], al
+00 44 48 xx - add [rax + rcx * 2 + x], al
+00 44 49 xx - add [rcx + rcx * 2 + x], al
+00 44 4a xx - add [rdx + rcx * 2 + x], al
+00 44 4b xx - add [rbx + rcx * 2 + x], al
+00 44 4c xx - add [rsp + rcx * 2 + x], al
+00 44 4d xx - add [rbp + rcx * 2 + x], al
+00 44 4e xx - add [rsi + rcx * 2 + x], al
+00 44 4f xx - add [rdi + rcx * 2 + x], al
+00 44 50 xx - add [rax + rdx * 2 + x], al
+00 44 51 xx - add [rcx + rdx * 2 + x], al
+00 44 52 xx - add [rdx + rdx * 2 + x], al
+00 44 53 xx - add [rbx + rdx * 2 + x], al
+00 44 54 xx - add [rsp + rdx * 2 + x], al
+00 44 55 xx - add [rbp + rdx * 2 + x], al
+00 44 56 xx - add [rsi + rdx * 2 + x], al
+00 44 57 xx - add [rdi + rdx * 2 + x], al
+00 44 58 xx - add [rax + rbx * 2 + x], al
+00 44 59 xx - add [rcx + rbx * 2 + x], al
+00 44 5a xx - add [rdx + rbx * 2 + x], al
+00 44 5b xx - add [rbx + rbx * 2 + x], al
+00 44 5c xx - add [rsp + rbx * 2 + x], al
+00 44 5d xx - add [rbp + rbx * 2 + x], al
+00 44 5e xx - add [rsi + rbx * 2 + x], al
+00 44 5f xx - add [rdi + rbx * 2 + x], al
+00 44 60 xx - add [rax + x], al
+00 44 61 xx - add [rcx + x], al
+00 44 62 xx - add [rdx + x], al
+00 44 63 xx - add [rbx + x], al
+00 44 64 xx - add [rsp + x], al
+00 44 65 xx - add [rbp + x], al
+00 44 66 xx - add [rsi + x], al
+00 44 67 xx - add [rdi + x], al
+00 44 68 xx - add [rax + rbp * 2 + x], al
+00 44 69 xx - add [rcx + rbp * 2 + x], al
+00 44 6a xx - add [rdx + rbp * 2 + x], al
+00 44 6b xx - add [rbx + rbp * 2 + x], al
+00 44 6c xx - add [rsp + rbp * 2 + x], al
+00 44 6d xx - add [rbp + rbp * 2 + x], al
+00 44 6e xx - add [rsi + rbp * 2 + x], al
+00 44 6f xx - add [rdi + rbp * 2 + x], al
+00 44 70 xx - add [rax + rsi * 2 + x], al
+00 44 71 xx - add [rcx + rsi * 2 + x], al
+00 44 72 xx - add [rdx + rsi * 2 + x], al
+00 44 73 xx - add [rbx + rsi * 2 + x], al
+00 44 74 xx - add [rsp + rsi * 2 + x], al
+00 44 75 xx - add [rbp + rsi * 2 + x], al
+00 44 76 xx - add [rsi + rsi * 2 + x], al
+00 44 77 xx - add [rdi + rsi * 2 + x], al
+00 44 78 xx - add [rax + rdi * 2 + x], al
+00 44 79 xx - add [rcx + rdi * 2 + x], al
+00 44 7a xx - add [rdx + rdi * 2 + x], al
+00 44 7b xx - add [rbx + rdi * 2 + x], al
+00 44 7c xx - add [rsp + rdi * 2 + x], al
+00 44 7d xx - add [rbp + rdi * 2 + x], al
+00 44 7e xx - add [rsi + rdi * 2 + x], al
+00 44 7f xx - add [rdi + rdi * 2 + x], al
+00 44 80 xx - add [rax + rax * 4 + x], al
+00 44 81 xx - add [rcx + rax * 4 + x], al
+00 44 82 xx - add [rdx + rax * 4 + x], al
+00 44 83 xx - add [rbx + rax * 4 + x], al
+00 44 84 xx - add [rsp + rax * 4 + x], al
+00 44 85 xx - add [rbp + rax * 4 + x], al
+00 44 86 xx - add [rsi + rax * 4 + x], al
+00 44 87 xx - add [rdi + rax * 4 + x], al
+00 44 88 xx - add [rax + rcx * 4 + x], al
+00 44 89 xx - add [rcx + rcx * 4 + x], al
+00 44 8a xx - add [rdx + rcx * 4 + x], al
+00 44 8b xx - add [rbx + rcx * 4 + x], al
+00 44 8c xx - add [rsp + rcx * 4 + x], al
+00 44 8d xx - add [rbp + rcx * 4 + x], al
+00 44 8e xx - add [rsi + rcx * 4 + x], al
+00 44 8f xx - add [rdi + rcx * 4 + x], al
+00 44 90 xx - add [rax + rdx * 4 + x], al
+00 44 91 xx - add [rcx + rdx * 4 + x], al
+00 44 92 xx - add [rdx + rdx * 4 + x], al
+00 44 93 xx - add [rbx + rdx * 4 + x], al
+00 44 94 xx - add [rsp + rdx * 4 + x], al
+00 44 95 xx - add [rbp + rdx * 4 + x], al
+00 44 96 xx - add [rsi + rdx * 4 + x], al
+00 44 97 xx - add [rdi + rdx * 4 + x], al
+00 44 98 xx - add [rax + rbx * 4 + x], al
+00 44 99 xx - add [rcx + rbx * 4 + x], al
+00 44 9a xx - add [rdx + rbx * 4 + x], al
+00 44 9b xx - add [rbx + rbx * 4 + x], al
+00 44 9c xx - add [rsp + rbx * 4 + x], al
+00 44 9d xx - add [rbp + rbx * 4 + x], al
+00 44 9e xx - add [rsi + rbx * 4 + x], al
+00 44 9f xx - add [rdi + rbx * 4 + x], al
+00 44 a0 xx - add [rax + x], al
+00 44 a1 xx - add [rcx + x], al
+00 44 a2 xx - add [rdx + x], al
+00 44 a3 xx - add [rbx + x], al
+00 44 a4 xx - add [rsp + x], al
+00 44 a5 xx - add [rbp + x], al
+00 44 a6 xx - add [rsi + x], al
+00 44 a7 xx - add [rdi + x], al
+00 44 a8 xx - add [rax + rbp * 4 + x], al
+00 44 a9 xx - add [rcx + rbp * 4 + x], al
+00 44 aa xx - add [rdx + rbp * 4 + x], al
+00 44 ab xx - add [rbx + rbp * 4 + x], al
+00 44 ac xx - add [rsp + rbp * 4 + x], al
+00 44 ad xx - add [rbp + rbp * 4 + x], al
+00 44 ae xx - add [rsi + rbp * 4 + x], al
+00 44 af xx - add [rdi + rbp * 4 + x], al
+00 44 b0 xx - add [rax + rsi * 4 + x], al
+00 44 b1 xx - add [rcx + rsi * 4 + x], al
+00 44 b2 xx - add [rdx + rsi * 4 + x], al
+00 44 b3 xx - add [rbx + rsi * 4 + x], al
+00 44 b4 xx - add [rsp + rsi * 4 + x], al
+00 44 b5 xx - add [rbp + rsi * 4 + x], al
+00 44 b6 xx - add [rsi + rsi * 4 + x], al
+00 44 b7 xx - add [rdi + rsi * 4 + x], al
+00 44 b8 xx - add [rax + rdi * 4 + x], al
+00 44 b9 xx - add [rcx + rdi * 4 + x], al
+00 44 ba xx - add [rdx + rdi * 4 + x], al
+00 44 bb xx - add [rbx + rdi * 4 + x], al
+00 44 bc xx - add [rsp + rdi * 4 + x], al
+00 44 bd xx - add [rbp + rdi * 4 + x], al
+00 44 be xx - add [rsi + rdi * 4 + x], al
+00 44 bf xx - add [rdi + rdi * 4 + x], al
+00 44 c0 xx - add [rax + rax * 8 + x], al
+00 44 c1 xx - add [rcx + rax * 8 + x], al
+00 44 c2 xx - add [rdx + rax * 8 + x], al
+00 44 c3 xx - add [rbx + rax * 8 + x], al
+00 44 c4 xx - add [rsp + rax * 8 + x], al
+00 44 c5 xx - add [rbp + rax * 8 + x], al
+00 44 c6 xx - add [rsi + rax * 8 + x], al
+00 44 c7 xx - add [rdi + rax * 8 + x], al
+00 44 c8 xx - add [rax + rcx * 8 + x], al
+00 44 c9 xx - add [rcx + rcx * 8 + x], al
+00 44 ca xx - add [rdx + rcx * 8 + x], al
+00 44 cb xx - add [rbx + rcx * 8 + x], al
+00 44 cc xx - add [rsp + rcx * 8 + x], al
+00 44 cd xx - add [rbp + rcx * 8 + x], al
+00 44 ce xx - add [rsi + rcx * 8 + x], al
+00 44 cf xx - add [rdi + rcx * 8 + x], al
+00 44 d0 xx - add [rax + rdx * 8 + x], al
+00 44 d1 xx - add [rcx + rdx * 8 + x], al
+00 44 d2 xx - add [rdx + rdx * 8 + x], al
+00 44 d3 xx - add [rbx + rdx * 8 + x], al
+00 44 d4 xx - add [rsp + rdx * 8 + x], al
+00 44 d5 xx - add [rbp + rdx * 8 + x], al
+00 44 d6 xx - add [rsi + rdx * 8 + x], al
+00 44 d7 xx - add [rdi + rdx * 8 + x], al
+00 44 d8 xx - add [rax + rbx * 8 + x], al
+00 44 d9 xx - add [rcx + rbx * 8 + x], al
+00 44 da xx - add [rdx + rbx * 8 + x], al
+00 44 db xx - add [rbx + rbx * 8 + x], al
+00 44 dc xx - add [rsp + rbx * 8 + x], al
+00 44 dd xx - add [rbp + rbx * 8 + x], al
+00 44 de xx - add [rsi + rbx * 8 + x], al
+00 44 df xx - add [rdi + rbx * 8 + x], al
+00 44 e0 xx - add [rax + x], al
+00 44 e1 xx - add [rcx + x], al
+00 44 e2 xx - add [rdx + x], al
+00 44 e3 xx - add [rbx + x], al
+00 44 e4 xx - add [rsp + x], al
+00 44 e5 xx - add [rbp + x], al
+00 44 e6 xx - add [rsi + x], al
+00 44 e7 xx - add [rdi + x], al
+00 44 e8 xx - add [rax + rbp * 8 + x], al
+00 44 e9 xx - add [rcx + rbp * 8 + x], al
+00 44 ea xx - add [rdx + rbp * 8 + x], al
+00 44 eb xx - add [rbx + rbp * 8 + x], al
+00 44 ec xx - add [rsp + rbp * 8 + x], al
+00 44 ed xx - add [rbp + rbp * 8 + x], al
+00 44 ee xx - add [rsi + rbp * 8 + x], al
+00 44 ef xx - add [rdi + rbp * 8 + x], al
+00 44 f0 xx - add [rax + rsi * 8 + x], al
+00 44 f1 xx - add [rcx + rsi * 8 + x], al
+00 44 f2 xx - add [rdx + rsi * 8 + x], al
+00 44 f3 xx - add [rbx + rsi * 8 + x], al
+00 44 f4 xx - add [rsp + rsi * 8 + x], al
+00 44 f5 xx - add [rbp + rsi * 8 + x], al
+00 44 f6 xx - add [rsi + rsi * 8 + x], al
+00 44 f7 xx - add [rdi + rsi * 8 + x], al
+00 44 f8 xx - add [rax + rdi * 8 + x], al
+00 44 f9 xx - add [rcx + rdi * 8 + x], al
+00 44 fa xx - add [rdx + rdi * 8 + x], al
+00 44 fb xx - add [rbx + rdi * 8 + x], al
+00 44 fc xx - add [rsp + rdi * 8 + x], al
+00 44 fd xx - add [rbp + rdi * 8 + x], al
+00 44 fe xx - add [rsi + rdi * 8 + x], al
+00 44 ff xx - add [rdi + rdi * 8 + x], al
+00 45 xx - add [rbp + x], al
+00 46 xx - add [rsi + x], al
+00 47 xx - add [rdi + x], al
+00 48 xx - add [rax + x], cl
+00 49 xx - add [rcx + x], cl
+00 4a xx - add [rdx + x], cl
+00 4b xx - add [rbx + x], cl
+00 4c 00 xx - add [rax + rax + x], cl
+00 4c 01 xx - add [rcx + rax + x], cl
+00 4c 02 xx - add [rdx + rax + x], cl
+00 4c 03 xx - add [rbx + rax + x], cl
+00 4c 04 xx - add [rsp + rax + x], cl
+00 4c 05 xx - add [rbp + rax + x], cl
+00 4c 06 xx - add [rsi + rax + x], cl
+00 4c 07 xx - add [rdi + rax + x], cl
+00 4c 08 xx - add [rax + rcx + x], cl
+00 4c 09 xx - add [rcx + rcx + x], cl
+00 4c 0a xx - add [rdx + rcx + x], cl
+00 4c 0b xx - add [rbx + rcx + x], cl
+00 4c 0c xx - add [rsp + rcx + x], cl
+00 4c 0d xx - add [rbp + rcx + x], cl
+00 4c 0e xx - add [rsi + rcx + x], cl
+00 4c 0f xx - add [rdi + rcx + x], cl
+00 4c 10 xx - add [rax + rdx + x], cl
+00 4c 11 xx - add [rcx + rdx + x], cl
+00 4c 12 xx - add [rdx + rdx + x], cl
+00 4c 13 xx - add [rbx + rdx + x], cl
+00 4c 14 xx - add [rsp + rdx + x], cl
+00 4c 15 xx - add [rbp + rdx + x], cl
+00 4c 16 xx - add [rsi + rdx + x], cl
+00 4c 17 xx - add [rdi + rdx + x], cl
+00 4c 18 xx - add [rax + rbx + x], cl
+00 4c 19 xx - add [rcx + rbx + x], cl
+00 4c 1a xx - add [rdx + rbx + x], cl
+00 4c 1b xx - add [rbx + rbx + x], cl
+00 4c 1c xx - add [rsp + rbx + x], cl
+00 4c 1d xx - add [rbp + rbx + x], cl
+00 4c 1e xx - add [rsi + rbx + x], cl
+00 4c 1f xx - add [rdi + rbx + x], cl
+00 4c 20 xx - add [rax + x], cl
+00 4c 21 xx - add [rcx + x], cl
+00 4c 22 xx - add [rdx + x], cl
+00 4c 23 xx - add [rbx + x], cl
+00 4c 24 xx - add [rsp + x], cl
+00 4c 25 xx - add [rbp + x], cl
+00 4c 26 xx - add [rsi + x], cl
+00 4c 27 xx - add [rdi + x], cl
+00 4c 28 xx - add [rax + rbp + x], cl
+00 4c 29 xx - add [rcx + rbp + x], cl
+00 4c 2a xx - add [rdx + rbp + x], cl
+00 4c 2b xx - add [rbx + rbp + x], cl
+00 4c 2c xx - add [rsp + rbp + x], cl
+00 4c 2d xx - add [rbp + rbp + x], cl
+00 4c 2e xx - add [rsi + rbp + x], cl
+00 4c 2f xx - add [rdi + rbp + x], cl
+00 4c 30 xx - add [rax + rsi + x], cl
+00 4c 31 xx - add [rcx + rsi + x], cl
+00 4c 32 xx - add [rdx + rsi + x], cl
+00 4c 33 xx - add [rbx + rsi + x], cl
+00 4c 34 xx - add [rsp + rsi + x], cl
+00 4c 35 xx - add [rbp + rsi + x], cl
+00 4c 36 xx - add [rsi + rsi + x], cl
+00 4c 37 xx - add [rdi + rsi + x], cl
+00 4c 38 xx - add [rax + rdi + x], cl
+00 4c 39 xx - add [rcx + rdi + x], cl
+00 4c 3a xx - add [rdx + rdi + x], cl
+00 4c 3b xx - add [rbx + rdi + x], cl
+00 4c 3c xx - add [rsp + rdi + x], cl
+00 4c 3d xx - add [rbp + rdi + x], cl
+00 4c 3e xx - add [rsi + rdi + x], cl
+00 4c 3f xx - add [rdi + rdi + x], cl
+00 4c 40 xx - add [rax + rax * 2 + x], cl
+00 4c 41 xx - add [rcx + rax * 2 + x], cl
+00 4c 42 xx - add [rdx + rax * 2 + x], cl
+00 4c 43 xx - add [rbx + rax * 2 + x], cl
+00 4c 44 xx - add [rsp + rax * 2 + x], cl
+00 4c 45 xx - add [rbp + rax * 2 + x], cl
+00 4c 46 xx - add [rsi + rax * 2 + x], cl
+00 4c 47 xx - add [rdi + rax * 2 + x], cl
+00 4c 48 xx - add [rax + rcx * 2 + x], cl
+00 4c 49 xx - add [rcx + rcx * 2 + x], cl
+00 4c 4a xx - add [rdx + rcx * 2 + x], cl
+00 4c 4b xx - add [rbx + rcx * 2 + x], cl
+00 4c 4c xx - add [rsp + rcx * 2 + x], cl
+00 4c 4d xx - add [rbp + rcx * 2 + x], cl
+00 4c 4e xx - add [rsi + rcx * 2 + x], cl
+00 4c 4f xx - add [rdi + rcx * 2 + x], cl
+00 4c 50 xx - add [rax + rdx * 2 + x], cl
+00 4c 51 xx - add [rcx + rdx * 2 + x], cl
+00 4c 52 xx - add [rdx + rdx * 2 + x], cl
+00 4c 53 xx - add [rbx + rdx * 2 + x], cl
+00 4c 54 xx - add [rsp + rdx * 2 + x], cl
+00 4c 55 xx - add [rbp + rdx * 2 + x], cl
+00 4c 56 xx - add [rsi + rdx * 2 + x], cl
+00 4c 57 xx - add [rdi + rdx * 2 + x], cl
+00 4c 58 xx - add [rax + rbx * 2 + x], cl
+00 4c 59 xx - add [rcx + rbx * 2 + x], cl
+00 4c 5a xx - add [rdx + rbx * 2 + x], cl
+00 4c 5b xx - add [rbx + rbx * 2 + x], cl
+00 4c 5c xx - add [rsp + rbx * 2 + x], cl
+00 4c 5d xx - add [rbp + rbx * 2 + x], cl
+00 4c 5e xx - add [rsi + rbx * 2 + x], cl
+00 4c 5f xx - add [rdi + rbx * 2 + x], cl
+00 4c 60 xx - add [rax + x], cl
+00 4c 61 xx - add [rcx + x], cl
+00 4c 62 xx - add [rdx + x], cl
+00 4c 63 xx - add [rbx + x], cl
+00 4c 64 xx - add [rsp + x], cl
+00 4c 65 xx - add [rbp + x], cl
+00 4c 66 xx - add [rsi + x], cl
+00 4c 67 xx - add [rdi + x], cl
+00 4c 68 xx - add [rax + rbp * 2 + x], cl
+00 4c 69 xx - add [rcx + rbp * 2 + x], cl
+00 4c 6a xx - add [rdx + rbp * 2 + x], cl
+00 4c 6b xx - add [rbx + rbp * 2 + x], cl
+00 4c 6c xx - add [rsp + rbp * 2 + x], cl
+00 4c 6d xx - add [rbp + rbp * 2 + x], cl
+00 4c 6e xx - add [rsi + rbp * 2 + x], cl
+00 4c 6f xx - add [rdi + rbp * 2 + x], cl
+00 4c 70 xx - add [rax + rsi * 2 + x], cl
+00 4c 71 xx - add [rcx + rsi * 2 + x], cl
+00 4c 72 xx - add [rdx + rsi * 2 + x], cl
+00 4c 73 xx - add [rbx + rsi * 2 + x], cl
+00 4c 74 xx - add [rsp + rsi * 2 + x], cl
+00 4c 75 xx - add [rbp + rsi * 2 + x], cl
+00 4c 76 xx - add [rsi + rsi * 2 + x], cl
+00 4c 77 xx - add [rdi + rsi * 2 + x], cl
+00 4c 78 xx - add [rax + rdi * 2 + x], cl
+00 4c 79 xx - add [rcx + rdi * 2 + x], cl
+00 4c 7a xx - add [rdx + rdi * 2 + x], cl
+00 4c 7b xx - add [rbx + rdi * 2 + x], cl
+00 4c 7c xx - add [rsp + rdi * 2 + x], cl
+00 4c 7d xx - add [rbp + rdi * 2 + x], cl
+00 4c 7e xx - add [rsi + rdi * 2 + x], cl
+00 4c 7f xx - add [rdi + rdi * 2 + x], cl
+00 4c 80 xx - add [rax + rax * 4 + x], cl
+00 4c 81 xx - add [rcx + rax * 4 + x], cl
+00 4c 82 xx - add [rdx + rax * 4 + x], cl
+00 4c 83 xx - add [rbx + rax * 4 + x], cl
+00 4c 84 xx - add [rsp + rax * 4 + x], cl
+00 4c 85 xx - add [rbp + rax * 4 + x], cl
+00 4c 86 xx - add [rsi + rax * 4 + x], cl
+00 4c 87 xx - add [rdi + rax * 4 + x], cl
+00 4c 88 xx - add [rax + rcx * 4 + x], cl
+00 4c 89 xx - add [rcx + rcx * 4 + x], cl
+00 4c 8a xx - add [rdx + rcx * 4 + x], cl
+00 4c 8b xx - add [rbx + rcx * 4 + x], cl
+00 4c 8c xx - add [rsp + rcx * 4 + x], cl
+00 4c 8d xx - add [rbp + rcx * 4 + x], cl
+00 4c 8e xx - add [rsi + rcx * 4 + x], cl
+00 4c 8f xx - add [rdi + rcx * 4 + x], cl
+00 4c 90 xx - add [rax + rdx * 4 + x], cl
+00 4c 91 xx - add [rcx + rdx * 4 + x], cl
+00 4c 92 xx - add [rdx + rdx * 4 + x], cl
+00 4c 93 xx - add [rbx + rdx * 4 + x], cl
+00 4c 94 xx - add [rsp + rdx * 4 + x], cl
+00 4c 95 xx - add [rbp + rdx * 4 + x], cl
+00 4c 96 xx - add [rsi + rdx * 4 + x], cl
+00 4c 97 xx - add [rdi + rdx * 4 + x], cl
+00 4c 98 xx - add [rax + rbx * 4 + x], cl
+00 4c 99 xx - add [rcx + rbx * 4 + x], cl
+00 4c 9a xx - add [rdx + rbx * 4 + x], cl
+00 4c 9b xx - add [rbx + rbx * 4 + x], cl
+00 4c 9c xx - add [rsp + rbx * 4 + x], cl
+00 4c 9d xx - add [rbp + rbx * 4 + x], cl
+00 4c 9e xx - add [rsi + rbx * 4 + x], cl
+00 4c 9f xx - add [rdi + rbx * 4 + x], cl
+00 4c a0 xx - add [rax + x], cl
+00 4c a1 xx - add [rcx + x], cl
+00 4c a2 xx - add [rdx + x], cl
+00 4c a3 xx - add [rbx + x], cl
+00 4c a4 xx - add [rsp + x], cl
+00 4c a5 xx - add [rbp + x], cl
+00 4c a6 xx - add [rsi + x], cl
+00 4c a7 xx - add [rdi + x], cl
+00 4c a8 xx - add [rax + rbp * 4 + x], cl
+00 4c a9 xx - add [rcx + rbp * 4 + x], cl
+00 4c aa xx - add [rdx + rbp * 4 + x], cl
+00 4c ab xx - add [rbx + rbp * 4 + x], cl
+00 4c ac xx - add [rsp + rbp * 4 + x], cl
+00 4c ad xx - add [rbp + rbp * 4 + x], cl
+00 4c ae xx - add [rsi + rbp * 4 + x], cl
+00 4c af xx - add [rdi + rbp * 4 + x], cl
+00 4c b0 xx - add [rax + rsi * 4 + x], cl
+00 4c b1 xx - add [rcx + rsi * 4 + x], cl
+00 4c b2 xx - add [rdx + rsi * 4 + x], cl
+00 4c b3 xx - add [rbx + rsi * 4 + x], cl
+00 4c b4 xx - add [rsp + rsi * 4 + x], cl
+00 4c b5 xx - add [rbp + rsi * 4 + x], cl
+00 4c b6 xx - add [rsi + rsi * 4 + x], cl
+00 4c b7 xx - add [rdi + rsi * 4 + x], cl
+00 4c b8 xx - add [rax + rdi * 4 + x], cl
+00 4c b9 xx - add [rcx + rdi * 4 + x], cl
+00 4c ba xx - add [rdx + rdi * 4 + x], cl
+00 4c bb xx - add [rbx + rdi * 4 + x], cl
+00 4c bc xx - add [rsp + rdi * 4 + x], cl
+00 4c bd xx - add [rbp + rdi * 4 + x], cl
+00 4c be xx - add [rsi + rdi * 4 + x], cl
+00 4c bf xx - add [rdi + rdi * 4 + x], cl
+00 4c c0 xx - add [rax + rax * 8 + x], cl
+00 4c c1 xx - add [rcx + rax * 8 + x], cl
+00 4c c2 xx - add [rdx + rax * 8 + x], cl
+00 4c c3 xx - add [rbx + rax * 8 + x], cl
+00 4c c4 xx - add [rsp + rax * 8 + x], cl
+00 4c c5 xx - add [rbp + rax * 8 + x], cl
+00 4c c6 xx - add [rsi + rax * 8 + x], cl
+00 4c c7 xx - add [rdi + rax * 8 + x], cl
+00 4c c8 xx - add [rax + rcx * 8 + x], cl
+00 4c c9 xx - add [rcx + rcx * 8 + x], cl
+00 4c ca xx - add [rdx + rcx * 8 + x], cl
+00 4c cb xx - add [rbx + rcx * 8 + x], cl
+00 4c cc xx - add [rsp + rcx * 8 + x], cl
+00 4c cd xx - add [rbp + rcx * 8 + x], cl
+00 4c ce xx - add [rsi + rcx * 8 + x], cl
+00 4c cf xx - add [rdi + rcx * 8 + x], cl
+00 4c d0 xx - add [rax + rdx * 8 + x], cl
+00 4c d1 xx - add [rcx + rdx * 8 + x], cl
+00 4c d2 xx - add [rdx + rdx * 8 + x], cl
+00 4c d3 xx - add [rbx + rdx * 8 + x], cl
+00 4c d4 xx - add [rsp + rdx * 8 + x], cl
+00 4c d5 xx - add [rbp + rdx * 8 + x], cl
+00 4c d6 xx - add [rsi + rdx * 8 + x], cl
+00 4c d7 xx - add [rdi + rdx * 8 + x], cl
+00 4c d8 xx - add [rax + rbx * 8 + x], cl
+00 4c d9 xx - add [rcx + rbx * 8 + x], cl
+00 4c da xx - add [rdx + rbx * 8 + x], cl
+00 4c db xx - add [rbx + rbx * 8 + x], cl
+00 4c dc xx - add [rsp + rbx * 8 + x], cl
+00 4c dd xx - add [rbp + rbx * 8 + x], cl
+00 4c de xx - add [rsi + rbx * 8 + x], cl
+00 4c df xx - add [rdi + rbx * 8 + x], cl
+00 4c e0 xx - add [rax + x], cl
+00 4c e1 xx - add [rcx + x], cl
+00 4c e2 xx - add [rdx + x], cl
+00 4c e3 xx - add [rbx + x], cl
+00 4c e4 xx - add [rsp + x], cl
+00 4c e5 xx - add [rbp + x], cl
+00 4c e6 xx - add [rsi + x], cl
+00 4c e7 xx - add [rdi + x], cl
+00 4c e8 xx - add [rax + rbp * 8 + x], cl
+00 4c e9 xx - add [rcx + rbp * 8 + x], cl
+00 4c ea xx - add [rdx + rbp * 8 + x], cl
+00 4c eb xx - add [rbx + rbp * 8 + x], cl
+00 4c ec xx - add [rsp + rbp * 8 + x], cl
+00 4c ed xx - add [rbp + rbp * 8 + x], cl
+00 4c ee xx - add [rsi + rbp * 8 + x], cl
+00 4c ef xx - add [rdi + rbp * 8 + x], cl
+00 4c f0 xx - add [rax + rsi * 8 + x], cl
+00 4c f1 xx - add [rcx + rsi * 8 + x], cl
+00 4c f2 xx - add [rdx + rsi * 8 + x], cl
+00 4c f3 xx - add [rbx + rsi * 8 + x], cl
+00 4c f4 xx - add [rsp + rsi * 8 + x], cl
+00 4c f5 xx - add [rbp + rsi * 8 + x], cl
+00 4c f6 xx - add [rsi + rsi * 8 + x], cl
+00 4c f7 xx - add [rdi + rsi * 8 + x], cl
+00 4c f8 xx - add [rax + rdi * 8 + x], cl
+00 4c f9 xx - add [rcx + rdi * 8 + x], cl
+00 4c fa xx - add [rdx + rdi * 8 + x], cl
+00 4c fb xx - add [rbx + rdi * 8 + x], cl
+00 4c fc xx - add [rsp + rdi * 8 + x], cl
+00 4c fd xx - add [rbp + rdi * 8 + x], cl
+00 4c fe xx - add [rsi + rdi * 8 + x], cl
+00 4c ff xx - add [rdi + rdi * 8 + x], cl
+00 4d xx - add [rbp + x], cl
+00 4e xx - add [rsi + x], cl
+00 4f xx - add [rdi + x], cl
+00 50 xx - add [rax + x], dl
+00 51 xx - add [rcx + x], dl
+00 52 xx - add [rdx + x], dl
+00 53 xx - add [rbx + x], dl
+00 54 00 xx - add [rax + rax + x], dl
+00 54 01 xx - add [rcx + rax + x], dl
+00 54 02 xx - add [rdx + rax + x], dl
+00 54 03 xx - add [rbx + rax + x], dl
+00 54 04 xx - add [rsp + rax + x], dl
+00 54 05 xx - add [rbp + rax + x], dl
+00 54 06 xx - add [rsi + rax + x], dl
+00 54 07 xx - add [rdi + rax + x], dl
+00 54 08 xx - add [rax + rcx + x], dl
+00 54 09 xx - add [rcx + rcx + x], dl
+00 54 0a xx - add [rdx + rcx + x], dl
+00 54 0b xx - add [rbx + rcx + x], dl
+00 54 0c xx - add [rsp + rcx + x], dl
+00 54 0d xx - add [rbp + rcx + x], dl
+00 54 0e xx - add [rsi + rcx + x], dl
+00 54 0f xx - add [rdi + rcx + x], dl
+00 54 10 xx - add [rax + rdx + x], dl
+00 54 11 xx - add [rcx + rdx + x], dl
+00 54 12 xx - add [rdx + rdx + x], dl
+00 54 13 xx - add [rbx + rdx + x], dl
+00 54 14 xx - add [rsp + rdx + x], dl
+00 54 15 xx - add [rbp + rdx + x], dl
+00 54 16 xx - add [rsi + rdx + x], dl
+00 54 17 xx - add [rdi + rdx + x], dl
+00 54 18 xx - add [rax + rbx + x], dl
+00 54 19 xx - add [rcx + rbx + x], dl
+00 54 1a xx - add [rdx + rbx + x], dl
+00 54 1b xx - add [rbx + rbx + x], dl
+00 54 1c xx - add [rsp + rbx + x], dl
+00 54 1d xx - add [rbp + rbx + x], dl
+00 54 1e xx - add [rsi + rbx + x], dl
+00 54 1f xx - add [rdi + rbx + x], dl
+00 54 20 xx - add [rax + x], dl
+00 54 21 xx - add [rcx + x], dl
+00 54 22 xx - add [rdx + x], dl
+00 54 23 xx - add [rbx + x], dl
+00 54 24 xx - add [rsp + x], dl
+00 54 25 xx - add [rbp + x], dl
+00 54 26 xx - add [rsi + x], dl
+00 54 27 xx - add [rdi + x], dl
+00 54 28 xx - add [rax + rbp + x], dl
+00 54 29 xx - add [rcx + rbp + x], dl
+00 54 2a xx - add [rdx + rbp + x], dl
+00 54 2b xx - add [rbx + rbp + x], dl
+00 54 2c xx - add [rsp + rbp + x], dl
+00 54 2d xx - add [rbp + rbp + x], dl
+00 54 2e xx - add [rsi + rbp + x], dl
+00 54 2f xx - add [rdi + rbp + x], dl
+00 54 30 xx - add [rax + rsi + x], dl
+00 54 31 xx - add [rcx + rsi + x], dl
+00 54 32 xx - add [rdx + rsi + x], dl
+00 54 33 xx - add [rbx + rsi + x], dl
+00 54 34 xx - add [rsp + rsi + x], dl
+00 54 35 xx - add [rbp + rsi + x], dl
+00 54 36 xx - add [rsi + rsi + x], dl
+00 54 37 xx - add [rdi + rsi + x], dl
+00 54 38 xx - add [rax + rdi + x], dl
+00 54 39 xx - add [rcx + rdi + x], dl
+00 54 3a xx - add [rdx + rdi + x], dl
+00 54 3b xx - add [rbx + rdi + x], dl
+00 54 3c xx - add [rsp + rdi + x], dl
+00 54 3d xx - add [rbp + rdi + x], dl
+00 54 3e xx - add [rsi + rdi + x], dl
+00 54 3f xx - add [rdi + rdi + x], dl
+00 54 40 xx - add [rax + rax * 2 + x], dl
+00 54 41 xx - add [rcx + rax * 2 + x], dl
+00 54 42 xx - add [rdx + rax * 2 + x], dl
+00 54 43 xx - add [rbx + rax * 2 + x], dl
+00 54 44 xx - add [rsp + rax * 2 + x], dl
+00 54 45 xx - add [rbp + rax * 2 + x], dl
+00 54 46 xx - add [rsi + rax * 2 + x], dl
+00 54 47 xx - add [rdi + rax * 2 + x], dl
+00 54 48 xx - add [rax + rcx * 2 + x], dl
+00 54 49 xx - add [rcx + rcx * 2 + x], dl
+00 54 4a xx - add [rdx + rcx * 2 + x], dl
+00 54 4b xx - add [rbx + rcx * 2 + x], dl
+00 54 4c xx - add [rsp + rcx * 2 + x], dl
+00 54 4d xx - add [rbp + rcx * 2 + x], dl
+00 54 4e xx - add [rsi + rcx * 2 + x], dl
+00 54 4f xx - add [rdi + rcx * 2 + x], dl
+00 54 50 xx - add [rax + rdx * 2 + x], dl
+00 54 51 xx - add [rcx + rdx * 2 + x], dl
+00 54 52 xx - add [rdx + rdx * 2 + x], dl
+00 54 53 xx - add [rbx + rdx * 2 + x], dl
+00 54 54 xx - add [rsp + rdx * 2 + x], dl
+00 54 55 xx - add [rbp + rdx * 2 + x], dl
+00 54 56 xx - add [rsi + rdx * 2 + x], dl
+00 54 57 xx - add [rdi + rdx * 2 + x], dl
+00 54 58 xx - add [rax + rbx * 2 + x], dl
+00 54 59 xx - add [rcx + rbx * 2 + x], dl
+00 54 5a xx - add [rdx + rbx * 2 + x], dl
+00 54 5b xx - add [rbx + rbx * 2 + x], dl
+00 54 5c xx - add [rsp + rbx * 2 + x], dl
+00 54 5d xx - add [rbp + rbx * 2 + x], dl
+00 54 5e xx - add [rsi + rbx * 2 + x], dl
+00 54 5f xx - add [rdi + rbx * 2 + x], dl
+00 54 60 xx - add [rax + x], dl
+00 54 61 xx - add [rcx + x], dl
+00 54 62 xx - add [rdx + x], dl
+00 54 63 xx - add [rbx + x], dl
+00 54 64 xx - add [rsp + x], dl
+00 54 65 xx - add [rbp + x], dl
+00 54 66 xx - add [rsi + x], dl
+00 54 67 xx - add [rdi + x], dl
+00 54 68 xx - add [rax + rbp * 2 + x], dl
+00 54 69 xx - add [rcx + rbp * 2 + x], dl
+00 54 6a xx - add [rdx + rbp * 2 + x], dl
+00 54 6b xx - add [rbx + rbp * 2 + x], dl
+00 54 6c xx - add [rsp + rbp * 2 + x], dl
+00 54 6d xx - add [rbp + rbp * 2 + x], dl
+00 54 6e xx - add [rsi + rbp * 2 + x], dl
+00 54 6f xx - add [rdi + rbp * 2 + x], dl
+00 54 70 xx - add [rax + rsi * 2 + x], dl
+00 54 71 xx - add [rcx + rsi * 2 + x], dl
+00 54 72 xx - add [rdx + rsi * 2 + x], dl
+00 54 73 xx - add [rbx + rsi * 2 + x], dl
+00 54 74 xx - add [rsp + rsi * 2 + x], dl
+00 54 75 xx - add [rbp + rsi * 2 + x], dl
+00 54 76 xx - add [rsi + rsi * 2 + x], dl
+00 54 77 xx - add [rdi + rsi * 2 + x], dl
+00 54 78 xx - add [rax + rdi * 2 + x], dl
+00 54 79 xx - add [rcx + rdi * 2 + x], dl
+00 54 7a xx - add [rdx + rdi * 2 + x], dl
+00 54 7b xx - add [rbx + rdi * 2 + x], dl
+00 54 7c xx - add [rsp + rdi * 2 + x], dl
+00 54 7d xx - add [rbp + rdi * 2 + x], dl
+00 54 7e xx - add [rsi + rdi * 2 + x], dl
+00 54 7f xx - add [rdi + rdi * 2 + x], dl
+00 54 80 xx - add [rax + rax * 4 + x], dl
+00 54 81 xx - add [rcx + rax * 4 + x], dl
+00 54 82 xx - add [rdx + rax * 4 + x], dl
+00 54 83 xx - add [rbx + rax * 4 + x], dl
+00 54 84 xx - add [rsp + rax * 4 + x], dl
+00 54 85 xx - add [rbp + rax * 4 + x], dl
+00 54 86 xx - add [rsi + rax * 4 + x], dl
+00 54 87 xx - add [rdi + rax * 4 + x], dl
+00 54 88 xx - add [rax + rcx * 4 + x], dl
+00 54 89 xx - add [rcx + rcx * 4 + x], dl
+00 54 8a xx - add [rdx + rcx * 4 + x], dl
+00 54 8b xx - add [rbx + rcx * 4 + x], dl
+00 54 8c xx - add [rsp + rcx * 4 + x], dl
+00 54 8d xx - add [rbp + rcx * 4 + x], dl
+00 54 8e xx - add [rsi + rcx * 4 + x], dl
+00 54 8f xx - add [rdi + rcx * 4 + x], dl
+00 54 90 xx - add [rax + rdx * 4 + x], dl
+00 54 91 xx - add [rcx + rdx * 4 + x], dl
+00 54 92 xx - add [rdx + rdx * 4 + x], dl
+00 54 93 xx - add [rbx + rdx * 4 + x], dl
+00 54 94 xx - add [rsp + rdx * 4 + x], dl
+00 54 95 xx - add [rbp + rdx * 4 + x], dl
+00 54 96 xx - add [rsi + rdx * 4 + x], dl
+00 54 97 xx - add [rdi + rdx * 4 + x], dl
+00 54 98 xx - add [rax + rbx * 4 + x], dl
+00 54 99 xx - add [rcx + rbx * 4 + x], dl
+00 54 9a xx - add [rdx + rbx * 4 + x], dl
+00 54 9b xx - add [rbx + rbx * 4 + x], dl
+00 54 9c xx - add [rsp + rbx * 4 + x], dl
+00 54 9d xx - add [rbp + rbx * 4 + x], dl
+00 54 9e xx - add [rsi + rbx * 4 + x], dl
+00 54 9f xx - add [rdi + rbx * 4 + x], dl
+00 54 a0 xx - add [rax + x], dl
+00 54 a1 xx - add [rcx + x], dl
+00 54 a2 xx - add [rdx + x], dl
+00 54 a3 xx - add [rbx + x], dl
+00 54 a4 xx - add [rsp + x], dl
+00 54 a5 xx - add [rbp + x], dl
+00 54 a6 xx - add [rsi + x], dl
+00 54 a7 xx - add [rdi + x], dl
+00 54 a8 xx - add [rax + rbp * 4 + x], dl
+00 54 a9 xx - add [rcx + rbp * 4 + x], dl
+00 54 aa xx - add [rdx + rbp * 4 + x], dl
+00 54 ab xx - add [rbx + rbp * 4 + x], dl
+00 54 ac xx - add [rsp + rbp * 4 + x], dl
+00 54 ad xx - add [rbp + rbp * 4 + x], dl
+00 54 ae xx - add [rsi + rbp * 4 + x], dl
+00 54 af xx - add [rdi + rbp * 4 + x], dl
+00 54 b0 xx - add [rax + rsi * 4 + x], dl
+00 54 b1 xx - add [rcx + rsi * 4 + x], dl
+00 54 b2 xx - add [rdx + rsi * 4 + x], dl
+00 54 b3 xx - add [rbx + rsi * 4 + x], dl
+00 54 b4 xx - add [rsp + rsi * 4 + x], dl
+00 54 b5 xx - add [rbp + rsi * 4 + x], dl
+00 54 b6 xx - add [rsi + rsi * 4 + x], dl
+00 54 b7 xx - add [rdi + rsi * 4 + x], dl
+00 54 b8 xx - add [rax + rdi * 4 + x], dl
+00 54 b9 xx - add [rcx + rdi * 4 + x], dl
+00 54 ba xx - add [rdx + rdi * 4 + x], dl
+00 54 bb xx - add [rbx + rdi * 4 + x], dl
+00 54 bc xx - add [rsp + rdi * 4 + x], dl
+00 54 bd xx - add [rbp + rdi * 4 + x], dl
+00 54 be xx - add [rsi + rdi * 4 + x], dl
+00 54 bf xx - add [rdi + rdi * 4 + x], dl
+00 54 c0 xx - add [rax + rax * 8 + x], dl
+00 54 c1 xx - add [rcx + rax * 8 + x], dl
+00 54 c2 xx - add [rdx + rax * 8 + x], dl
+00 54 c3 xx - add [rbx + rax * 8 + x], dl
+00 54 c4 xx - add [rsp + rax * 8 + x], dl
+00 54 c5 xx - add [rbp + rax * 8 + x], dl
+00 54 c6 xx - add [rsi + rax * 8 + x], dl
+00 54 c7 xx - add [rdi + rax * 8 + x], dl
+00 54 c8 xx - add [rax + rcx * 8 + x], dl
+00 54 c9 xx - add [rcx + rcx * 8 + x], dl
+00 54 ca xx - add [rdx + rcx * 8 + x], dl
+00 54 cb xx - add [rbx + rcx * 8 + x], dl
+00 54 cc xx - add [rsp + rcx * 8 + x], dl
+00 54 cd xx - add [rbp + rcx * 8 + x], dl
+00 54 ce xx - add [rsi + rcx * 8 + x], dl
+00 54 cf xx - add [rdi + rcx * 8 + x], dl
+00 54 d0 xx - add [rax + rdx * 8 + x], dl
+00 54 d1 xx - add [rcx + rdx * 8 + x], dl
+00 54 d2 xx - add [rdx + rdx * 8 + x], dl
+00 54 d3 xx - add [rbx + rdx * 8 + x], dl
+00 54 d4 xx - add [rsp + rdx * 8 + x], dl
+00 54 d5 xx - add [rbp + rdx * 8 + x], dl
+00 54 d6 xx - add [rsi + rdx * 8 + x], dl
+00 54 d7 xx - add [rdi + rdx * 8 + x], dl
+00 54 d8 xx - add [rax + rbx * 8 + x], dl
+00 54 d9 xx - add [rcx + rbx * 8 + x], dl
+00 54 da xx - add [rdx + rbx * 8 + x], dl
+00 54 db xx - add [rbx + rbx * 8 + x], dl
+00 54 dc xx - add [rsp + rbx * 8 + x], dl
+00 54 dd xx - add [rbp + rbx * 8 + x], dl
+00 54 de xx - add [rsi + rbx * 8 + x], dl
+00 54 df xx - add [rdi + rbx * 8 + x], dl
+00 54 e0 xx - add [rax + x], dl
+00 54 e1 xx - add [rcx + x], dl
+00 54 e2 xx - add [rdx + x], dl
+00 54 e3 xx - add [rbx + x], dl
+00 54 e4 xx - add [rsp + x], dl
+00 54 e5 xx - add [rbp + x], dl
+00 54 e6 xx - add [rsi + x], dl
+00 54 e7 xx - add [rdi + x], dl
+00 54 e8 xx - add [rax + rbp * 8 + x], dl
+00 54 e9 xx - add [rcx + rbp * 8 + x], dl
+00 54 ea xx - add [rdx + rbp * 8 + x], dl
+00 54 eb xx - add [rbx + rbp * 8 + x], dl
+00 54 ec xx - add [rsp + rbp * 8 + x], dl
+00 54 ed xx - add [rbp + rbp * 8 + x], dl
+00 54 ee xx - add [rsi + rbp * 8 + x], dl
+00 54 ef xx - add [rdi + rbp * 8 + x], dl
+00 54 f0 xx - add [rax + rsi * 8 + x], dl
+00 54 f1 xx - add [rcx + rsi * 8 + x], dl
+00 54 f2 xx - add [rdx + rsi * 8 + x], dl
+00 54 f3 xx - add [rbx + rsi * 8 + x], dl
+00 54 f4 xx - add [rsp + rsi * 8 + x], dl
+00 54 f5 xx - add [rbp + rsi * 8 + x], dl
+00 54 f6 xx - add [rsi + rsi * 8 + x], dl
+00 54 f7 xx - add [rdi + rsi * 8 + x], dl
+00 54 f8 xx - add [rax + rdi * 8 + x], dl
+00 54 f9 xx - add [rcx + rdi * 8 + x], dl
+00 54 fa xx - add [rdx + rdi * 8 + x], dl
+00 54 fb xx - add [rbx + rdi * 8 + x], dl
+00 54 fc xx - add [rsp + rdi * 8 + x], dl
+00 54 fd xx - add [rbp + rdi * 8 + x], dl
+00 54 fe xx - add [rsi + rdi * 8 + x], dl
+00 54 ff xx - add [rdi + rdi * 8 + x], dl
+00 55 xx - add [rbp + x], dl
+00 56 xx - add [rsi + x], dl
+00 57 xx - add [rdi + x], dl
+00 58 xx - add [rax + x], bl
+00 59 xx - add [rcx + x], bl
+00 5a xx - add [rdx + x], bl
+00 5b xx - add [rbx + x], bl
+00 5c 00 xx - add [rax + rax + x], bl
+00 5c 01 xx - add [rcx + rax + x], bl
+00 5c 02 xx - add [rdx + rax + x], bl
+00 5c 03 xx - add [rbx + rax + x], bl
+00 5c 04 xx - add [rsp + rax + x], bl
+00 5c 05 xx - add [rbp + rax + x], bl
+00 5c 06 xx - add [rsi + rax + x], bl
+00 5c 07 xx - add [rdi + rax + x], bl
+00 5c 08 xx - add [rax + rcx + x], bl
+00 5c 09 xx - add [rcx + rcx + x], bl
+00 5c 0a xx - add [rdx + rcx + x], bl
+00 5c 0b xx - add [rbx + rcx + x], bl
+00 5c 0c xx - add [rsp + rcx + x], bl
+00 5c 0d xx - add [rbp + rcx + x], bl
+00 5c 0e xx - add [rsi + rcx + x], bl
+00 5c 0f xx - add [rdi + rcx + x], bl
+00 5c 10 xx - add [rax + rdx + x], bl
+00 5c 11 xx - add [rcx + rdx + x], bl
+00 5c 12 xx - add [rdx + rdx + x], bl
+00 5c 13 xx - add [rbx + rdx + x], bl
+00 5c 14 xx - add [rsp + rdx + x], bl
+00 5c 15 xx - add [rbp + rdx + x], bl
+00 5c 16 xx - add [rsi + rdx + x], bl
+00 5c 17 xx - add [rdi + rdx + x], bl
+00 5c 18 xx - add [rax + rbx + x], bl
+00 5c 19 xx - add [rcx + rbx + x], bl
+00 5c 1a xx - add [rdx + rbx + x], bl
+00 5c 1b xx - add [rbx + rbx + x], bl
+00 5c 1c xx - add [rsp + rbx + x], bl
+00 5c 1d xx - add [rbp + rbx + x], bl
+00 5c 1e xx - add [rsi + rbx + x], bl
+00 5c 1f xx - add [rdi + rbx + x], bl
+00 5c 20 xx - add [rax + x], bl
+00 5c 21 xx - add [rcx + x], bl
+00 5c 22 xx - add [rdx + x], bl
+00 5c 23 xx - add [rbx + x], bl
+00 5c 24 xx - add [rsp + x], bl
+00 5c 25 xx - add [rbp + x], bl
+00 5c 26 xx - add [rsi + x], bl
+00 5c 27 xx - add [rdi + x], bl
+00 5c 28 xx - add [rax + rbp + x], bl
+00 5c 29 xx - add [rcx + rbp + x], bl
+00 5c 2a xx - add [rdx + rbp + x], bl
+00 5c 2b xx - add [rbx + rbp + x], bl
+00 5c 2c xx - add [rsp + rbp + x], bl
+00 5c 2d xx - add [rbp + rbp + x], bl
+00 5c 2e xx - add [rsi + rbp + x], bl
+00 5c 2f xx - add [rdi + rbp + x], bl
+00 5c 30 xx - add [rax + rsi + x], bl
+00 5c 31 xx - add [rcx + rsi + x], bl
+00 5c 32 xx - add [rdx + rsi + x], bl
+00 5c 33 xx - add [rbx + rsi + x], bl
+00 5c 34 xx - add [rsp + rsi + x], bl
+00 5c 35 xx - add [rbp + rsi + x], bl
+00 5c 36 xx - add [rsi + rsi + x], bl
+00 5c 37 xx - add [rdi + rsi + x], bl
+00 5c 38 xx - add [rax + rdi + x], bl
+00 5c 39 xx - add [rcx + rdi + x], bl
+00 5c 3a xx - add [rdx + rdi + x], bl
+00 5c 3b xx - add [rbx + rdi + x], bl
+00 5c 3c xx - add [rsp + rdi + x], bl
+00 5c 3d xx - add [rbp + rdi + x], bl
+00 5c 3e xx - add [rsi + rdi + x], bl
+00 5c 3f xx - add [rdi + rdi + x], bl
+00 5c 40 xx - add [rax + rax * 2 + x], bl
+00 5c 41 xx - add [rcx + rax * 2 + x], bl
+00 5c 42 xx - add [rdx + rax * 2 + x], bl
+00 5c 43 xx - add [rbx + rax * 2 + x], bl
+00 5c 44 xx - add [rsp + rax * 2 + x], bl
+00 5c 45 xx - add [rbp + rax * 2 + x], bl
+00 5c 46 xx - add [rsi + rax * 2 + x], bl
+00 5c 47 xx - add [rdi + rax * 2 + x], bl
+00 5c 48 xx - add [rax + rcx * 2 + x], bl
+00 5c 49 xx - add [rcx + rcx * 2 + x], bl
+00 5c 4a xx - add [rdx + rcx * 2 + x], bl
+00 5c 4b xx - add [rbx + rcx * 2 + x], bl
+00 5c 4c xx - add [rsp + rcx * 2 + x], bl
+00 5c 4d xx - add [rbp + rcx * 2 + x], bl
+00 5c 4e xx - add [rsi + rcx * 2 + x], bl
+00 5c 4f xx - add [rdi + rcx * 2 + x], bl
+00 5c 50 xx - add [rax + rdx * 2 + x], bl
+00 5c 51 xx - add [rcx + rdx * 2 + x], bl
+00 5c 52 xx - add [rdx + rdx * 2 + x], bl
+00 5c 53 xx - add [rbx + rdx * 2 + x], bl
+00 5c 54 xx - add [rsp + rdx * 2 + x], bl
+00 5c 55 xx - add [rbp + rdx * 2 + x], bl
+00 5c 56 xx - add [rsi + rdx * 2 + x], bl
+00 5c 57 xx - add [rdi + rdx * 2 + x], bl
+00 5c 58 xx - add [rax + rbx * 2 + x], bl
+00 5c 59 xx - add [rcx + rbx * 2 + x], bl
+00 5c 5a xx - add [rdx + rbx * 2 + x], bl
+00 5c 5b xx - add [rbx + rbx * 2 + x], bl
+00 5c 5c xx - add [rsp + rbx * 2 + x], bl
+00 5c 5d xx - add [rbp + rbx * 2 + x], bl
+00 5c 5e xx - add [rsi + rbx * 2 + x], bl
+00 5c 5f xx - add [rdi + rbx * 2 + x], bl
+00 5c 60 xx - add [rax + x], bl
+00 5c 61 xx - add [rcx + x], bl
+00 5c 62 xx - add [rdx + x], bl
+00 5c 63 xx - add [rbx + x], bl
+00 5c 64 xx - add [rsp + x], bl
+00 5c 65 xx - add [rbp + x], bl
+00 5c 66 xx - add [rsi + x], bl
+00 5c 67 xx - add [rdi + x], bl
+00 5c 68 xx - add [rax + rbp * 2 + x], bl
+00 5c 69 xx - add [rcx + rbp * 2 + x], bl
+00 5c 6a xx - add [rdx + rbp * 2 + x], bl
+00 5c 6b xx - add [rbx + rbp * 2 + x], bl
+00 5c 6c xx - add [rsp + rbp * 2 + x], bl
+00 5c 6d xx - add [rbp + rbp * 2 + x], bl
+00 5c 6e xx - add [rsi + rbp * 2 + x], bl
+00 5c 6f xx - add [rdi + rbp * 2 + x], bl
+00 5c 70 xx - add [rax + rsi * 2 + x], bl
+00 5c 71 xx - add [rcx + rsi * 2 + x], bl
+00 5c 72 xx - add [rdx + rsi * 2 + x], bl
+00 5c 73 xx - add [rbx + rsi * 2 + x], bl
+00 5c 74 xx - add [rsp + rsi * 2 + x], bl
+00 5c 75 xx - add [rbp + rsi * 2 + x], bl
+00 5c 76 xx - add [rsi + rsi * 2 + x], bl
+00 5c 77 xx - add [rdi + rsi * 2 + x], bl
+00 5c 78 xx - add [rax + rdi * 2 + x], bl
+00 5c 79 xx - add [rcx + rdi * 2 + x], bl
+00 5c 7a xx - add [rdx + rdi * 2 + x], bl
+00 5c 7b xx - add [rbx + rdi * 2 + x], bl
+00 5c 7c xx - add [rsp + rdi * 2 + x], bl
+00 5c 7d xx - add [rbp + rdi * 2 + x], bl
+00 5c 7e xx - add [rsi + rdi * 2 + x], bl
+00 5c 7f xx - add [rdi + rdi * 2 + x], bl
+00 5c 80 xx - add [rax + rax * 4 + x], bl
+00 5c 81 xx - add [rcx + rax * 4 + x], bl
+00 5c 82 xx - add [rdx + rax * 4 + x], bl
+00 5c 83 xx - add [rbx + rax * 4 + x], bl
+00 5c 84 xx - add [rsp + rax * 4 + x], bl
+00 5c 85 xx - add [rbp + rax * 4 + x], bl
+00 5c 86 xx - add [rsi + rax * 4 + x], bl
+00 5c 87 xx - add [rdi + rax * 4 + x], bl
+00 5c 88 xx - add [rax + rcx * 4 + x], bl
+00 5c 89 xx - add [rcx + rcx * 4 + x], bl
+00 5c 8a xx - add [rdx + rcx * 4 + x], bl
+00 5c 8b xx - add [rbx + rcx * 4 + x], bl
+00 5c 8c xx - add [rsp + rcx * 4 + x], bl
+00 5c 8d xx - add [rbp + rcx * 4 + x], bl
+00 5c 8e xx - add [rsi + rcx * 4 + x], bl
+00 5c 8f xx - add [rdi + rcx * 4 + x], bl
+00 5c 90 xx - add [rax + rdx * 4 + x], bl
+00 5c 91 xx - add [rcx + rdx * 4 + x], bl
+00 5c 92 xx - add [rdx + rdx * 4 + x], bl
+00 5c 93 xx - add [rbx + rdx * 4 + x], bl
+00 5c 94 xx - add [rsp + rdx * 4 + x], bl
+00 5c 95 xx - add [rbp + rdx * 4 + x], bl
+00 5c 96 xx - add [rsi + rdx * 4 + x], bl
+00 5c 97 xx - add [rdi + rdx * 4 + x], bl
+00 5c 98 xx - add [rax + rbx * 4 + x], bl
+00 5c 99 xx - add [rcx + rbx * 4 + x], bl
+00 5c 9a xx - add [rdx + rbx * 4 + x], bl
+00 5c 9b xx - add [rbx + rbx * 4 + x], bl
+00 5c 9c xx - add [rsp + rbx * 4 + x], bl
+00 5c 9d xx - add [rbp + rbx * 4 + x], bl
+00 5c 9e xx - add [rsi + rbx * 4 + x], bl
+00 5c 9f xx - add [rdi + rbx * 4 + x], bl
+00 5c a0 xx - add [rax + x], bl
+00 5c a1 xx - add [rcx + x], bl
+00 5c a2 xx - add [rdx + x], bl
+00 5c a3 xx - add [rbx + x], bl
+00 5c a4 xx - add [rsp + x], bl
+00 5c a5 xx - add [rbp + x], bl
+00 5c a6 xx - add [rsi + x], bl
+00 5c a7 xx - add [rdi + x], bl
+00 5c a8 xx - add [rax + rbp * 4 + x], bl
+00 5c a9 xx - add [rcx + rbp * 4 + x], bl
+00 5c aa xx - add [rdx + rbp * 4 + x], bl
+00 5c ab xx - add [rbx + rbp * 4 + x], bl
+00 5c ac xx - add [rsp + rbp * 4 + x], bl
+00 5c ad xx - add [rbp + rbp * 4 + x], bl
+00 5c ae xx - add [rsi + rbp * 4 + x], bl
+00 5c af xx - add [rdi + rbp * 4 + x], bl
+00 5c b0 xx - add [rax + rsi * 4 + x], bl
+00 5c b1 xx - add [rcx + rsi * 4 + x], bl
+00 5c b2 xx - add [rdx + rsi * 4 + x], bl
+00 5c b3 xx - add [rbx + rsi * 4 + x], bl
+00 5c b4 xx - add [rsp + rsi * 4 + x], bl
+00 5c b5 xx - add [rbp + rsi * 4 + x], bl
+00 5c b6 xx - add [rsi + rsi * 4 + x], bl
+00 5c b7 xx - add [rdi + rsi * 4 + x], bl
+00 5c b8 xx - add [rax + rdi * 4 + x], bl
+00 5c b9 xx - add [rcx + rdi * 4 + x], bl
+00 5c ba xx - add [rdx + rdi * 4 + x], bl
+00 5c bb xx - add [rbx + rdi * 4 + x], bl
+00 5c bc xx - add [rsp + rdi * 4 + x], bl
+00 5c bd xx - add [rbp + rdi * 4 + x], bl
+00 5c be xx - add [rsi + rdi * 4 + x], bl
+00 5c bf xx - add [rdi + rdi * 4 + x], bl
+00 5c c0 xx - add [rax + rax * 8 + x], bl
+00 5c c1 xx - add [rcx + rax * 8 + x], bl
+00 5c c2 xx - add [rdx + rax * 8 + x], bl
+00 5c c3 xx - add [rbx + rax * 8 + x], bl
+00 5c c4 xx - add [rsp + rax * 8 + x], bl
+00 5c c5 xx - add [rbp + rax * 8 + x], bl
+00 5c c6 xx - add [rsi + rax * 8 + x], bl
+00 5c c7 xx - add [rdi + rax * 8 + x], bl
+00 5c c8 xx - add [rax + rcx * 8 + x], bl
+00 5c c9 xx - add [rcx + rcx * 8 + x], bl
+00 5c ca xx - add [rdx + rcx * 8 + x], bl
+00 5c cb xx - add [rbx + rcx * 8 + x], bl
+00 5c cc xx - add [rsp + rcx * 8 + x], bl
+00 5c cd xx - add [rbp + rcx * 8 + x], bl
+00 5c ce xx - add [rsi + rcx * 8 + x], bl
+00 5c cf xx - add [rdi + rcx * 8 + x], bl
+00 5c d0 xx - add [rax + rdx * 8 + x], bl
+00 5c d1 xx - add [rcx + rdx * 8 + x], bl
+00 5c d2 xx - add [rdx + rdx * 8 + x], bl
+00 5c d3 xx - add [rbx + rdx * 8 + x], bl
+00 5c d4 xx - add [rsp + rdx * 8 + x], bl
+00 5c d5 xx - add [rbp + rdx * 8 + x], bl
+00 5c d6 xx - add [rsi + rdx * 8 + x], bl
+00 5c d7 xx - add [rdi + rdx * 8 + x], bl
+00 5c d8 xx - add [rax + rbx * 8 + x], bl
+00 5c d9 xx - add [rcx + rbx * 8 + x], bl
+00 5c da xx - add [rdx + rbx * 8 + x], bl
+00 5c db xx - add [rbx + rbx * 8 + x], bl
+00 5c dc xx - add [rsp + rbx * 8 + x], bl
+00 5c dd xx - add [rbp + rbx * 8 + x], bl
+00 5c de xx - add [rsi + rbx * 8 + x], bl
+00 5c df xx - add [rdi + rbx * 8 + x], bl
+00 5c e0 xx - add [rax + x], bl
+00 5c e1 xx - add [rcx + x], bl
+00 5c e2 xx - add [rdx + x], bl
+00 5c e3 xx - add [rbx + x], bl
+00 5c e4 xx - add [rsp + x], bl
+00 5c e5 xx - add [rbp + x], bl
+00 5c e6 xx - add [rsi + x], bl
+00 5c e7 xx - add [rdi + x], bl
+00 5c e8 xx - add [rax + rbp * 8 + x], bl
+00 5c e9 xx - add [rcx + rbp * 8 + x], bl
+00 5c ea xx - add [rdx + rbp * 8 + x], bl
+00 5c eb xx - add [rbx + rbp * 8 + x], bl
+00 5c ec xx - add [rsp + rbp * 8 + x], bl
+00 5c ed xx - add [rbp + rbp * 8 + x], bl
+00 5c ee xx - add [rsi + rbp * 8 + x], bl
+00 5c ef xx - add [rdi + rbp * 8 + x], bl
+00 5c f0 xx - add [rax + rsi * 8 + x], bl
+00 5c f1 xx - add [rcx + rsi * 8 + x], bl
+00 5c f2 xx - add [rdx + rsi * 8 + x], bl
+00 5c f3 xx - add [rbx + rsi * 8 + x], bl
+00 5c f4 xx - add [rsp + rsi * 8 + x], bl
+00 5c f5 xx - add [rbp + rsi * 8 + x], bl
+00 5c f6 xx - add [rsi + rsi * 8 + x], bl
+00 5c f7 xx - add [rdi + rsi * 8 + x], bl
+00 5c f8 xx - add [rax + rdi * 8 + x], bl
+00 5c f9 xx - add [rcx + rdi * 8 + x], bl
+00 5c fa xx - add [rdx + rdi * 8 + x], bl
+00 5c fb xx - add [rbx + rdi * 8 + x], bl
+00 5c fc xx - add [rsp + rdi * 8 + x], bl
+00 5c fd xx - add [rbp + rdi * 8 + x], bl
+00 5c fe xx - add [rsi + rdi * 8 + x], bl
+00 5c ff xx - add [rdi + rdi * 8 + x], bl
+00 5d xx - add [rbp + x], bl
+00 5e xx - add [rsi + x], bl
+00 5f xx - add [rdi + x], bl
+00 60 xx - add [rax + x], ah
+00 61 xx - add [rcx + x], ah
+00 62 xx - add [rdx + x], ah
+00 63 xx - add [rbx + x], ah
+00 64 00 xx - add [rax + rax + x], ah
+00 64 01 xx - add [rcx + rax + x], ah
+00 64 02 xx - add [rdx + rax + x], ah
+00 64 03 xx - add [rbx + rax + x], ah
+00 64 04 xx - add [rsp + rax + x], ah
+00 64 05 xx - add [rbp + rax + x], ah
+00 64 06 xx - add [rsi + rax + x], ah
+00 64 07 xx - add [rdi + rax + x], ah
+00 64 08 xx - add [rax + rcx + x], ah
+00 64 09 xx - add [rcx + rcx + x], ah
+00 64 0a xx - add [rdx + rcx + x], ah
+00 64 0b xx - add [rbx + rcx + x], ah
+00 64 0c xx - add [rsp + rcx + x], ah
+00 64 0d xx - add [rbp + rcx + x], ah
+00 64 0e xx - add [rsi + rcx + x], ah
+00 64 0f xx - add [rdi + rcx + x], ah
+00 64 10 xx - add [rax + rdx + x], ah
+00 64 11 xx - add [rcx + rdx + x], ah
+00 64 12 xx - add [rdx + rdx + x], ah
+00 64 13 xx - add [rbx + rdx + x], ah
+00 64 14 xx - add [rsp + rdx + x], ah
+00 64 15 xx - add [rbp + rdx + x], ah
+00 64 16 xx - add [rsi + rdx + x], ah
+00 64 17 xx - add [rdi + rdx + x], ah
+00 64 18 xx - add [rax + rbx + x], ah
+00 64 19 xx - add [rcx + rbx + x], ah
+00 64 1a xx - add [rdx + rbx + x], ah
+00 64 1b xx - add [rbx + rbx + x], ah
+00 64 1c xx - add [rsp + rbx + x], ah
+00 64 1d xx - add [rbp + rbx + x], ah
+00 64 1e xx - add [rsi + rbx + x], ah
+00 64 1f xx - add [rdi + rbx + x], ah
+00 64 20 xx - add [rax + x], ah
+00 64 21 xx - add [rcx + x], ah
+00 64 22 xx - add [rdx + x], ah
+00 64 23 xx - add [rbx + x], ah
+00 64 24 xx - add [rsp + x], ah
+00 64 25 xx - add [rbp + x], ah
+00 64 26 xx - add [rsi + x], ah
+00 64 27 xx - add [rdi + x], ah
+00 64 28 xx - add [rax + rbp + x], ah
+00 64 29 xx - add [rcx + rbp + x], ah
+00 64 2a xx - add [rdx + rbp + x], ah
+00 64 2b xx - add [rbx + rbp + x], ah
+00 64 2c xx - add [rsp + rbp + x], ah
+00 64 2d xx - add [rbp + rbp + x], ah
+00 64 2e xx - add [rsi + rbp + x], ah
+00 64 2f xx - add [rdi + rbp + x], ah
+00 64 30 xx - add [rax + rsi + x], ah
+00 64 31 xx - add [rcx + rsi + x], ah
+00 64 32 xx - add [rdx + rsi + x], ah
+00 64 33 xx - add [rbx + rsi + x], ah
+00 64 34 xx - add [rsp + rsi + x], ah
+00 64 35 xx - add [rbp + rsi + x], ah
+00 64 36 xx - add [rsi + rsi + x], ah
+00 64 37 xx - add [rdi + rsi + x], ah
+00 64 38 xx - add [rax + rdi + x], ah
+00 64 39 xx - add [rcx + rdi + x], ah
+00 64 3a xx - add [rdx + rdi + x], ah
+00 64 3b xx - add [rbx + rdi + x], ah
+00 64 3c xx - add [rsp + rdi + x], ah
+00 64 3d xx - add [rbp + rdi + x], ah
+00 64 3e xx - add [rsi + rdi + x], ah
+00 64 3f xx - add [rdi + rdi + x], ah
+00 64 40 xx - add [rax + rax * 2 + x], ah
+00 64 41 xx - add [rcx + rax * 2 + x], ah
+00 64 42 xx - add [rdx + rax * 2 + x], ah
+00 64 43 xx - add [rbx + rax * 2 + x], ah
+00 64 44 xx - add [rsp + rax * 2 + x], ah
+00 64 45 xx - add [rbp + rax * 2 + x], ah
+00 64 46 xx - add [rsi + rax * 2 + x], ah
+00 64 47 xx - add [rdi + rax * 2 + x], ah
+00 64 48 xx - add [rax + rcx * 2 + x], ah
+00 64 49 xx - add [rcx + rcx * 2 + x], ah
+00 64 4a xx - add [rdx + rcx * 2 + x], ah
+00 64 4b xx - add [rbx + rcx * 2 + x], ah
+00 64 4c xx - add [rsp + rcx * 2 + x], ah
+00 64 4d xx - add [rbp + rcx * 2 + x], ah
+00 64 4e xx - add [rsi + rcx * 2 + x], ah
+00 64 4f xx - add [rdi + rcx * 2 + x], ah
+00 64 50 xx - add [rax + rdx * 2 + x], ah
+00 64 51 xx - add [rcx + rdx * 2 + x], ah
+00 64 52 xx - add [rdx + rdx * 2 + x], ah
+00 64 53 xx - add [rbx + rdx * 2 + x], ah
+00 64 54 xx - add [rsp + rdx * 2 + x], ah
+00 64 55 xx - add [rbp + rdx * 2 + x], ah
+00 64 56 xx - add [rsi + rdx * 2 + x], ah
+00 64 57 xx - add [rdi + rdx * 2 + x], ah
+00 64 58 xx - add [rax + rbx * 2 + x], ah
+00 64 59 xx - add [rcx + rbx * 2 + x], ah
+00 64 5a xx - add [rdx + rbx * 2 + x], ah
+00 64 5b xx - add [rbx + rbx * 2 + x], ah
+00 64 5c xx - add [rsp + rbx * 2 + x], ah
+00 64 5d xx - add [rbp + rbx * 2 + x], ah
+00 64 5e xx - add [rsi + rbx * 2 + x], ah
+00 64 5f xx - add [rdi + rbx * 2 + x], ah
+00 64 60 xx - add [rax + x], ah
+00 64 61 xx - add [rcx + x], ah
+00 64 62 xx - add [rdx + x], ah
+00 64 63 xx - add [rbx + x], ah
+00 64 64 xx - add [rsp + x], ah
+00 64 65 xx - add [rbp + x], ah
+00 64 66 xx - add [rsi + x], ah
+00 64 67 xx - add [rdi + x], ah
+00 64 68 xx - add [rax + rbp * 2 + x], ah
+00 64 69 xx - add [rcx + rbp * 2 + x], ah
+00 64 6a xx - add [rdx + rbp * 2 + x], ah
+00 64 6b xx - add [rbx + rbp * 2 + x], ah
+00 64 6c xx - add [rsp + rbp * 2 + x], ah
+00 64 6d xx - add [rbp + rbp * 2 + x], ah
+00 64 6e xx - add [rsi + rbp * 2 + x], ah
+00 64 6f xx - add [rdi + rbp * 2 + x], ah
+00 64 70 xx - add [rax + rsi * 2 + x], ah
+00 64 71 xx - add [rcx + rsi * 2 + x], ah
+00 64 72 xx - add [rdx + rsi * 2 + x], ah
+00 64 73 xx - add [rbx + rsi * 2 + x], ah
+00 64 74 xx - add [rsp + rsi * 2 + x], ah
+00 64 75 xx - add [rbp + rsi * 2 + x], ah
+00 64 76 xx - add [rsi + rsi * 2 + x], ah
+00 64 77 xx - add [rdi + rsi * 2 + x], ah
+00 64 78 xx - add [rax + rdi * 2 + x], ah
+00 64 79 xx - add [rcx + rdi * 2 + x], ah
+00 64 7a xx - add [rdx + rdi * 2 + x], ah
+00 64 7b xx - add [rbx + rdi * 2 + x], ah
+00 64 7c xx - add [rsp + rdi * 2 + x], ah
+00 64 7d xx - add [rbp + rdi * 2 + x], ah
+00 64 7e xx - add [rsi + rdi * 2 + x], ah
+00 64 7f xx - add [rdi + rdi * 2 + x], ah
+00 64 80 xx - add [rax + rax * 4 + x], ah
+00 64 81 xx - add [rcx + rax * 4 + x], ah
+00 64 82 xx - add [rdx + rax * 4 + x], ah
+00 64 83 xx - add [rbx + rax * 4 + x], ah
+00 64 84 xx - add [rsp + rax * 4 + x], ah
+00 64 85 xx - add [rbp + rax * 4 + x], ah
+00 64 86 xx - add [rsi + rax * 4 + x], ah
+00 64 87 xx - add [rdi + rax * 4 + x], ah
+00 64 88 xx - add [rax + rcx * 4 + x], ah
+00 64 89 xx - add [rcx + rcx * 4 + x], ah
+00 64 8a xx - add [rdx + rcx * 4 + x], ah
+00 64 8b xx - add [rbx + rcx * 4 + x], ah
+00 64 8c xx - add [rsp + rcx * 4 + x], ah
+00 64 8d xx - add [rbp + rcx * 4 + x], ah
+00 64 8e xx - add [rsi + rcx * 4 + x], ah
+00 64 8f xx - add [rdi + rcx * 4 + x], ah
+00 64 90 xx - add [rax + rdx * 4 + x], ah
+00 64 91 xx - add [rcx + rdx * 4 + x], ah
+00 64 92 xx - add [rdx + rdx * 4 + x], ah
+00 64 93 xx - add [rbx + rdx * 4 + x], ah
+00 64 94 xx - add [rsp + rdx * 4 + x], ah
+00 64 95 xx - add [rbp + rdx * 4 + x], ah
+00 64 96 xx - add [rsi + rdx * 4 + x], ah
+00 64 97 xx - add [rdi + rdx * 4 + x], ah
+00 64 98 xx - add [rax + rbx * 4 + x], ah
+00 64 99 xx - add [rcx + rbx * 4 + x], ah
+00 64 9a xx - add [rdx + rbx * 4 + x], ah
+00 64 9b xx - add [rbx + rbx * 4 + x], ah
+00 64 9c xx - add [rsp + rbx * 4 + x], ah
+00 64 9d xx - add [rbp + rbx * 4 + x], ah
+00 64 9e xx - add [rsi + rbx * 4 + x], ah
+00 64 9f xx - add [rdi + rbx * 4 + x], ah
+00 64 a0 xx - add [rax + x], ah
+00 64 a1 xx - add [rcx + x], ah
+00 64 a2 xx - add [rdx + x], ah
+00 64 a3 xx - add [rbx + x], ah
+00 64 a4 xx - add [rsp + x], ah
+00 64 a5 xx - add [rbp + x], ah
+00 64 a6 xx - add [rsi + x], ah
+00 64 a7 xx - add [rdi + x], ah
+00 64 a8 xx - add [rax + rbp * 4 + x], ah
+00 64 a9 xx - add [rcx + rbp * 4 + x], ah
+00 64 aa xx - add [rdx + rbp * 4 + x], ah
+00 64 ab xx - add [rbx + rbp * 4 + x], ah
+00 64 ac xx - add [rsp + rbp * 4 + x], ah
+00 64 ad xx - add [rbp + rbp * 4 + x], ah
+00 64 ae xx - add [rsi + rbp * 4 + x], ah
+00 64 af xx - add [rdi + rbp * 4 + x], ah
+00 64 b0 xx - add [rax + rsi * 4 + x], ah
+00 64 b1 xx - add [rcx + rsi * 4 + x], ah
+00 64 b2 xx - add [rdx + rsi * 4 + x], ah
+00 64 b3 xx - add [rbx + rsi * 4 + x], ah
+00 64 b4 xx - add [rsp + rsi * 4 + x], ah
+00 64 b5 xx - add [rbp + rsi * 4 + x], ah
+00 64 b6 xx - add [rsi + rsi * 4 + x], ah
+00 64 b7 xx - add [rdi + rsi * 4 + x], ah
+00 64 b8 xx - add [rax + rdi * 4 + x], ah
+00 64 b9 xx - add [rcx + rdi * 4 + x], ah
+00 64 ba xx - add [rdx + rdi * 4 + x], ah
+00 64 bb xx - add [rbx + rdi * 4 + x], ah
+00 64 bc xx - add [rsp + rdi * 4 + x], ah
+00 64 bd xx - add [rbp + rdi * 4 + x], ah
+00 64 be xx - add [rsi + rdi * 4 + x], ah
+00 64 bf xx - add [rdi + rdi * 4 + x], ah
+00 64 c0 xx - add [rax + rax * 8 + x], ah
+00 64 c1 xx - add [rcx + rax * 8 + x], ah
+00 64 c2 xx - add [rdx + rax * 8 + x], ah
+00 64 c3 xx - add [rbx + rax * 8 + x], ah
+00 64 c4 xx - add [rsp + rax * 8 + x], ah
+00 64 c5 xx - add [rbp + rax * 8 + x], ah
+00 64 c6 xx - add [rsi + rax * 8 + x], ah
+00 64 c7 xx - add [rdi + rax * 8 + x], ah
+00 64 c8 xx - add [rax + rcx * 8 + x], ah
+00 64 c9 xx - add [rcx + rcx * 8 + x], ah
+00 64 ca xx - add [rdx + rcx * 8 + x], ah
+00 64 cb xx - add [rbx + rcx * 8 + x], ah
+00 64 cc xx - add [rsp + rcx * 8 + x], ah
+00 64 cd xx - add [rbp + rcx * 8 + x], ah
+00 64 ce xx - add [rsi + rcx * 8 + x], ah
+00 64 cf xx - add [rdi + rcx * 8 + x], ah
+00 64 d0 xx - add [rax + rdx * 8 + x], ah
+00 64 d1 xx - add [rcx + rdx * 8 + x], ah
+00 64 d2 xx - add [rdx + rdx * 8 + x], ah
+00 64 d3 xx - add [rbx + rdx * 8 + x], ah
+00 64 d4 xx - add [rsp + rdx * 8 + x], ah
+00 64 d5 xx - add [rbp + rdx * 8 + x], ah
+00 64 d6 xx - add [rsi + rdx * 8 + x], ah
+00 64 d7 xx - add [rdi + rdx * 8 + x], ah
+00 64 d8 xx - add [rax + rbx * 8 + x], ah
+00 64 d9 xx - add [rcx + rbx * 8 + x], ah
+00 64 da xx - add [rdx + rbx * 8 + x], ah
+00 64 db xx - add [rbx + rbx * 8 + x], ah
+00 64 dc xx - add [rsp + rbx * 8 + x], ah
+00 64 dd xx - add [rbp + rbx * 8 + x], ah
+00 64 de xx - add [rsi + rbx * 8 + x], ah
+00 64 df xx - add [rdi + rbx * 8 + x], ah
+00 64 e0 xx - add [rax + x], ah
+00 64 e1 xx - add [rcx + x], ah
+00 64 e2 xx - add [rdx + x], ah
+00 64 e3 xx - add [rbx + x], ah
+00 64 e4 xx - add [rsp + x], ah
+00 64 e5 xx - add [rbp + x], ah
+00 64 e6 xx - add [rsi + x], ah
+00 64 e7 xx - add [rdi + x], ah
+00 64 e8 xx - add [rax + rbp * 8 + x], ah
+00 64 e9 xx - add [rcx + rbp * 8 + x], ah
+00 64 ea xx - add [rdx + rbp * 8 + x], ah
+00 64 eb xx - add [rbx + rbp * 8 + x], ah
+00 64 ec xx - add [rsp + rbp * 8 + x], ah
+00 64 ed xx - add [rbp + rbp * 8 + x], ah
+00 64 ee xx - add [rsi + rbp * 8 + x], ah
+00 64 ef xx - add [rdi + rbp * 8 + x], ah
+00 64 f0 xx - add [rax + rsi * 8 + x], ah
+00 64 f1 xx - add [rcx + rsi * 8 + x], ah
+00 64 f2 xx - add [rdx + rsi * 8 + x], ah
+00 64 f3 xx - add [rbx + rsi * 8 + x], ah
+00 64 f4 xx - add [rsp + rsi * 8 + x], ah
+00 64 f5 xx - add [rbp + rsi * 8 + x], ah
+00 64 f6 xx - add [rsi + rsi * 8 + x], ah
+00 64 f7 xx - add [rdi + rsi * 8 + x], ah
+00 64 f8 xx - add [rax + rdi * 8 + x], ah
+00 64 f9 xx - add [rcx + rdi * 8 + x], ah
+00 64 fa xx - add [rdx + rdi * 8 + x], ah
+00 64 fb xx - add [rbx + rdi * 8 + x], ah
+00 64 fc xx - add [rsp + rdi * 8 + x], ah
+00 64 fd xx - add [rbp + rdi * 8 + x], ah
+00 64 fe xx - add [rsi + rdi * 8 + x], ah
+00 64 ff xx - add [rdi + rdi * 8 + x], ah
+00 65 xx - add [rbp + x], ah
+00 66 xx - add [rsi + x], ah
+00 67 xx - add [rdi + x], ah
+00 68 xx - add [rax + x], ch
+00 69 xx - add [rcx + x], ch
+00 6a xx - add [rdx + x], ch
+00 6b xx - add [rbx + x], ch
+00 6c 00 xx - add [rax + rax + x], ch
+00 6c 01 xx - add [rcx + rax + x], ch
+00 6c 02 xx - add [rdx + rax + x], ch
+00 6c 03 xx - add [rbx + rax + x], ch
+00 6c 04 xx - add [rsp + rax + x], ch
+00 6c 05 xx - add [rbp + rax + x], ch
+00 6c 06 xx - add [rsi + rax + x], ch
+00 6c 07 xx - add [rdi + rax + x], ch
+00 6c 08 xx - add [rax + rcx + x], ch
+00 6c 09 xx - add [rcx + rcx + x], ch
+00 6c 0a xx - add [rdx + rcx + x], ch
+00 6c 0b xx - add [rbx + rcx + x], ch
+00 6c 0c xx - add [rsp + rcx + x], ch
+00 6c 0d xx - add [rbp + rcx + x], ch
+00 6c 0e xx - add [rsi + rcx + x], ch
+00 6c 0f xx - add [rdi + rcx + x], ch
+00 6c 10 xx - add [rax + rdx + x], ch
+00 6c 11 xx - add [rcx + rdx + x], ch
+00 6c 12 xx - add [rdx + rdx + x], ch
+00 6c 13 xx - add [rbx + rdx + x], ch
+00 6c 14 xx - add [rsp + rdx + x], ch
+00 6c 15 xx - add [rbp + rdx + x], ch
+00 6c 16 xx - add [rsi + rdx + x], ch
+00 6c 17 xx - add [rdi + rdx + x], ch
+00 6c 18 xx - add [rax + rbx + x], ch
+00 6c 19 xx - add [rcx + rbx + x], ch
+00 6c 1a xx - add [rdx + rbx + x], ch
+00 6c 1b xx - add [rbx + rbx + x], ch
+00 6c 1c xx - add [rsp + rbx + x], ch
+00 6c 1d xx - add [rbp + rbx + x], ch
+00 6c 1e xx - add [rsi + rbx + x], ch
+00 6c 1f xx - add [rdi + rbx + x], ch
+00 6c 20 xx - add [rax + x], ch
+00 6c 21 xx - add [rcx + x], ch
+00 6c 22 xx - add [rdx + x], ch
+00 6c 23 xx - add [rbx + x], ch
+00 6c 24 xx - add [rsp + x], ch
+00 6c 25 xx - add [rbp + x], ch
+00 6c 26 xx - add [rsi + x], ch
+00 6c 27 xx - add [rdi + x], ch
+00 6c 28 xx - add [rax + rbp + x], ch
+00 6c 29 xx - add [rcx + rbp + x], ch
+00 6c 2a xx - add [rdx + rbp + x], ch
+00 6c 2b xx - add [rbx + rbp + x], ch
+00 6c 2c xx - add [rsp + rbp + x], ch
+00 6c 2d xx - add [rbp + rbp + x], ch
+00 6c 2e xx - add [rsi + rbp + x], ch
+00 6c 2f xx - add [rdi + rbp + x], ch
+00 6c 30 xx - add [rax + rsi + x], ch
+00 6c 31 xx - add [rcx + rsi + x], ch
+00 6c 32 xx - add [rdx + rsi + x], ch
+00 6c 33 xx - add [rbx + rsi + x], ch
+00 6c 34 xx - add [rsp + rsi + x], ch
+00 6c 35 xx - add [rbp + rsi + x], ch
+00 6c 36 xx - add [rsi + rsi + x], ch
+00 6c 37 xx - add [rdi + rsi + x], ch
+00 6c 38 xx - add [rax + rdi + x], ch
+00 6c 39 xx - add [rcx + rdi + x], ch
+00 6c 3a xx - add [rdx + rdi + x], ch
+00 6c 3b xx - add [rbx + rdi + x], ch
+00 6c 3c xx - add [rsp + rdi + x], ch
+00 6c 3d xx - add [rbp + rdi + x], ch
+00 6c 3e xx - add [rsi + rdi + x], ch
+00 6c 3f xx - add [rdi + rdi + x], ch
+00 6c 40 xx - add [rax + rax * 2 + x], ch
+00 6c 41 xx - add [rcx + rax * 2 + x], ch
+00 6c 42 xx - add [rdx + rax * 2 + x], ch
+00 6c 43 xx - add [rbx + rax * 2 + x], ch
+00 6c 44 xx - add [rsp + rax * 2 + x], ch
+00 6c 45 xx - add [rbp + rax * 2 + x], ch
+00 6c 46 xx - add [rsi + rax * 2 + x], ch
+00 6c 47 xx - add [rdi + rax * 2 + x], ch
+00 6c 48 xx - add [rax + rcx * 2 + x], ch
+00 6c 49 xx - add [rcx + rcx * 2 + x], ch
+00 6c 4a xx - add [rdx + rcx * 2 + x], ch
+00 6c 4b xx - add [rbx + rcx * 2 + x], ch
+00 6c 4c xx - add [rsp + rcx * 2 + x], ch
+00 6c 4d xx - add [rbp + rcx * 2 + x], ch
+00 6c 4e xx - add [rsi + rcx * 2 + x], ch
+00 6c 4f xx - add [rdi + rcx * 2 + x], ch
+00 6c 50 xx - add [rax + rdx * 2 + x], ch
+00 6c 51 xx - add [rcx + rdx * 2 + x], ch
+00 6c 52 xx - add [rdx + rdx * 2 + x], ch
+00 6c 53 xx - add [rbx + rdx * 2 + x], ch
+00 6c 54 xx - add [rsp + rdx * 2 + x], ch
+00 6c 55 xx - add [rbp + rdx * 2 + x], ch
+00 6c 56 xx - add [rsi + rdx * 2 + x], ch
+00 6c 57 xx - add [rdi + rdx * 2 + x], ch
+00 6c 58 xx - add [rax + rbx * 2 + x], ch
+00 6c 59 xx - add [rcx + rbx * 2 + x], ch
+00 6c 5a xx - add [rdx + rbx * 2 + x], ch
+00 6c 5b xx - add [rbx + rbx * 2 + x], ch
+00 6c 5c xx - add [rsp + rbx * 2 + x], ch
+00 6c 5d xx - add [rbp + rbx * 2 + x], ch
+00 6c 5e xx - add [rsi + rbx * 2 + x], ch
+00 6c 5f xx - add [rdi + rbx * 2 + x], ch
+00 6c 60 xx - add [rax + x], ch
+00 6c 61 xx - add [rcx + x], ch
+00 6c 62 xx - add [rdx + x], ch
+00 6c 63 xx - add [rbx + x], ch
+00 6c 64 xx - add [rsp + x], ch
+00 6c 65 xx - add [rbp + x], ch
+00 6c 66 xx - add [rsi + x], ch
+00 6c 67 xx - add [rdi + x], ch
+00 6c 68 xx - add [rax + rbp * 2 + x], ch
+00 6c 69 xx - add [rcx + rbp * 2 + x], ch
+00 6c 6a xx - add [rdx + rbp * 2 + x], ch
+00 6c 6b xx - add [rbx + rbp * 2 + x], ch
+00 6c 6c xx - add [rsp + rbp * 2 + x], ch
+00 6c 6d xx - add [rbp + rbp * 2 + x], ch
+00 6c 6e xx - add [rsi + rbp * 2 + x], ch
+00 6c 6f xx - add [rdi + rbp * 2 + x], ch
+00 6c 70 xx - add [rax + rsi * 2 + x], ch
+00 6c 71 xx - add [rcx + rsi * 2 + x], ch
+00 6c 72 xx - add [rdx + rsi * 2 + x], ch
+00 6c 73 xx - add [rbx + rsi * 2 + x], ch
+00 6c 74 xx - add [rsp + rsi * 2 + x], ch
+00 6c 75 xx - add [rbp + rsi * 2 + x], ch
+00 6c 76 xx - add [rsi + rsi * 2 + x], ch
+00 6c 77 xx - add [rdi + rsi * 2 + x], ch
+00 6c 78 xx - add [rax + rdi * 2 + x], ch
+00 6c 79 xx - add [rcx + rdi * 2 + x], ch
+00 6c 7a xx - add [rdx + rdi * 2 + x], ch
+00 6c 7b xx - add [rbx + rdi * 2 + x], ch
+00 6c 7c xx - add [rsp + rdi * 2 + x], ch
+00 6c 7d xx - add [rbp + rdi * 2 + x], ch
+00 6c 7e xx - add [rsi + rdi * 2 + x], ch
+00 6c 7f xx - add [rdi + rdi * 2 + x], ch
+00 6c 80 xx - add [rax + rax * 4 + x], ch
+00 6c 81 xx - add [rcx + rax * 4 + x], ch
+00 6c 82 xx - add [rdx + rax * 4 + x], ch
+00 6c 83 xx - add [rbx + rax * 4 + x], ch
+00 6c 84 xx - add [rsp + rax * 4 + x], ch
+00 6c 85 xx - add [rbp + rax * 4 + x], ch
+00 6c 86 xx - add [rsi + rax * 4 + x], ch
+00 6c 87 xx - add [rdi + rax * 4 + x], ch
+00 6c 88 xx - add [rax + rcx * 4 + x], ch
+00 6c 89 xx - add [rcx + rcx * 4 + x], ch
+00 6c 8a xx - add [rdx + rcx * 4 + x], ch
+00 6c 8b xx - add [rbx + rcx * 4 + x], ch
+00 6c 8c xx - add [rsp + rcx * 4 + x], ch
+00 6c 8d xx - add [rbp + rcx * 4 + x], ch
+00 6c 8e xx - add [rsi + rcx * 4 + x], ch
+00 6c 8f xx - add [rdi + rcx * 4 + x], ch
+00 6c 90 xx - add [rax + rdx * 4 + x], ch
+00 6c 91 xx - add [rcx + rdx * 4 + x], ch
+00 6c 92 xx - add [rdx + rdx * 4 + x], ch
+00 6c 93 xx - add [rbx + rdx * 4 + x], ch
+00 6c 94 xx - add [rsp + rdx * 4 + x], ch
+00 6c 95 xx - add [rbp + rdx * 4 + x], ch
+00 6c 96 xx - add [rsi + rdx * 4 + x], ch
+00 6c 97 xx - add [rdi + rdx * 4 + x], ch
+00 6c 98 xx - add [rax + rbx * 4 + x], ch
+00 6c 99 xx - add [rcx + rbx * 4 + x], ch
+00 6c 9a xx - add [rdx + rbx * 4 + x], ch
+00 6c 9b xx - add [rbx + rbx * 4 + x], ch
+00 6c 9c xx - add [rsp + rbx * 4 + x], ch
+00 6c 9d xx - add [rbp + rbx * 4 + x], ch
+00 6c 9e xx - add [rsi + rbx * 4 + x], ch
+00 6c 9f xx - add [rdi + rbx * 4 + x], ch
+00 6c a0 xx - add [rax + x], ch
+00 6c a1 xx - add [rcx + x], ch
+00 6c a2 xx - add [rdx + x], ch
+00 6c a3 xx - add [rbx + x], ch
+00 6c a4 xx - add [rsp + x], ch
+00 6c a5 xx - add [rbp + x], ch
+00 6c a6 xx - add [rsi + x], ch
+00 6c a7 xx - add [rdi + x], ch
+00 6c a8 xx - add [rax + rbp * 4 + x], ch
+00 6c a9 xx - add [rcx + rbp * 4 + x], ch
+00 6c aa xx - add [rdx + rbp * 4 + x], ch
+00 6c ab xx - add [rbx + rbp * 4 + x], ch
+00 6c ac xx - add [rsp + rbp * 4 + x], ch
+00 6c ad xx - add [rbp + rbp * 4 + x], ch
+00 6c ae xx - add [rsi + rbp * 4 + x], ch
+00 6c af xx - add [rdi + rbp * 4 + x], ch
+00 6c b0 xx - add [rax + rsi * 4 + x], ch
+00 6c b1 xx - add [rcx + rsi * 4 + x], ch
+00 6c b2 xx - add [rdx + rsi * 4 + x], ch
+00 6c b3 xx - add [rbx + rsi * 4 + x], ch
+00 6c b4 xx - add [rsp + rsi * 4 + x], ch
+00 6c b5 xx - add [rbp + rsi * 4 + x], ch
+00 6c b6 xx - add [rsi + rsi * 4 + x], ch
+00 6c b7 xx - add [rdi + rsi * 4 + x], ch
+00 6c b8 xx - add [rax + rdi * 4 + x], ch
+00 6c b9 xx - add [rcx + rdi * 4 + x], ch
+00 6c ba xx - add [rdx + rdi * 4 + x], ch
+00 6c bb xx - add [rbx + rdi * 4 + x], ch
+00 6c bc xx - add [rsp + rdi * 4 + x], ch
+00 6c bd xx - add [rbp + rdi * 4 + x], ch
+00 6c be xx - add [rsi + rdi * 4 + x], ch
+00 6c bf xx - add [rdi + rdi * 4 + x], ch
+00 6c c0 xx - add [rax + rax * 8 + x], ch
+00 6c c1 xx - add [rcx + rax * 8 + x], ch
+00 6c c2 xx - add [rdx + rax * 8 + x], ch
+00 6c c3 xx - add [rbx + rax * 8 + x], ch
+00 6c c4 xx - add [rsp + rax * 8 + x], ch
+00 6c c5 xx - add [rbp + rax * 8 + x], ch
+00 6c c6 xx - add [rsi + rax * 8 + x], ch
+00 6c c7 xx - add [rdi + rax * 8 + x], ch
+00 6c c8 xx - add [rax + rcx * 8 + x], ch
+00 6c c9 xx - add [rcx + rcx * 8 + x], ch
+00 6c ca xx - add [rdx + rcx * 8 + x], ch
+00 6c cb xx - add [rbx + rcx * 8 + x], ch
+00 6c cc xx - add [rsp + rcx * 8 + x], ch
+00 6c cd xx - add [rbp + rcx * 8 + x], ch
+00 6c ce xx - add [rsi + rcx * 8 + x], ch
+00 6c cf xx - add [rdi + rcx * 8 + x], ch
+00 6c d0 xx - add [rax + rdx * 8 + x], ch
+00 6c d1 xx - add [rcx + rdx * 8 + x], ch
+00 6c d2 xx - add [rdx + rdx * 8 + x], ch
+00 6c d3 xx - add [rbx + rdx * 8 + x], ch
+00 6c d4 xx - add [rsp + rdx * 8 + x], ch
+00 6c d5 xx - add [rbp + rdx * 8 + x], ch
+00 6c d6 xx - add [rsi + rdx * 8 + x], ch
+00 6c d7 xx - add [rdi + rdx * 8 + x], ch
+00 6c d8 xx - add [rax + rbx * 8 + x], ch
+00 6c d9 xx - add [rcx + rbx * 8 + x], ch
+00 6c da xx - add [rdx + rbx * 8 + x], ch
+00 6c db xx - add [rbx + rbx * 8 + x], ch
+00 6c dc xx - add [rsp + rbx * 8 + x], ch
+00 6c dd xx - add [rbp + rbx * 8 + x], ch
+00 6c de xx - add [rsi + rbx * 8 + x], ch
+00 6c df xx - add [rdi + rbx * 8 + x], ch
+00 6c e0 xx - add [rax + x], ch
+00 6c e1 xx - add [rcx + x], ch
+00 6c e2 xx - add [rdx + x], ch
+00 6c e3 xx - add [rbx + x], ch
+00 6c e4 xx - add [rsp + x], ch
+00 6c e5 xx - add [rbp + x], ch
+00 6c e6 xx - add [rsi + x], ch
+00 6c e7 xx - add [rdi + x], ch
+00 6c e8 xx - add [rax + rbp * 8 + x], ch
+00 6c e9 xx - add [rcx + rbp * 8 + x], ch
+00 6c ea xx - add [rdx + rbp * 8 + x], ch
+00 6c eb xx - add [rbx + rbp * 8 + x], ch
+00 6c ec xx - add [rsp + rbp * 8 + x], ch
+00 6c ed xx - add [rbp + rbp * 8 + x], ch
+00 6c ee xx - add [rsi + rbp * 8 + x], ch
+00 6c ef xx - add [rdi + rbp * 8 + x], ch
+00 6c f0 xx - add [rax + rsi * 8 + x], ch
+00 6c f1 xx - add [rcx + rsi * 8 + x], ch
+00 6c f2 xx - add [rdx + rsi * 8 + x], ch
+00 6c f3 xx - add [rbx + rsi * 8 + x], ch
+00 6c f4 xx - add [rsp + rsi * 8 + x], ch
+00 6c f5 xx - add [rbp + rsi * 8 + x], ch
+00 6c f6 xx - add [rsi + rsi * 8 + x], ch
+00 6c f7 xx - add [rdi + rsi * 8 + x], ch
+00 6c f8 xx - add [rax + rdi * 8 + x], ch
+00 6c f9 xx - add [rcx + rdi * 8 + x], ch
+00 6c fa xx - add [rdx + rdi * 8 + x], ch
+00 6c fb xx - add [rbx + rdi * 8 + x], ch
+00 6c fc xx - add [rsp + rdi * 8 + x], ch
+00 6c fd xx - add [rbp + rdi * 8 + x], ch
+00 6c fe xx - add [rsi + rdi * 8 + x], ch
+00 6c ff xx - add [rdi + rdi * 8 + x], ch
+00 6d xx - add [rbp + x], ch
+00 6e xx - add [rsi + x], ch
+00 6f xx - add [rdi + x], ch
+00 70 xx - add [rax + x], dh
+00 71 xx - add [rcx + x], dh
+00 72 xx - add [rdx + x], dh
+00 73 xx - add [rbx + x], dh
+00 74 00 xx - add [rax + rax + x], dh
+00 74 01 xx - add [rcx + rax + x], dh
+00 74 02 xx - add [rdx + rax + x], dh
+00 74 03 xx - add [rbx + rax + x], dh
+00 74 04 xx - add [rsp + rax + x], dh
+00 74 05 xx - add [rbp + rax + x], dh
+00 74 06 xx - add [rsi + rax + x], dh
+00 74 07 xx - add [rdi + rax + x], dh
+00 74 08 xx - add [rax + rcx + x], dh
+00 74 09 xx - add [rcx + rcx + x], dh
+00 74 0a xx - add [rdx + rcx + x], dh
+00 74 0b xx - add [rbx + rcx + x], dh
+00 74 0c xx - add [rsp + rcx + x], dh
+00 74 0d xx - add [rbp + rcx + x], dh
+00 74 0e xx - add [rsi + rcx + x], dh
+00 74 0f xx - add [rdi + rcx + x], dh
+00 74 10 xx - add [rax + rdx + x], dh
+00 74 11 xx - add [rcx + rdx + x], dh
+00 74 12 xx - add [rdx + rdx + x], dh
+00 74 13 xx - add [rbx + rdx + x], dh
+00 74 14 xx - add [rsp + rdx + x], dh
+00 74 15 xx - add [rbp + rdx + x], dh
+00 74 16 xx - add [rsi + rdx + x], dh
+00 74 17 xx - add [rdi + rdx + x], dh
+00 74 18 xx - add [rax + rbx + x], dh
+00 74 19 xx - add [rcx + rbx + x], dh
+00 74 1a xx - add [rdx + rbx + x], dh
+00 74 1b xx - add [rbx + rbx + x], dh
+00 74 1c xx - add [rsp + rbx + x], dh
+00 74 1d xx - add [rbp + rbx + x], dh
+00 74 1e xx - add [rsi + rbx + x], dh
+00 74 1f xx - add [rdi + rbx + x], dh
+00 74 20 xx - add [rax + x], dh
+00 74 21 xx - add [rcx + x], dh
+00 74 22 xx - add [rdx + x], dh
+00 74 23 xx - add [rbx + x], dh
+00 74 24 xx - add [rsp + x], dh
+00 74 25 xx - add [rbp + x], dh
+00 74 26 xx - add [rsi + x], dh
+00 74 27 xx - add [rdi + x], dh
+00 74 28 xx - add [rax + rbp + x], dh
+00 74 29 xx - add [rcx + rbp + x], dh
+00 74 2a xx - add [rdx + rbp + x], dh
+00 74 2b xx - add [rbx + rbp + x], dh
+00 74 2c xx - add [rsp + rbp + x], dh
+00 74 2d xx - add [rbp + rbp + x], dh
+00 74 2e xx - add [rsi + rbp + x], dh
+00 74 2f xx - add [rdi + rbp + x], dh
+00 74 30 xx - add [rax + rsi + x], dh
+00 74 31 xx - add [rcx + rsi + x], dh
+00 74 32 xx - add [rdx + rsi + x], dh
+00 74 33 xx - add [rbx + rsi + x], dh
+00 74 34 xx - add [rsp + rsi + x], dh
+00 74 35 xx - add [rbp + rsi + x], dh
+00 74 36 xx - add [rsi + rsi + x], dh
+00 74 37 xx - add [rdi + rsi + x], dh
+00 74 38 xx - add [rax + rdi + x], dh
+00 74 39 xx - add [rcx + rdi + x], dh
+00 74 3a xx - add [rdx + rdi + x], dh
+00 74 3b xx - add [rbx + rdi + x], dh
+00 74 3c xx - add [rsp + rdi + x], dh
+00 74 3d xx - add [rbp + rdi + x], dh
+00 74 3e xx - add [rsi + rdi + x], dh
+00 74 3f xx - add [rdi + rdi + x], dh
+00 74 40 xx - add [rax + rax * 2 + x], dh
+00 74 41 xx - add [rcx + rax * 2 + x], dh
+00 74 42 xx - add [rdx + rax * 2 + x], dh
+00 74 43 xx - add [rbx + rax * 2 + x], dh
+00 74 44 xx - add [rsp + rax * 2 + x], dh
+00 74 45 xx - add [rbp + rax * 2 + x], dh
+00 74 46 xx - add [rsi + rax * 2 + x], dh
+00 74 47 xx - add [rdi + rax * 2 + x], dh
+00 74 48 xx - add [rax + rcx * 2 + x], dh
+00 74 49 xx - add [rcx + rcx * 2 + x], dh
+00 74 4a xx - add [rdx + rcx * 2 + x], dh
+00 74 4b xx - add [rbx + rcx * 2 + x], dh
+00 74 4c xx - add [rsp + rcx * 2 + x], dh
+00 74 4d xx - add [rbp + rcx * 2 + x], dh
+00 74 4e xx - add [rsi + rcx * 2 + x], dh
+00 74 4f xx - add [rdi + rcx * 2 + x], dh
+00 74 50 xx - add [rax + rdx * 2 + x], dh
+00 74 51 xx - add [rcx + rdx * 2 + x], dh
+00 74 52 xx - add [rdx + rdx * 2 + x], dh
+00 74 53 xx - add [rbx + rdx * 2 + x], dh
+00 74 54 xx - add [rsp + rdx * 2 + x], dh
+00 74 55 xx - add [rbp + rdx * 2 + x], dh
+00 74 56 xx - add [rsi + rdx * 2 + x], dh
+00 74 57 xx - add [rdi + rdx * 2 + x], dh
+00 74 58 xx - add [rax + rbx * 2 + x], dh
+00 74 59 xx - add [rcx + rbx * 2 + x], dh
+00 74 5a xx - add [rdx + rbx * 2 + x], dh
+00 74 5b xx - add [rbx + rbx * 2 + x], dh
+00 74 5c xx - add [rsp + rbx * 2 + x], dh
+00 74 5d xx - add [rbp + rbx * 2 + x], dh
+00 74 5e xx - add [rsi + rbx * 2 + x], dh
+00 74 5f xx - add [rdi + rbx * 2 + x], dh
+00 74 60 xx - add [rax + x], dh
+00 74 61 xx - add [rcx + x], dh
+00 74 62 xx - add [rdx + x], dh
+00 74 63 xx - add [rbx + x], dh
+00 74 64 xx - add [rsp + x], dh
+00 74 65 xx - add [rbp + x], dh
+00 74 66 xx - add [rsi + x], dh
+00 74 67 xx - add [rdi + x], dh
+00 74 68 xx - add [rax + rbp * 2 + x], dh
+00 74 69 xx - add [rcx + rbp * 2 + x], dh
+00 74 6a xx - add [rdx + rbp * 2 + x], dh
+00 74 6b xx - add [rbx + rbp * 2 + x], dh
+00 74 6c xx - add [rsp + rbp * 2 + x], dh
+00 74 6d xx - add [rbp + rbp * 2 + x], dh
+00 74 6e xx - add [rsi + rbp * 2 + x], dh
+00 74 6f xx - add [rdi + rbp * 2 + x], dh
+00 74 70 xx - add [rax + rsi * 2 + x], dh
+00 74 71 xx - add [rcx + rsi * 2 + x], dh
+00 74 72 xx - add [rdx + rsi * 2 + x], dh
+00 74 73 xx - add [rbx + rsi * 2 + x], dh
+00 74 74 xx - add [rsp + rsi * 2 + x], dh
+00 74 75 xx - add [rbp + rsi * 2 + x], dh
+00 74 76 xx - add [rsi + rsi * 2 + x], dh
+00 74 77 xx - add [rdi + rsi * 2 + x], dh
+00 74 78 xx - add [rax + rdi * 2 + x], dh
+00 74 79 xx - add [rcx + rdi * 2 + x], dh
+00 74 7a xx - add [rdx + rdi * 2 + x], dh
+00 74 7b xx - add [rbx + rdi * 2 + x], dh
+00 74 7c xx - add [rsp + rdi * 2 + x], dh
+00 74 7d xx - add [rbp + rdi * 2 + x], dh
+00 74 7e xx - add [rsi + rdi * 2 + x], dh
+00 74 7f xx - add [rdi + rdi * 2 + x], dh
+00 74 80 xx - add [rax + rax * 4 + x], dh
+00 74 81 xx - add [rcx + rax * 4 + x], dh
+00 74 82 xx - add [rdx + rax * 4 + x], dh
+00 74 83 xx - add [rbx + rax * 4 + x], dh
+00 74 84 xx - add [rsp + rax * 4 + x], dh
+00 74 85 xx - add [rbp + rax * 4 + x], dh
+00 74 86 xx - add [rsi + rax * 4 + x], dh
+00 74 87 xx - add [rdi + rax * 4 + x], dh
+00 74 88 xx - add [rax + rcx * 4 + x], dh
+00 74 89 xx - add [rcx + rcx * 4 + x], dh
+00 74 8a xx - add [rdx + rcx * 4 + x], dh
+00 74 8b xx - add [rbx + rcx * 4 + x], dh
+00 74 8c xx - add [rsp + rcx * 4 + x], dh
+00 74 8d xx - add [rbp + rcx * 4 + x], dh
+00 74 8e xx - add [rsi + rcx * 4 + x], dh
+00 74 8f xx - add [rdi + rcx * 4 + x], dh
+00 74 90 xx - add [rax + rdx * 4 + x], dh
+00 74 91 xx - add [rcx + rdx * 4 + x], dh
+00 74 92 xx - add [rdx + rdx * 4 + x], dh
+00 74 93 xx - add [rbx + rdx * 4 + x], dh
+00 74 94 xx - add [rsp + rdx * 4 + x], dh
+00 74 95 xx - add [rbp + rdx * 4 + x], dh
+00 74 96 xx - add [rsi + rdx * 4 + x], dh
+00 74 97 xx - add [rdi + rdx * 4 + x], dh
+00 74 98 xx - add [rax + rbx * 4 + x], dh
+00 74 99 xx - add [rcx + rbx * 4 + x], dh
+00 74 9a xx - add [rdx + rbx * 4 + x], dh
+00 74 9b xx - add [rbx + rbx * 4 + x], dh
+00 74 9c xx - add [rsp + rbx * 4 + x], dh
+00 74 9d xx - add [rbp + rbx * 4 + x], dh
+00 74 9e xx - add [rsi + rbx * 4 + x], dh
+00 74 9f xx - add [rdi + rbx * 4 + x], dh
+00 74 a0 xx - add [rax + x], dh
+00 74 a1 xx - add [rcx + x], dh
+00 74 a2 xx - add [rdx + x], dh
+00 74 a3 xx - add [rbx + x], dh
+00 74 a4 xx - add [rsp + x], dh
+00 74 a5 xx - add [rbp + x], dh
+00 74 a6 xx - add [rsi + x], dh
+00 74 a7 xx - add [rdi + x], dh
+00 74 a8 xx - add [rax + rbp * 4 + x], dh
+00 74 a9 xx - add [rcx + rbp * 4 + x], dh
+00 74 aa xx - add [rdx + rbp * 4 + x], dh
+00 74 ab xx - add [rbx + rbp * 4 + x], dh
+00 74 ac xx - add [rsp + rbp * 4 + x], dh
+00 74 ad xx - add [rbp + rbp * 4 + x], dh
+00 74 ae xx - add [rsi + rbp * 4 + x], dh
+00 74 af xx - add [rdi + rbp * 4 + x], dh
+00 74 b0 xx - add [rax + rsi * 4 + x], dh
+00 74 b1 xx - add [rcx + rsi * 4 + x], dh
+00 74 b2 xx - add [rdx + rsi * 4 + x], dh
+00 74 b3 xx - add [rbx + rsi * 4 + x], dh
+00 74 b4 xx - add [rsp + rsi * 4 + x], dh
+00 74 b5 xx - add [rbp + rsi * 4 + x], dh
+00 74 b6 xx - add [rsi + rsi * 4 + x], dh
+00 74 b7 xx - add [rdi + rsi * 4 + x], dh
+00 74 b8 xx - add [rax + rdi * 4 + x], dh
+00 74 b9 xx - add [rcx + rdi * 4 + x], dh
+00 74 ba xx - add [rdx + rdi * 4 + x], dh
+00 74 bb xx - add [rbx + rdi * 4 + x], dh
+00 74 bc xx - add [rsp + rdi * 4 + x], dh
+00 74 bd xx - add [rbp + rdi * 4 + x], dh
+00 74 be xx - add [rsi + rdi * 4 + x], dh
+00 74 bf xx - add [rdi + rdi * 4 + x], dh
+00 74 c0 xx - add [rax + rax * 8 + x], dh
+00 74 c1 xx - add [rcx + rax * 8 + x], dh
+00 74 c2 xx - add [rdx + rax * 8 + x], dh
+00 74 c3 xx - add [rbx + rax * 8 + x], dh
+00 74 c4 xx - add [rsp + rax * 8 + x], dh
+00 74 c5 xx - add [rbp + rax * 8 + x], dh
+00 74 c6 xx - add [rsi + rax * 8 + x], dh
+00 74 c7 xx - add [rdi + rax * 8 + x], dh
+00 74 c8 xx - add [rax + rcx * 8 + x], dh
+00 74 c9 xx - add [rcx + rcx * 8 + x], dh
+00 74 ca xx - add [rdx + rcx * 8 + x], dh
+00 74 cb xx - add [rbx + rcx * 8 + x], dh
+00 74 cc xx - add [rsp + rcx * 8 + x], dh
+00 74 cd xx - add [rbp + rcx * 8 + x], dh
+00 74 ce xx - add [rsi + rcx * 8 + x], dh
+00 74 cf xx - add [rdi + rcx * 8 + x], dh
+00 74 d0 xx - add [rax + rdx * 8 + x], dh
+00 74 d1 xx - add [rcx + rdx * 8 + x], dh
+00 74 d2 xx - add [rdx + rdx * 8 + x], dh
+00 74 d3 xx - add [rbx + rdx * 8 + x], dh
+00 74 d4 xx - add [rsp + rdx * 8 + x], dh
+00 74 d5 xx - add [rbp + rdx * 8 + x], dh
+00 74 d6 xx - add [rsi + rdx * 8 + x], dh
+00 74 d7 xx - add [rdi + rdx * 8 + x], dh
+00 74 d8 xx - add [rax + rbx * 8 + x], dh
+00 74 d9 xx - add [rcx + rbx * 8 + x], dh
+00 74 da xx - add [rdx + rbx * 8 + x], dh
+00 74 db xx - add [rbx + rbx * 8 + x], dh
+00 74 dc xx - add [rsp + rbx * 8 + x], dh
+00 74 dd xx - add [rbp + rbx * 8 + x], dh
+00 74 de xx - add [rsi + rbx * 8 + x], dh
+00 74 df xx - add [rdi + rbx * 8 + x], dh
+00 74 e0 xx - add [rax + x], dh
+00 74 e1 xx - add [rcx + x], dh
+00 74 e2 xx - add [rdx + x], dh
+00 74 e3 xx - add [rbx + x], dh
+00 74 e4 xx - add [rsp + x], dh
+00 74 e5 xx - add [rbp + x], dh
+00 74 e6 xx - add [rsi + x], dh
+00 74 e7 xx - add [rdi + x], dh
+00 74 e8 xx - add [rax + rbp * 8 + x], dh
+00 74 e9 xx - add [rcx + rbp * 8 + x], dh
+00 74 ea xx - add [rdx + rbp * 8 + x], dh
+00 74 eb xx - add [rbx + rbp * 8 + x], dh
+00 74 ec xx - add [rsp + rbp * 8 + x], dh
+00 74 ed xx - add [rbp + rbp * 8 + x], dh
+00 74 ee xx - add [rsi + rbp * 8 + x], dh
+00 74 ef xx - add [rdi + rbp * 8 + x], dh
+00 74 f0 xx - add [rax + rsi * 8 + x], dh
+00 74 f1 xx - add [rcx + rsi * 8 + x], dh
+00 74 f2 xx - add [rdx + rsi * 8 + x], dh
+00 74 f3 xx - add [rbx + rsi * 8 + x], dh
+00 74 f4 xx - add [rsp + rsi * 8 + x], dh
+00 74 f5 xx - add [rbp + rsi * 8 + x], dh
+00 74 f6 xx - add [rsi + rsi * 8 + x], dh
+00 74 f7 xx - add [rdi + rsi * 8 + x], dh
+00 74 f8 xx - add [rax + rdi * 8 + x], dh
+00 74 f9 xx - add [rcx + rdi * 8 + x], dh
+00 74 fa xx - add [rdx + rdi * 8 + x], dh
+00 74 fb xx - add [rbx + rdi * 8 + x], dh
+00 74 fc xx - add [rsp + rdi * 8 + x], dh
+00 74 fd xx - add [rbp + rdi * 8 + x], dh
+00 74 fe xx - add [rsi + rdi * 8 + x], dh
+00 74 ff xx - add [rdi + rdi * 8 + x], dh
+00 75 xx - add [rbp + x], dh
+00 76 xx - add [rsi + x], dh
+00 77 xx - add [rdi + x], dh
+00 78 xx - add [rax + x], bh
+00 79 xx - add [rcx + x], bh
+00 7a xx - add [rdx + x], bh
+00 7b xx - add [rbx + x], bh
+00 7c 00 xx - add [rax + rax + x], bh
+00 7c 01 xx - add [rcx + rax + x], bh
+00 7c 02 xx - add [rdx + rax + x], bh
+00 7c 03 xx - add [rbx + rax + x], bh
+00 7c 04 xx - add [rsp + rax + x], bh
+00 7c 05 xx - add [rbp + rax + x], bh
+00 7c 06 xx - add [rsi + rax + x], bh
+00 7c 07 xx - add [rdi + rax + x], bh
+00 7c 08 xx - add [rax + rcx + x], bh
+00 7c 09 xx - add [rcx + rcx + x], bh
+00 7c 0a xx - add [rdx + rcx + x], bh
+00 7c 0b xx - add [rbx + rcx + x], bh
+00 7c 0c xx - add [rsp + rcx + x], bh
+00 7c 0d xx - add [rbp + rcx + x], bh
+00 7c 0e xx - add [rsi + rcx + x], bh
+00 7c 0f xx - add [rdi + rcx + x], bh
+00 7c 10 xx - add [rax + rdx + x], bh
+00 7c 11 xx - add [rcx + rdx + x], bh
+00 7c 12 xx - add [rdx + rdx + x], bh
+00 7c 13 xx - add [rbx + rdx + x], bh
+00 7c 14 xx - add [rsp + rdx + x], bh
+00 7c 15 xx - add [rbp + rdx + x], bh
+00 7c 16 xx - add [rsi + rdx + x], bh
+00 7c 17 xx - add [rdi + rdx + x], bh
+00 7c 18 xx - add [rax + rbx + x], bh
+00 7c 19 xx - add [rcx + rbx + x], bh
+00 7c 1a xx - add [rdx + rbx + x], bh
+00 7c 1b xx - add [rbx + rbx + x], bh
+00 7c 1c xx - add [rsp + rbx + x], bh
+00 7c 1d xx - add [rbp + rbx + x], bh
+00 7c 1e xx - add [rsi + rbx + x], bh
+00 7c 1f xx - add [rdi + rbx + x], bh
+00 7c 20 xx - add [rax + x], bh
+00 7c 21 xx - add [rcx + x], bh
+00 7c 22 xx - add [rdx + x], bh
+00 7c 23 xx - add [rbx + x], bh
+00 7c 24 xx - add [rsp + x], bh
+00 7c 25 xx - add [rbp + x], bh
+00 7c 26 xx - add [rsi + x], bh
+00 7c 27 xx - add [rdi + x], bh
+00 7c 28 xx - add [rax + rbp + x], bh
+00 7c 29 xx - add [rcx + rbp + x], bh
+00 7c 2a xx - add [rdx + rbp + x], bh
+00 7c 2b xx - add [rbx + rbp + x], bh
+00 7c 2c xx - add [rsp + rbp + x], bh
+00 7c 2d xx - add [rbp + rbp + x], bh
+00 7c 2e xx - add [rsi + rbp + x], bh
+00 7c 2f xx - add [rdi + rbp + x], bh
+00 7c 30 xx - add [rax + rsi + x], bh
+00 7c 31 xx - add [rcx + rsi + x], bh
+00 7c 32 xx - add [rdx + rsi + x], bh
+00 7c 33 xx - add [rbx + rsi + x], bh
+00 7c 34 xx - add [rsp + rsi + x], bh
+00 7c 35 xx - add [rbp + rsi + x], bh
+00 7c 36 xx - add [rsi + rsi + x], bh
+00 7c 37 xx - add [rdi + rsi + x], bh
+00 7c 38 xx - add [rax + rdi + x], bh
+00 7c 39 xx - add [rcx + rdi + x], bh
+00 7c 3a xx - add [rdx + rdi + x], bh
+00 7c 3b xx - add [rbx + rdi + x], bh
+00 7c 3c xx - add [rsp + rdi + x], bh
+00 7c 3d xx - add [rbp + rdi + x], bh
+00 7c 3e xx - add [rsi + rdi + x], bh
+00 7c 3f xx - add [rdi + rdi + x], bh
+00 7c 40 xx - add [rax + rax * 2 + x], bh
+00 7c 41 xx - add [rcx + rax * 2 + x], bh
+00 7c 42 xx - add [rdx + rax * 2 + x], bh
+00 7c 43 xx - add [rbx + rax * 2 + x], bh
+00 7c 44 xx - add [rsp + rax * 2 + x], bh
+00 7c 45 xx - add [rbp + rax * 2 + x], bh
+00 7c 46 xx - add [rsi + rax * 2 + x], bh
+00 7c 47 xx - add [rdi + rax * 2 + x], bh
+00 7c 48 xx - add [rax + rcx * 2 + x], bh
+00 7c 49 xx - add [rcx + rcx * 2 + x], bh
+00 7c 4a xx - add [rdx + rcx * 2 + x], bh
+00 7c 4b xx - add [rbx + rcx * 2 + x], bh
+00 7c 4c xx - add [rsp + rcx * 2 + x], bh
+00 7c 4d xx - add [rbp + rcx * 2 + x], bh
+00 7c 4e xx - add [rsi + rcx * 2 + x], bh
+00 7c 4f xx - add [rdi + rcx * 2 + x], bh
+00 7c 50 xx - add [rax + rdx * 2 + x], bh
+00 7c 51 xx - add [rcx + rdx * 2 + x], bh
+00 7c 52 xx - add [rdx + rdx * 2 + x], bh
+00 7c 53 xx - add [rbx + rdx * 2 + x], bh
+00 7c 54 xx - add [rsp + rdx * 2 + x], bh
+00 7c 55 xx - add [rbp + rdx * 2 + x], bh
+00 7c 56 xx - add [rsi + rdx * 2 + x], bh
+00 7c 57 xx - add [rdi + rdx * 2 + x], bh
+00 7c 58 xx - add [rax + rbx * 2 + x], bh
+00 7c 59 xx - add [rcx + rbx * 2 + x], bh
+00 7c 5a xx - add [rdx + rbx * 2 + x], bh
+00 7c 5b xx - add [rbx + rbx * 2 + x], bh
+00 7c 5c xx - add [rsp + rbx * 2 + x], bh
+00 7c 5d xx - add [rbp + rbx * 2 + x], bh
+00 7c 5e xx - add [rsi + rbx * 2 + x], bh
+00 7c 5f xx - add [rdi + rbx * 2 + x], bh
+00 7c 60 xx - add [rax + x], bh
+00 7c 61 xx - add [rcx + x], bh
+00 7c 62 xx - add [rdx + x], bh
+00 7c 63 xx - add [rbx + x], bh
+00 7c 64 xx - add [rsp + x], bh
+00 7c 65 xx - add [rbp + x], bh
+00 7c 66 xx - add [rsi + x], bh
+00 7c 67 xx - add [rdi + x], bh
+00 7c 68 xx - add [rax + rbp * 2 + x], bh
+00 7c 69 xx - add [rcx + rbp * 2 + x], bh
+00 7c 6a xx - add [rdx + rbp * 2 + x], bh
+00 7c 6b xx - add [rbx + rbp * 2 + x], bh
+00 7c 6c xx - add [rsp + rbp * 2 + x], bh
+00 7c 6d xx - add [rbp + rbp * 2 + x], bh
+00 7c 6e xx - add [rsi + rbp * 2 + x], bh
+00 7c 6f xx - add [rdi + rbp * 2 + x], bh
+00 7c 70 xx - add [rax + rsi * 2 + x], bh
+00 7c 71 xx - add [rcx + rsi * 2 + x], bh
+00 7c 72 xx - add [rdx + rsi * 2 + x], bh
+00 7c 73 xx - add [rbx + rsi * 2 + x], bh
+00 7c 74 xx - add [rsp + rsi * 2 + x], bh
+00 7c 75 xx - add [rbp + rsi * 2 + x], bh
+00 7c 76 xx - add [rsi + rsi * 2 + x], bh
+00 7c 77 xx - add [rdi + rsi * 2 + x], bh
+00 7c 78 xx - add [rax + rdi * 2 + x], bh
+00 7c 79 xx - add [rcx + rdi * 2 + x], bh
+00 7c 7a xx - add [rdx + rdi * 2 + x], bh
+00 7c 7b xx - add [rbx + rdi * 2 + x], bh
+00 7c 7c xx - add [rsp + rdi * 2 + x], bh
+00 7c 7d xx - add [rbp + rdi * 2 + x], bh
+00 7c 7e xx - add [rsi + rdi * 2 + x], bh
+00 7c 7f xx - add [rdi + rdi * 2 + x], bh
+00 7c 80 xx - add [rax + rax * 4 + x], bh
+00 7c 81 xx - add [rcx + rax * 4 + x], bh
+00 7c 82 xx - add [rdx + rax * 4 + x], bh
+00 7c 83 xx - add [rbx + rax * 4 + x], bh
+00 7c 84 xx - add [rsp + rax * 4 + x], bh
+00 7c 85 xx - add [rbp + rax * 4 + x], bh
+00 7c 86 xx - add [rsi + rax * 4 + x], bh
+00 7c 87 xx - add [rdi + rax * 4 + x], bh
+00 7c 88 xx - add [rax + rcx * 4 + x], bh
+00 7c 89 xx - add [rcx + rcx * 4 + x], bh
+00 7c 8a xx - add [rdx + rcx * 4 + x], bh
+00 7c 8b xx - add [rbx + rcx * 4 + x], bh
+00 7c 8c xx - add [rsp + rcx * 4 + x], bh
+00 7c 8d xx - add [rbp + rcx * 4 + x], bh
+00 7c 8e xx - add [rsi + rcx * 4 + x], bh
+00 7c 8f xx - add [rdi + rcx * 4 + x], bh
+00 7c 90 xx - add [rax + rdx * 4 + x], bh
+00 7c 91 xx - add [rcx + rdx * 4 + x], bh
+00 7c 92 xx - add [rdx + rdx * 4 + x], bh
+00 7c 93 xx - add [rbx + rdx * 4 + x], bh
+00 7c 94 xx - add [rsp + rdx * 4 + x], bh
+00 7c 95 xx - add [rbp + rdx * 4 + x], bh
+00 7c 96 xx - add [rsi + rdx * 4 + x], bh
+00 7c 97 xx - add [rdi + rdx * 4 + x], bh
+00 7c 98 xx - add [rax + rbx * 4 + x], bh
+00 7c 99 xx - add [rcx + rbx * 4 + x], bh
+00 7c 9a xx - add [rdx + rbx * 4 + x], bh
+00 7c 9b xx - add [rbx + rbx * 4 + x], bh
+00 7c 9c xx - add [rsp + rbx * 4 + x], bh
+00 7c 9d xx - add [rbp + rbx * 4 + x], bh
+00 7c 9e xx - add [rsi + rbx * 4 + x], bh
+00 7c 9f xx - add [rdi + rbx * 4 + x], bh
+00 7c a0 xx - add [rax + x], bh
+00 7c a1 xx - add [rcx + x], bh
+00 7c a2 xx - add [rdx + x], bh
+00 7c a3 xx - add [rbx + x], bh
+00 7c a4 xx - add [rsp + x], bh
+00 7c a5 xx - add [rbp + x], bh
+00 7c a6 xx - add [rsi + x], bh
+00 7c a7 xx - add [rdi + x], bh
+00 7c a8 xx - add [rax + rbp * 4 + x], bh
+00 7c a9 xx - add [rcx + rbp * 4 + x], bh
+00 7c aa xx - add [rdx + rbp * 4 + x], bh
+00 7c ab xx - add [rbx + rbp * 4 + x], bh
+00 7c ac xx - add [rsp + rbp * 4 + x], bh
+00 7c ad xx - add [rbp + rbp * 4 + x], bh
+00 7c ae xx - add [rsi + rbp * 4 + x], bh
+00 7c af xx - add [rdi + rbp * 4 + x], bh
+00 7c b0 xx - add [rax + rsi * 4 + x], bh
+00 7c b1 xx - add [rcx + rsi * 4 + x], bh
+00 7c b2 xx - add [rdx + rsi * 4 + x], bh
+00 7c b3 xx - add [rbx + rsi * 4 + x], bh
+00 7c b4 xx - add [rsp + rsi * 4 + x], bh
+00 7c b5 xx - add [rbp + rsi * 4 + x], bh
+00 7c b6 xx - add [rsi + rsi * 4 + x], bh
+00 7c b7 xx - add [rdi + rsi * 4 + x], bh
+00 7c b8 xx - add [rax + rdi * 4 + x], bh
+00 7c b9 xx - add [rcx + rdi * 4 + x], bh
+00 7c ba xx - add [rdx + rdi * 4 + x], bh
+00 7c bb xx - add [rbx + rdi * 4 + x], bh
+00 7c bc xx - add [rsp + rdi * 4 + x], bh
+00 7c bd xx - add [rbp + rdi * 4 + x], bh
+00 7c be xx - add [rsi + rdi * 4 + x], bh
+00 7c bf xx - add [rdi + rdi * 4 + x], bh
+00 7c c0 xx - add [rax + rax * 8 + x], bh
+00 7c c1 xx - add [rcx + rax * 8 + x], bh
+00 7c c2 xx - add [rdx + rax * 8 + x], bh
+00 7c c3 xx - add [rbx + rax * 8 + x], bh
+00 7c c4 xx - add [rsp + rax * 8 + x], bh
+00 7c c5 xx - add [rbp + rax * 8 + x], bh
+00 7c c6 xx - add [rsi + rax * 8 + x], bh
+00 7c c7 xx - add [rdi + rax * 8 + x], bh
+00 7c c8 xx - add [rax + rcx * 8 + x], bh
+00 7c c9 xx - add [rcx + rcx * 8 + x], bh
+00 7c ca xx - add [rdx + rcx * 8 + x], bh
+00 7c cb xx - add [rbx + rcx * 8 + x], bh
+00 7c cc xx - add [rsp + rcx * 8 + x], bh
+00 7c cd xx - add [rbp + rcx * 8 + x], bh
+00 7c ce xx - add [rsi + rcx * 8 + x], bh
+00 7c cf xx - add [rdi + rcx * 8 + x], bh
+00 7c d0 xx - add [rax + rdx * 8 + x], bh
+00 7c d1 xx - add [rcx + rdx * 8 + x], bh
+00 7c d2 xx - add [rdx + rdx * 8 + x], bh
+00 7c d3 xx - add [rbx + rdx * 8 + x], bh
+00 7c d4 xx - add [rsp + rdx * 8 + x], bh
+00 7c d5 xx - add [rbp + rdx * 8 + x], bh
+00 7c d6 xx - add [rsi + rdx * 8 + x], bh
+00 7c d7 xx - add [rdi + rdx * 8 + x], bh
+00 7c d8 xx - add [rax + rbx * 8 + x], bh
+00 7c d9 xx - add [rcx + rbx * 8 + x], bh
+00 7c da xx - add [rdx + rbx * 8 + x], bh
+00 7c db xx - add [rbx + rbx * 8 + x], bh
+00 7c dc xx - add [rsp + rbx * 8 + x], bh
+00 7c dd xx - add [rbp + rbx * 8 + x], bh
+00 7c de xx - add [rsi + rbx * 8 + x], bh
+00 7c df xx - add [rdi + rbx * 8 + x], bh
+00 7c e0 xx - add [rax + x], bh
+00 7c e1 xx - add [rcx + x], bh
+00 7c e2 xx - add [rdx + x], bh
+00 7c e3 xx - add [rbx + x], bh
+00 7c e4 xx - add [rsp + x], bh
+00 7c e5 xx - add [rbp + x], bh
+00 7c e6 xx - add [rsi + x], bh
+00 7c e7 xx - add [rdi + x], bh
+00 7c e8 xx - add [rax + rbp * 8 + x], bh
+00 7c e9 xx - add [rcx + rbp * 8 + x], bh
+00 7c ea xx - add [rdx + rbp * 8 + x], bh
+00 7c eb xx - add [rbx + rbp * 8 + x], bh
+00 7c ec xx - add [rsp + rbp * 8 + x], bh
+00 7c ed xx - add [rbp + rbp * 8 + x], bh
+00 7c ee xx - add [rsi + rbp * 8 + x], bh
+00 7c ef xx - add [rdi + rbp * 8 + x], bh
+00 7c f0 xx - add [rax + rsi * 8 + x], bh
+00 7c f1 xx - add [rcx + rsi * 8 + x], bh
+00 7c f2 xx - add [rdx + rsi * 8 + x], bh
+00 7c f3 xx - add [rbx + rsi * 8 + x], bh
+00 7c f4 xx - add [rsp + rsi * 8 + x], bh
+00 7c f5 xx - add [rbp + rsi * 8 + x], bh
+00 7c f6 xx - add [rsi + rsi * 8 + x], bh
+00 7c f7 xx - add [rdi + rsi * 8 + x], bh
+00 7c f8 xx - add [rax + rdi * 8 + x], bh
+00 7c f9 xx - add [rcx + rdi * 8 + x], bh
+00 7c fa xx - add [rdx + rdi * 8 + x], bh
+00 7c fb xx - add [rbx + rdi * 8 + x], bh
+00 7c fc xx - add [rsp + rdi * 8 + x], bh
+00 7c fd xx - add [rbp + rdi * 8 + x], bh
+00 7c fe xx - add [rsi + rdi * 8 + x], bh
+00 7c ff xx - add [rdi + rdi * 8 + x], bh
+00 7d xx - add [rbp + x], bh
+00 7e xx - add [rsi + x], bh
+00 7f xx - add [rdi + x], bh
