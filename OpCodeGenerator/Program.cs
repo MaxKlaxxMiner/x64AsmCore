@@ -58,13 +58,17 @@ namespace OpCodeGenerator
       /// </summary>
       C1 = 1,
       /// <summary>
+      /// fügt eine Int32-Konstante hinzu (-2147483648 bis 2147483647)
+      /// </summary>
+      C4 = 2,
+      /// <summary>
       /// ersetzt den Register "RBP" an erster Stelle durch eine Int32-Konstante aus (-2147483648 bis 2147483647)
       /// </summary>
-      Rbp1ToC4 = 2,
+      Rbp1ToC4 = 4,
       /// <summary>
       /// entfernt den Register "RSP" an zweiter Stelle 
       /// </summary>
-      Rsp2Skip = 4
+      Rsp2Skip = 8
     }
 
     /// <summary>
@@ -82,6 +86,7 @@ namespace OpCodeGenerator
       bool skip2 = false;
 
       if (ext.HasFlag(AddrExt.C1)) { constBytes = 1; }
+      if (ext.HasFlag(AddrExt.C4)) { constBytes = 4; }
       if (ext.HasFlag(AddrExt.Rbp1ToC4) && index1 == 5) { skip1 = true; constBytes = 4; }
       if (ext.HasFlag(AddrExt.Rsp2Skip) && index2 == 4) { skip2 = true; }
 
@@ -172,6 +177,28 @@ namespace OpCodeGenerator
         opCode[pos]++;
       }
       #endregion
+      #region # // 00 80 - 00 bf
+      for (int y = 0; y < 64; y++)
+      {
+        int rr = opCode[pos] / 8 & 7;
+        switch (opCode[pos] & 7)
+        {
+          default: yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, 4, 0, AddrExt.C4 | AddrExt.Rsp2Skip) + ',' + R8(rr); break;
+
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, opCode[pos] / 8 & 7, opCode[pos] / 64 & 3, AddrExt.C4 | AddrExt.Rsp2Skip) + ',' + R8(rr);
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
+        }
+        opCode[pos]++;
+      }
+      #endregion
     }
 
     /// <summary>
@@ -179,7 +206,7 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 2100;
+    const int StartView = 4200;
 
     static void Main(string[] args)
     {
