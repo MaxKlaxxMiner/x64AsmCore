@@ -2,7 +2,7 @@
 01 01 - add [rcx], eax
 01 02 - add [rdx], eax
 01 03 - add [rbx], eax
-01 04 01 - add [rax + rax], eax
+01 04 00 - add [rax + rax], eax
 01 04 01 - add [rcx + rax], eax
 01 04 02 - add [rdx + rax], eax
 01 04 03 - add [rbx + rax], eax
@@ -266,7 +266,7 @@
 01 09 - add [rcx], ecx
 01 0a - add [rdx], ecx
 01 0b - add [rbx], ecx
-01 0c 01 - add [rax + rax], ecx
+01 0c 00 - add [rax + rax], ecx
 01 0c 01 - add [rcx + rax], ecx
 01 0c 02 - add [rdx + rax], ecx
 01 0c 03 - add [rbx + rax], ecx
@@ -530,7 +530,7 @@
 01 11 - add [rcx], edx
 01 12 - add [rdx], edx
 01 13 - add [rbx], edx
-01 14 01 - add [rax + rax], edx
+01 14 00 - add [rax + rax], edx
 01 14 01 - add [rcx + rax], edx
 01 14 02 - add [rdx + rax], edx
 01 14 03 - add [rbx + rax], edx
@@ -794,7 +794,7 @@
 01 19 - add [rcx], ebx
 01 1a - add [rdx], ebx
 01 1b - add [rbx], ebx
-01 1c 01 - add [rax + rax], ebx
+01 1c 00 - add [rax + rax], ebx
 01 1c 01 - add [rcx + rax], ebx
 01 1c 02 - add [rdx + rax], ebx
 01 1c 03 - add [rbx + rax], ebx
@@ -1058,7 +1058,7 @@
 01 21 - add [rcx], esp
 01 22 - add [rdx], esp
 01 23 - add [rbx], esp
-01 24 01 - add [rax + rax], esp
+01 24 00 - add [rax + rax], esp
 01 24 01 - add [rcx + rax], esp
 01 24 02 - add [rdx + rax], esp
 01 24 03 - add [rbx + rax], esp
@@ -1322,7 +1322,7 @@
 01 29 - add [rcx], ebp
 01 2a - add [rdx], ebp
 01 2b - add [rbx], ebp
-01 2c 01 - add [rax + rax], ebp
+01 2c 00 - add [rax + rax], ebp
 01 2c 01 - add [rcx + rax], ebp
 01 2c 02 - add [rdx + rax], ebp
 01 2c 03 - add [rbx + rax], ebp
@@ -1586,7 +1586,7 @@
 01 31 - add [rcx], esi
 01 32 - add [rdx], esi
 01 33 - add [rbx], esi
-01 34 01 - add [rax + rax], esi
+01 34 00 - add [rax + rax], esi
 01 34 01 - add [rcx + rax], esi
 01 34 02 - add [rdx + rax], esi
 01 34 03 - add [rbx + rax], esi
@@ -1850,7 +1850,7 @@
 01 39 - add [rcx], edi
 01 3a - add [rdx], edi
 01 3b - add [rbx], edi
-01 3c 01 - add [rax + rax], edi
+01 3c 00 - add [rax + rax], edi
 01 3c 01 - add [rcx + rax], edi
 01 3c 02 - add [rdx + rax], edi
 01 3c 03 - add [rbx + rax], edi
@@ -2114,7 +2114,7 @@
 01 41 xx - add [rcx + x], eax
 01 42 xx - add [rdx + x], eax
 01 43 xx - add [rbx + x], eax
-01 44 01 xx - add [rax + rax + x], eax
+01 44 00 xx - add [rax + rax + x], eax
 01 44 01 xx - add [rcx + rax + x], eax
 01 44 02 xx - add [rdx + rax + x], eax
 01 44 03 xx - add [rbx + rax + x], eax
@@ -2377,7 +2377,7 @@
 01 49 xx - add [rcx + x], ecx
 01 4a xx - add [rdx + x], ecx
 01 4b xx - add [rbx + x], ecx
-01 4c 01 xx - add [rax + rax + x], ecx
+01 4c 00 xx - add [rax + rax + x], ecx
 01 4c 01 xx - add [rcx + rax + x], ecx
 01 4c 02 xx - add [rdx + rax + x], ecx
 01 4c 03 xx - add [rbx + rax + x], ecx
@@ -2640,7 +2640,7 @@
 01 51 xx - add [rcx + x], edx
 01 52 xx - add [rdx + x], edx
 01 53 xx - add [rbx + x], edx
-01 54 01 xx - add [rax + rax + x], edx
+01 54 00 xx - add [rax + rax + x], edx
 01 54 01 xx - add [rcx + rax + x], edx
 01 54 02 xx - add [rdx + rax + x], edx
 01 54 03 xx - add [rbx + rax + x], edx
@@ -2903,7 +2903,7 @@
 01 59 xx - add [rcx + x], ebx
 01 5a xx - add [rdx + x], ebx
 01 5b xx - add [rbx + x], ebx
-01 5c 01 xx - add [rax + rax + x], ebx
+01 5c 00 xx - add [rax + rax + x], ebx
 01 5c 01 xx - add [rcx + rax + x], ebx
 01 5c 02 xx - add [rdx + rax + x], ebx
 01 5c 03 xx - add [rbx + rax + x], ebx
@@ -3166,7 +3166,7 @@
 01 61 xx - add [rcx + x], esp
 01 62 xx - add [rdx + x], esp
 01 63 xx - add [rbx + x], esp
-01 64 01 xx - add [rax + rax + x], esp
+01 64 00 xx - add [rax + rax + x], esp
 01 64 01 xx - add [rcx + rax + x], esp
 01 64 02 xx - add [rdx + rax + x], esp
 01 64 03 xx - add [rbx + rax + x], esp
@@ -3429,7 +3429,7 @@
 01 69 xx - add [rcx + x], ebp
 01 6a xx - add [rdx + x], ebp
 01 6b xx - add [rbx + x], ebp
-01 6c 01 xx - add [rax + rax + x], ebp
+01 6c 00 xx - add [rax + rax + x], ebp
 01 6c 01 xx - add [rcx + rax + x], ebp
 01 6c 02 xx - add [rdx + rax + x], ebp
 01 6c 03 xx - add [rbx + rax + x], ebp
@@ -3692,7 +3692,7 @@
 01 71 xx - add [rcx + x], esi
 01 72 xx - add [rdx + x], esi
 01 73 xx - add [rbx + x], esi
-01 74 01 xx - add [rax + rax + x], esi
+01 74 00 xx - add [rax + rax + x], esi
 01 74 01 xx - add [rcx + rax + x], esi
 01 74 02 xx - add [rdx + rax + x], esi
 01 74 03 xx - add [rbx + rax + x], esi
@@ -3955,7 +3955,7 @@
 01 79 xx - add [rcx + x], edi
 01 7a xx - add [rdx + x], edi
 01 7b xx - add [rbx + x], edi
-01 7c 01 xx - add [rax + rax + x], edi
+01 7c 00 xx - add [rax + rax + x], edi
 01 7c 01 xx - add [rcx + rax + x], edi
 01 7c 02 xx - add [rdx + rax + x], edi
 01 7c 03 xx - add [rbx + rax + x], edi
@@ -4219,7 +4219,7 @@
 01 81 xx xx xx xx - add [rcx + x], eax
 01 82 xx xx xx xx - add [rdx + x], eax
 01 83 xx xx xx xx - add [rbx + x], eax
-01 84 01 xx xx xx xx - add [rax + rax + x], eax
+01 84 00 xx xx xx xx - add [rax + rax + x], eax
 01 84 01 xx xx xx xx - add [rcx + rax + x], eax
 01 84 02 xx xx xx xx - add [rdx + rax + x], eax
 01 84 03 xx xx xx xx - add [rbx + rax + x], eax
@@ -4482,7 +4482,7 @@
 01 89 xx xx xx xx - add [rcx + x], ecx
 01 8a xx xx xx xx - add [rdx + x], ecx
 01 8b xx xx xx xx - add [rbx + x], ecx
-01 8c 01 xx xx xx xx - add [rax + rax + x], ecx
+01 8c 00 xx xx xx xx - add [rax + rax + x], ecx
 01 8c 01 xx xx xx xx - add [rcx + rax + x], ecx
 01 8c 02 xx xx xx xx - add [rdx + rax + x], ecx
 01 8c 03 xx xx xx xx - add [rbx + rax + x], ecx
@@ -4745,7 +4745,7 @@
 01 91 xx xx xx xx - add [rcx + x], edx
 01 92 xx xx xx xx - add [rdx + x], edx
 01 93 xx xx xx xx - add [rbx + x], edx
-01 94 01 xx xx xx xx - add [rax + rax + x], edx
+01 94 00 xx xx xx xx - add [rax + rax + x], edx
 01 94 01 xx xx xx xx - add [rcx + rax + x], edx
 01 94 02 xx xx xx xx - add [rdx + rax + x], edx
 01 94 03 xx xx xx xx - add [rbx + rax + x], edx
@@ -5008,7 +5008,7 @@
 01 99 xx xx xx xx - add [rcx + x], ebx
 01 9a xx xx xx xx - add [rdx + x], ebx
 01 9b xx xx xx xx - add [rbx + x], ebx
-01 9c 01 xx xx xx xx - add [rax + rax + x], ebx
+01 9c 00 xx xx xx xx - add [rax + rax + x], ebx
 01 9c 01 xx xx xx xx - add [rcx + rax + x], ebx
 01 9c 02 xx xx xx xx - add [rdx + rax + x], ebx
 01 9c 03 xx xx xx xx - add [rbx + rax + x], ebx
@@ -5271,7 +5271,7 @@
 01 a1 xx xx xx xx - add [rcx + x], esp
 01 a2 xx xx xx xx - add [rdx + x], esp
 01 a3 xx xx xx xx - add [rbx + x], esp
-01 a4 01 xx xx xx xx - add [rax + rax + x], esp
+01 a4 00 xx xx xx xx - add [rax + rax + x], esp
 01 a4 01 xx xx xx xx - add [rcx + rax + x], esp
 01 a4 02 xx xx xx xx - add [rdx + rax + x], esp
 01 a4 03 xx xx xx xx - add [rbx + rax + x], esp
@@ -5534,7 +5534,7 @@
 01 a9 xx xx xx xx - add [rcx + x], ebp
 01 aa xx xx xx xx - add [rdx + x], ebp
 01 ab xx xx xx xx - add [rbx + x], ebp
-01 ac 01 xx xx xx xx - add [rax + rax + x], ebp
+01 ac 00 xx xx xx xx - add [rax + rax + x], ebp
 01 ac 01 xx xx xx xx - add [rcx + rax + x], ebp
 01 ac 02 xx xx xx xx - add [rdx + rax + x], ebp
 01 ac 03 xx xx xx xx - add [rbx + rax + x], ebp
@@ -5797,7 +5797,7 @@
 01 b1 xx xx xx xx - add [rcx + x], esi
 01 b2 xx xx xx xx - add [rdx + x], esi
 01 b3 xx xx xx xx - add [rbx + x], esi
-01 b4 01 xx xx xx xx - add [rax + rax + x], esi
+01 b4 00 xx xx xx xx - add [rax + rax + x], esi
 01 b4 01 xx xx xx xx - add [rcx + rax + x], esi
 01 b4 02 xx xx xx xx - add [rdx + rax + x], esi
 01 b4 03 xx xx xx xx - add [rbx + rax + x], esi
@@ -6060,7 +6060,7 @@
 01 b9 xx xx xx xx - add [rcx + x], edi
 01 ba xx xx xx xx - add [rdx + x], edi
 01 bb xx xx xx xx - add [rbx + x], edi
-01 bc 01 xx xx xx xx - add [rax + rax + x], edi
+01 bc 00 xx xx xx xx - add [rax + rax + x], edi
 01 bc 01 xx xx xx xx - add [rcx + rax + x], edi
 01 bc 02 xx xx xx xx - add [rdx + rax + x], edi
 01 bc 03 xx xx xx xx - add [rbx + rax + x], edi
