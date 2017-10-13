@@ -199,6 +199,13 @@ namespace OpCodeGenerator
         opCode[pos]++;
       }
       #endregion
+      #region # // 00 c0 - 00 ff
+      for (int y = 0; y < 64; y++)
+      {
+        yield return StrB(opCode, pos) + Asm.Instructions[0] + R8(opCode[pos] & 7) + ',' + R8(opCode[pos] / 8 & 7);
+        opCode[pos]++;
+      }
+      #endregion
     }
 
     /// <summary>
@@ -206,7 +213,7 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 4200;
+    const int StartView = 6300;
 
     static void Main(string[] args)
     {
