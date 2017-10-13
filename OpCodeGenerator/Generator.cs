@@ -350,6 +350,20 @@ namespace OpCodeGenerator
       }
       #endregion
       opCode[pos - 1]++;
+
+      // --- ADD al, const ---
+      yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[0] + R8(0) + ", x";
+      opCode[pos - 1]++;
+      // --- ADD eax, const ---
+      yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[0] + R32(0) + ", x";
+      opCode[pos - 1]++;
+      // --- 06 - ??? ---
+      yield return StrB(opCode, pos - 1) + "???";
+      opCode[pos - 1]++;
+      // --- 07 - ??? ---
+      yield return StrB(opCode, pos - 1) + "???";
+      opCode[pos - 1]++;
+
     }
   }
 }
