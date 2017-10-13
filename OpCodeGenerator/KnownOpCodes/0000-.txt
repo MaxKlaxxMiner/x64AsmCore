@@ -265,7 +265,7 @@
 
 00 05 xx xx xx xx - add [rip + x], al
 00 06 - add [rsi], al
-00 07 - add [rsi], al
+00 07 - add [rdi], al
 
 00 08 - add [rax], cl
 00 09 - add [rcx], cl
@@ -534,7 +534,7 @@
 
 00 0d xx xx xx xx - add [rip + x], cl
 00 0e - add [rsi], cl
-00 0f - add [rsi], cl
+00 0f - add [rdi], cl
 
 00 10 - add [rax], dl
 00 11 - add [rcx], dl
@@ -803,7 +803,7 @@
 
 00 15 xx xx xx xx - add [rip + x], dl
 00 16 - add [rsi], dl
-00 17 - add [rsi], dl
+00 17 - add [rdi], dl
 
 00 18 - add [rax], bl
 00 19 - add [rcx], bl
@@ -1072,5 +1072,5 @@
 
 00 1d xx xx xx xx - add [rip + x], bl
 00 1e - add [rsi], bl
-00 1f - add [rsi], bl
+00 1f - add [rdi], bl
 
