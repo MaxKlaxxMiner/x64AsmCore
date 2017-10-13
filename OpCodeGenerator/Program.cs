@@ -44,18 +44,50 @@ namespace OpCodeGenerator
     }
 
     /// <summary>
+    /// Flags für Zusatzinformationen
+    /// </summary>
+    [Flags]
+    enum AddrExt
+    {
+      /// <summary>
+      /// keine Sonderinfos vorhanden
+      /// </summary>
+      None = 0,
+      /// <summary>
+      /// fügt eine Int8-Konstante hinzu (-128 bis 127)
+      /// </summary>
+      C1 = 1,
+      /// <summary>
+      /// ersetzt den Register "RBP" an erster Stelle durch eine Int32-Konstante aus (-2147483648 bis 2147483647)
+      /// </summary>
+      Rbp1ToC4 = 2,
+      /// <summary>
+      /// entfernt den Register "RSP" an zweiter Stelle 
+      /// </summary>
+      Rsp2Skip = 4
+    }
+
+    /// <summary>
     /// gibt eine mehrteilige 64-Bit Adressierung zurück, mit Leerzeichen am Anfang (z.B. "[rsi + rcx * 4]")
     /// </summary>
     /// <param name="index1">Index auf den ersten Register (z.B. 6: "rsi")</param>
     /// <param name="index2">Index auf den zweiten Register (z.B. 1: "rcx")</param>
     /// <param name="mulShift2">Shiftwert für die Multiplikation des zweiten Registers (z.B. 2: "rcx * 4")</param>
-    /// <param name="constBytes">optionaler Wert für eine zusätzliche Konstante</param>
+    /// <param name="ext">optionale Zusatzinfos</param>
     /// <returns>fertige Adressierung</returns>
-    static string R64Addr(int index1, int index2, int mulShift2, int constBytes = 0)
+    static string R64Addr(int index1, int index2, int mulShift2, AddrExt ext = AddrExt.None)
     {
-      string t1 = constBytes == 0 || index1 != 5 ? Asm.RegistersR64[index1] : "";
+      int constBytes = 0;
+      bool skip1 = false;
+      bool skip2 = false;
 
-      string t2 = index2 != 4 ? Asm.RegistersR64[index2] : "";
+      if (ext.HasFlag(AddrExt.C1)) { constBytes = 1; }
+      if (ext.HasFlag(AddrExt.Rbp1ToC4) && index1 == 5) { skip1 = true; constBytes = 4; }
+      if (ext.HasFlag(AddrExt.Rsp2Skip) && index2 == 4) { skip2 = true; }
+
+      string t1 = skip1 ? "" : Asm.RegistersR64[index1];
+
+      string t2 = skip2 ? "" : Asm.RegistersR64[index2];
       if (mulShift2 != 0 && t2 != "") t2 += " * " + (1 << mulShift2);
 
       string t3 = constBytes > 0 ? "x" : "";
@@ -90,39 +122,56 @@ namespace OpCodeGenerator
       var opCode = new byte[3];
       int pos = 1;
 
-      // 00 00 - 00 3f
+      #region # // 00 00 - 00 3f
       for (int y = 0; y < 64; y++)
       {
         int rr = opCode[pos] / 8;
         switch (opCode[pos] & 7)
         {
+          default: yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7) + ',' + R8(rr); break;
+
           case 4:
           {
             opCode[++pos] = 0;
             for (int x = 0; x < 256; x++)
             {
               int r1 = opCode[pos] & 7;
-              int r2 = opCode[pos] / 8 & 7;
-              int mul = opCode[pos] / 64 & 3;
-              if (r1 == 5)
-              {
-                yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(r1, r2, mul, 4) + ',' + R8(rr);
-              }
-              else
-              {
-                yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(r1, r2, mul) + ',' + R8(rr);
-              }
+              yield return StrB(opCode, pos, r1 == 5 ? 4 : 0) + Asm.Instructions[0] + R64Addr(r1, opCode[pos] / 8 & 7, opCode[pos] / 64, AddrExt.Rbp1ToC4 | AddrExt.Rsp2Skip) + ',' + R8(rr);
               opCode[pos]++;
             }
             pos--;
           } break;
 
-          case 5: yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, (opCode[pos] & 7) + 16, 0, 4) + ',' + R8(rr); break;
-
-          default: yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7) + ',' + R8(rr); break;
+          case 5:
+          {
+            yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, 21, 0, AddrExt.Rbp1ToC4) + ',' + R8(rr);
+          } break;
         }
         opCode[pos]++;
       }
+      #endregion
+      #region # // 00 40 - 00 7f
+      for (int y = 0; y < 64; y++)
+      {
+        int rr = opCode[pos] / 8 & 7;
+        switch (opCode[pos] & 7)
+        {
+          default: yield return StrB(opCode, pos, 1) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, 4, 0, AddrExt.C1 | AddrExt.Rsp2Skip) + ',' + R8(rr); break;
+
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              yield return StrB(opCode, pos, 1) + Asm.Instructions[0] + R64Addr(opCode[pos] & 7, opCode[pos] / 8 & 7, opCode[pos] / 64 & 3, AddrExt.C1 | AddrExt.Rsp2Skip) + ',' + R8(rr);
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
+        }
+        opCode[pos]++;
+      }
+      #endregion
     }
 
     /// <summary>
@@ -130,7 +179,7 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 1000;
+    const int StartView = 2100;
 
     static void Main(string[] args)
     {
@@ -141,7 +190,7 @@ namespace OpCodeGenerator
       // --- bekannte OpCodes mit den generierten Version vergleichen und beim ersten Fehler stoppen
       for (int i = 0; i < count; i++)
       {
-        if (i >= StartView) Console.WriteLine("  ok: " + gen[i]);
+        if (i >= StartView) Console.WriteLine("  " + i.ToString("N0") + ": " + gen[i]);
         if (gen[i] != known[i])
         {
           Console.WriteLine();
