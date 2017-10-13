@@ -20,16 +20,17 @@ namespace OpCodeGenerator
       foreach (var line in File.ReadLines("KnownOpCodes/0000-.txt")) if (!string.IsNullOrWhiteSpace(line) && line.Trim()[0] != '#') yield return line.Trim();
     }
 
+    #region # // --- Hilfmethoden für die Darstellung ---
     /// <summary>
     /// gibt eine bestimmte Anzahl von Bytes in hexadezimale Schreibweise zurück und endet mit einem Bindestrich (z.B. "00 04 f4 - ")
     /// </summary>
     /// <param name="bytes">Bytes, welche ausgelesen werden sollen</param>
-    /// <param name="count">Anzahl der Bytes, welche ausgelesen werden sollen</param>
+    /// <param name="lastByte">zeig auf das letzte Byte in der Kette, welche ausgelesen werden sollen</param>
     /// <param name="constBytes">optionale zusätzliche Bytes für eine direkte Konstante</param>
-    /// <returns></returns>
-    static string StrB(byte[] bytes, int count, int constBytes = 0)
+    /// <returns>fertige Zeichenkette</returns>
+    static string StrB(byte[] bytes, int lastByte, int constBytes = 0)
     {
-      return string.Join(" ", bytes.Take(count).Select(b => b.ToString("x2")).Concat(Enumerable.Range(0, constBytes).Select(i => "xx"))) + " - ";
+      return string.Join(" ", bytes.Take(lastByte + 1).Select(b => b.ToString("x2")).Concat(Enumerable.Range(0, constBytes).Select(i => "xx"))) + " - ";
     }
 
     /// <summary>
@@ -78,6 +79,7 @@ namespace OpCodeGenerator
     {
       return " " + Asm.RegistersR8[index];
     }
+    #endregion
 
     /// <summary>
     /// generiert alle OpCodes anhand bestimmter Regeln
@@ -86,29 +88,39 @@ namespace OpCodeGenerator
     static IEnumerable<string> GenerateOpCodes()
     {
       var opCode = new byte[3];
-      int opCodeLen = 2;
+      int pos = 1;
 
+      // 00 00 - 00 04
       for (int i = 0; i < 4; i++)
       {
-        yield return StrB(opCode, opCodeLen) + Asm.Instructions[0] + R64Addr(i) + ',' + R8(0);
-        opCode[opCodeLen - 1]++;
+        yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos]) + ',' + R8(0);
+        opCode[pos]++;
       }
-      opCode[opCodeLen++] = 0;
+      // 00 04 xx
+      opCode[++pos] = 0;
       for (int i = 0; i < 256; i++)
       {
-        int r1 = i & 7;
-        int r2 = i / 8 & 7;
-        int mul = i / 64 & 3;
+        int r1 = opCode[pos] & 7;
+        int r2 = opCode[pos] / 8 & 7;
+        int mul = opCode[pos] / 64 & 3;
         if (r1 == 5)
         {
-          yield return StrB(opCode, opCodeLen, 4) + Asm.Instructions[0] + R64Addr(r1, r2, mul, 4) + ',' + R8(0);
+          yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(r1, r2, mul, 4) + ',' + R8(0);
         }
         else
         {
-          yield return StrB(opCode, opCodeLen) + Asm.Instructions[0] + R64Addr(r1, r2, mul) + ',' + R8(0);
+          yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(r1, r2, mul) + ',' + R8(0);
         }
-        opCode[opCodeLen - 1]++;
+        opCode[pos]++;
       }
+      opCode[--pos]++;
+      // 00 05 - 00 07
+      yield return StrB(opCode, pos, 4) + Asm.Instructions[0] + R64Addr(opCode[pos], opCode[pos] + 16, 0, 4) + ',' + R8(0);
+      opCode[pos]++;
+      yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos]) + ',' + R8(0);
+      opCode[pos]++;
+      yield return StrB(opCode, pos) + Asm.Instructions[0] + R64Addr(opCode[pos]) + ',' + R8(0);
+      opCode[pos]++;
 
     }
 
@@ -144,18 +156,18 @@ namespace OpCodeGenerator
       {
         Console.WriteLine("Missing known-opcodes: {0:N0}", gen.Length - known.Length);
         Console.WriteLine();
-        for (int i = count; i < Math.Min(SamplePreview, known.Length); i++)
+        for (int i = count; i < Math.Min(count + SamplePreview, gen.Length); i++)
         {
-          Console.WriteLine("  gen: " + known[i]);
+          Console.WriteLine("  gen: " + gen[i]);
         }
-        if (known.Length > SamplePreview) Console.WriteLine("  gen: ...");
+        if (gen.Length > SamplePreview) Console.WriteLine("  gen: ...");
         Console.WriteLine();
       }
       if (gen.Length < known.Length)
       {
         Console.WriteLine("Missing generated-opcodes: {0:N0}", known.Length - gen.Length);
         Console.WriteLine();
-        for (int i = count; i < Math.Min(SamplePreview, known.Length); i++)
+        for (int i = count; i < Math.Min(count + SamplePreview, known.Length); i++)
         {
           Console.WriteLine("  known: " + known[i]);
         }
