@@ -52,6 +52,6 @@
     /// <summary>
     /// Namen der Assembler-Befehle
     /// </summary>
-    public static readonly string[] Instructions = { "add" };
+    public static readonly string[] Instructions = { "add", "or" };
   }
 }
