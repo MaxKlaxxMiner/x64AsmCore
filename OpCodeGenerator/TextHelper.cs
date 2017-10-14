@@ -92,5 +92,44 @@ namespace OpCodeGenerator
         }
       }
     }
+
+    static string ReplaceInstruction(string line, string newInstruction)
+    {
+      try
+      {
+        if (line.Trim() == "" || line.Trim()[0] == '#') return line;
+        string t = line;
+        int p = t.IndexOf(" - ");
+        string r = t.Substring(0, p + 3);
+        t = t.Remove(0, p + 3);
+        p = t.IndexOf(' ');
+        r += newInstruction + " ";
+        r += t.Remove(0, p + 1);
+
+        return r;
+      }
+      catch
+      {
+        Console.WriteLine("err: " + line);
+        return line;
+      }
+    }
+
+    /// <summary>
+    /// ersetzt die Instruktion in allen Zeilen
+    /// </summary>
+    /// <param name="inputFile">Datei, welche gelesen werden soll</param>
+    /// <param name="outputFile">Datei, welche mit neuen Instruktionen geschrieben werden soll</param>
+    /// <param name="newInstruction">neue Instruktion</param>
+    public static void ReplaceInstrucion(string inputFile, string outputFile, string newInstruction)
+    {
+      using (var w = new StreamWriter(outputFile))
+      {
+        foreach (var r in File.ReadLines(inputFile))
+        {
+          w.WriteLine(ReplaceInstruction(r, newInstruction));
+        }
+      }
+    }
   }
 }

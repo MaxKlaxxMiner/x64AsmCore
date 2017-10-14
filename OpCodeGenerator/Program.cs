@@ -17,7 +17,7 @@ namespace OpCodeGenerator
     /// <returns>Enumerable der Zeilen, welche gelesen wurden</returns>
     static IEnumerable<string> ReadKnownOpCodes()
     {
-      string[] files = { "00", "01", "02", "03", "04-07" };
+      string[] files = { "00", "01", "02", "03", "04-07", "08", "09", "0a", "0b" };
       foreach (var file in files)
       {
         foreach (var line in File.ReadLines("KnownOpCodes/" + file + ".txt")) if (!string.IsNullOrWhiteSpace(line) && line.Trim()[0] != '#') yield return line.Trim();
@@ -34,7 +34,8 @@ namespace OpCodeGenerator
     static void Main()
     {
       //TextHelper.SwapOperands("KnownOpCodes/01.txt", "tmp.txt");
-      //TextHelper.ReplaceFirstOpcodes("tmp.txt", "tmp2.txt", "03");
+      //TextHelper.ReplaceInstrucion("KnownOpCodes/03.txt", "tmp.txt", "or");
+      //TextHelper.ReplaceFirstOpcodes("tmp.txt", "tmp2.txt", "0b");
       //return;
 
       var known = ReadKnownOpCodes().ToArray();
