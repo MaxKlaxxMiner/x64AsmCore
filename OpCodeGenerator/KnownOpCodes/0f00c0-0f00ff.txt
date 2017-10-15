@@ -16,41 +16,41 @@
 0f 00 ce - str esi
 0f 00 cf - str edi
 
-0f 00 d0 - lldt eax
-0f 00 d1 - lldt ecx
-0f 00 d2 - lldt edx
-0f 00 d3 - lldt ebx
-0f 00 d4 - lldt esp
-0f 00 d5 - lldt ebp
-0f 00 d6 - lldt esi
-0f 00 d7 - lldt edi
+0f 00 d0 - lldt ax
+0f 00 d1 - lldt cx
+0f 00 d2 - lldt dx
+0f 00 d3 - lldt bx
+0f 00 d4 - lldt sp
+0f 00 d5 - lldt bp
+0f 00 d6 - lldt si
+0f 00 d7 - lldt di
 
-0f 00 d8 - ltr eax
-0f 00 d9 - ltr ecx
-0f 00 da - ltr edx
-0f 00 db - ltr ebx
-0f 00 dc - ltr esp
-0f 00 dd - ltr ebp
-0f 00 de - ltr esi
-0f 00 df - ltr edi
+0f 00 d8 - ltr ax
+0f 00 d9 - ltr cx
+0f 00 da - ltr dx
+0f 00 db - ltr bx
+0f 00 dc - ltr sp
+0f 00 dd - ltr bp
+0f 00 de - ltr si
+0f 00 df - ltr di
 
-0f 00 e0 - verr eax
-0f 00 e1 - verr ecx
-0f 00 e2 - verr edx
-0f 00 e3 - verr ebx
-0f 00 e4 - verr esp
-0f 00 e5 - verr ebp
-0f 00 e6 - verr esi
-0f 00 e7 - verr edi
+0f 00 e0 - verr ax
+0f 00 e1 - verr cx
+0f 00 e2 - verr dx
+0f 00 e3 - verr bx
+0f 00 e4 - verr sp
+0f 00 e5 - verr bp
+0f 00 e6 - verr si
+0f 00 e7 - verr di
 
-0f 00 e8 - verw eax
-0f 00 e9 - verw ecx
-0f 00 ea - verw edx
-0f 00 eb - verw ebx
-0f 00 ec - verw esp
-0f 00 ed - verw ebp
-0f 00 ee - verw esi
-0f 00 ef - verw edi
+0f 00 e8 - verw ax
+0f 00 e9 - verw cx
+0f 00 ea - verw dx
+0f 00 eb - verw bx
+0f 00 ec - verw sp
+0f 00 ed - verw bp
+0f 00 ee - verw si
+0f 00 ef - verw di
 
 0f 00 f0 - ???
 0f 00 f1 - ???
