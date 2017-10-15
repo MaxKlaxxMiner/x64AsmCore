@@ -132,13 +132,13 @@ namespace OpCodeGenerator
       }
     }
 
-    static string ReplaceFirstChars(string line, string newChars)
+    static string ReplaceFirstChars(string line, string newChars, int removeLen)
     {
       try
       {
         if (line.Trim() == "" || line.Trim()[0] == '#') return line;
         string t = line;
-        return newChars + t.Remove(0, newChars.Length);
+        return newChars + t.Remove(0, removeLen);
       }
       catch
       {
@@ -153,13 +153,14 @@ namespace OpCodeGenerator
     /// <param name="inputFile">Datei, welche gelesen werden soll</param>
     /// <param name="outputFile">Datei, welche mit neuen Instruktionen geschrieben werden soll</param>
     /// <param name="newChars">neue Zeichen, welche mit der gleichen Länge ersetzt werden sollen</param>
-    public static void ReplaceFirstChars(string inputFile, string outputFile, string newChars)
+    /// <param name="removeLen">optional: festgelegte Anzahl der Zeichen, welche entfernt werden sollen</param>
+    public static void ReplaceFirstChars(string inputFile, string outputFile, string newChars, int removeLen = -1)
     {
       using (var w = new StreamWriter(outputFile))
       {
         foreach (var r in File.ReadLines(inputFile))
         {
-          w.WriteLine(ReplaceFirstChars(r, newChars));
+          w.WriteLine(ReplaceFirstChars(r, newChars, removeLen >= 0 ? removeLen : newChars.Length));
         }
       }
     }
