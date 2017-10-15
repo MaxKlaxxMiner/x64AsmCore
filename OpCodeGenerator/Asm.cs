@@ -53,5 +53,15 @@
     /// Namen der Assembler-Befehle
     /// </summary>
     public static readonly string[] Instructions = { "add", "or" };
+
+    /// <summary>
+    /// Namen der Assembler-Befehle, welche mit 0x0f beginnen
+    /// </summary>
+    public static readonly string[] InstructionsF = { "sldt", "str" };
+
+    /// <summary>
+    /// Bezeichnung der Größe des Elementes, welches im Speicher verarbeitet werden soll
+    /// </summary>
+    public static readonly string[] MemType = { " byte ptr", " word ptr", " dword ptr", " qword ptr" };
   }
 }

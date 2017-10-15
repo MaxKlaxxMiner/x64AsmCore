@@ -349,6 +349,36 @@ namespace OpCodeGenerator
       opCode[pos - 1]++;
     }
 
+    static IEnumerable<string> OpInternalF(byte[] opCode, int pos, int instr)
+    {
+      for (int y = 0; y < 8; y++)
+      {
+        switch (opCode[pos] & 7)
+        {
+          default: yield return StrB(opCode, pos) + Asm.InstructionsF[instr] + Asm.MemType[1] + R64Addr(opCode[pos] & 7); break;
+
+          case 4:
+          {
+            opCode[++pos] = 0;
+            for (int x = 0; x < 256; x++)
+            {
+              int r1 = opCode[pos] & 7;
+              yield return StrB(opCode, pos, r1 == 5 ? 4 : 0) + Asm.InstructionsF[instr] + Asm.MemType[1] + R64Addr(r1, opCode[pos] / 8 & 7, opCode[pos] / 64, AddrExt.Rbp1ToC4 | AddrExt.Rsp2Skip);
+              opCode[pos]++;
+            }
+            pos--;
+          } break;
+
+          case 5:
+          {
+            yield return StrB(opCode, pos, 4) + Asm.InstructionsF[instr] + Asm.MemType[1] + R64Addr(opCode[pos] & 7, 21, 0, AddrExt.Rbp1ToC4);
+          } break;
+        }
+
+        opCode[pos]++;
+      }
+    }
+
     /// <summary>
     /// generiert alle OpCodes anhand bestimmter Regeln
     /// </summary>
@@ -358,31 +388,30 @@ namespace OpCodeGenerator
       var opCode = new byte[3];
       int pos = 1;
 
-      // --- ADD: 00 - 03 ---
+      // --- 00 - 03:          ADD
       foreach (var line in OpInternal(opCode, pos, 0)) yield return line;
-      // --- ADD al, const ---
-      yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[0] + R8(0) + ", x";
-      opCode[pos - 1]++;
-      // --- ADD eax, const ---
-      yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[0] + R32(0) + ", x";
-      opCode[pos - 1]++;
-      // --- 06 - ??? ---
-      yield return StrB(opCode, pos - 1) + "???";
-      opCode[pos - 1]++;
-      // --- 07 - ??? ---
-      yield return StrB(opCode, pos - 1) + "???";
-      opCode[pos - 1]++;
+      // --- 04:               ADD al, const
+      yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[0] + R8(0) + ", x"; opCode[pos - 1]++;
+      // --- 05:               ADD eax, const
+      yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[0] + R32(0) + ", x"; opCode[pos - 1]++;
+      // --- 06:               ???
+      yield return StrB(opCode, pos - 1) + "???"; opCode[pos - 1]++;
+      // --- 07:               ???
+      yield return StrB(opCode, pos - 1) + "???"; opCode[pos - 1]++;
 
-      // --- OR: 08 - 0b ---
+      // --- 08 - 0b:          OR
       foreach (var line in OpInternal(opCode, pos, 1)) yield return line;
-      // --- OR al, const ---
-      yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[1] + R8(0) + ", x";
-      opCode[pos - 1]++;
-      // --- OR eax, const ---
-      yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[1] + R32(0) + ", x";
-      opCode[pos - 1]++;
-      // --- 0f - ??? ---
-      yield return StrB(opCode, pos - 1) + "???";
+      // --- 0c:               OR al, const
+      yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[1] + R8(0) + ", x"; opCode[pos - 1]++;
+      // --- 0d:               OR eax, const
+      yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[1] + R32(0) + ", x"; opCode[pos - 1]++;
+      // --- 0e:               ???
+      yield return StrB(opCode, pos - 1) + "???"; opCode[pos - 1]++;
+      // --- 0f 00 - 0f 07     SLDT
+      foreach (var line in OpInternalF(opCode, pos, 0)) yield return line;
+      // --- 0f 08 - 0f 0f     STR
+      foreach (var line in OpInternalF(opCode, pos, 1)) yield return line;
+
     }
   }
 }
