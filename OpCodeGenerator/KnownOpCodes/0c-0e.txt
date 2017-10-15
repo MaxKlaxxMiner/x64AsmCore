@@ -1,0 +1,3 @@
+﻿0c xx - or al, x
+0d xx xx xx xx - or eax, x
+0e - ???
