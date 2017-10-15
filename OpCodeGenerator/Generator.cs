@@ -385,7 +385,7 @@ namespace OpCodeGenerator
     /// <returns>Enumerable der Zeilen, welche generiert wurden</returns>
     public static IEnumerable<string> GenerateOpCodes()
     {
-      var opCode = new byte[3];
+      var opCode = new byte[15];
       int pos = 1;
 
       // --- 00 - 03:          ADD
@@ -407,18 +407,21 @@ namespace OpCodeGenerator
       yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[1] + R32(0) + ", x"; opCode[pos - 1]++;
       // --- 0e:               ???
       yield return StrB(opCode, pos - 1) + "???"; opCode[pos - 1]++;
-      // --- 0f 00 - 0f 07     SLDT
+
+      pos++;
+      // --- 0f 00 00 - 0f 00 07  SLDT
       foreach (var line in OpInternalF(opCode, pos, 0)) yield return line;
-      // --- 0f 08 - 0f 0f     STR
+      // --- 0f 00 08 - 0f 00 0f  STR
       foreach (var line in OpInternalF(opCode, pos, 1)) yield return line;
-      // --- 0f 10 - 0f 17     LLDT
+      // --- 0f 00 10 - 0f 00 17  LLDT
       foreach (var line in OpInternalF(opCode, pos, 2)) yield return line;
-      // --- 0f 18 - 0f 1f     LTR
+      // --- 0f 00 18 - 0f 00 1f  LTR
       foreach (var line in OpInternalF(opCode, pos, 3)) yield return line;
-      // --- 0f 20 - 0f 27     VERR
+      // --- 0f 00 20 - 0f 00 27  VERR
       foreach (var line in OpInternalF(opCode, pos, 4)) yield return line;
-      // --- 0f 28 - 0f 2f     VERW
+      // --- 0f 00 28 - 0f 00 2f  VERW
       foreach (var line in OpInternalF(opCode, pos, 5)) yield return line;
+      pos--;
 
     }
   }
