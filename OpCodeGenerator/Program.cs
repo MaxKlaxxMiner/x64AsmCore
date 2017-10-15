@@ -29,7 +29,7 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 52000;
+    const int StartView = 52500;
 
     static void Main()
     {

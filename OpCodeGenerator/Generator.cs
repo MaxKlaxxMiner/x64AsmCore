@@ -415,6 +415,10 @@ namespace OpCodeGenerator
       foreach (var line in OpInternalF(opCode, pos, 2)) yield return line;
       // --- 0f 18 - 0f 1f     LTR
       foreach (var line in OpInternalF(opCode, pos, 3)) yield return line;
+      // --- 0f 20 - 0f 27     VERR
+      foreach (var line in OpInternalF(opCode, pos, 4)) yield return line;
+      // --- 0f 28 - 0f 2f     VERW
+      foreach (var line in OpInternalF(opCode, pos, 5)) yield return line;
 
     }
   }
