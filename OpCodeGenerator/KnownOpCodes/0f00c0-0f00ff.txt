@@ -1,0 +1,70 @@
+﻿0f 00 c0 - sldt eax
+0f 00 c1 - sldt ecx
+0f 00 c2 - sldt edx
+0f 00 c3 - sldt ebx
+0f 00 c4 - sldt esp
+0f 00 c5 - sldt ebp
+0f 00 c6 - sldt esi
+0f 00 c7 - sldt edi
+
+0f 00 c8 - str eax
+0f 00 c9 - str ecx
+0f 00 ca - str edx
+0f 00 cb - str ebx
+0f 00 cc - str esp
+0f 00 cd - str ebp
+0f 00 ce - str esi
+0f 00 cf - str edi
+
+0f 00 d0 - lldt eax
+0f 00 d1 - lldt ecx
+0f 00 d2 - lldt edx
+0f 00 d3 - lldt ebx
+0f 00 d4 - lldt esp
+0f 00 d5 - lldt ebp
+0f 00 d6 - lldt esi
+0f 00 d7 - lldt edi
+
+0f 00 d8 - ltr eax
+0f 00 d9 - ltr ecx
+0f 00 da - ltr edx
+0f 00 db - ltr ebx
+0f 00 dc - ltr esp
+0f 00 dd - ltr ebp
+0f 00 de - ltr esi
+0f 00 df - ltr edi
+
+0f 00 e0 - verr eax
+0f 00 e1 - verr ecx
+0f 00 e2 - verr edx
+0f 00 e3 - verr ebx
+0f 00 e4 - verr esp
+0f 00 e5 - verr ebp
+0f 00 e6 - verr esi
+0f 00 e7 - verr edi
+
+0f 00 e8 - verw eax
+0f 00 e9 - verw ecx
+0f 00 ea - verw edx
+0f 00 eb - verw ebx
+0f 00 ec - verw esp
+0f 00 ed - verw ebp
+0f 00 ee - verw esi
+0f 00 ef - verw edi
+
+0f 00 f0 - ???
+0f 00 f1 - ???
+0f 00 f2 - ???
+0f 00 f3 - ???
+0f 00 f4 - ???
+0f 00 f5 - ???
+0f 00 f6 - ???
+0f 00 f7 - ???
+0f 00 f8 - ???
+0f 00 f9 - ???
+0f 00 fa - ???
+0f 00 fb - ???
+0f 00 fc - ???
+0f 00 fd - ???
+0f 00 fe - ???
+0f 00 ff - ???
