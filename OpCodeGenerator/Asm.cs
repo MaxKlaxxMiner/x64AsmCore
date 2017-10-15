@@ -57,7 +57,7 @@
     /// <summary>
     /// Namen der Assembler-Befehle, welche mit 0x0f beginnen
     /// </summary>
-    public static readonly string[] InstructionsF = { "sldt", "str" };
+    public static readonly string[] InstructionsF = { "sldt", "str", "lldt", "ltr" };
 
     /// <summary>
     /// Bezeichnung der Größe des Elementes, welches im Speicher verarbeitet werden soll

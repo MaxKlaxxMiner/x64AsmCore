@@ -411,6 +411,10 @@ namespace OpCodeGenerator
       foreach (var line in OpInternalF(opCode, pos, 0)) yield return line;
       // --- 0f 08 - 0f 0f     STR
       foreach (var line in OpInternalF(opCode, pos, 1)) yield return line;
+      // --- 0f 10 - 0f 17     LLDT
+      foreach (var line in OpInternalF(opCode, pos, 2)) yield return line;
+      // --- 0f 18 - 0f 1f     LTR
+      foreach (var line in OpInternalF(opCode, pos, 3)) yield return line;
 
     }
   }
