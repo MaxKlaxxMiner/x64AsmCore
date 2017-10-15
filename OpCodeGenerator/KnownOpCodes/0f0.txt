@@ -258,7 +258,7 @@
 0f 04 fd xx xx xx xx - sldt word ptr [rdi * 8 + x]
 0f 04 fe - sldt word ptr [rsi + rdi * 8]
 0f 04 ff - sldt word ptr [rdi + rdi * 8]
-0f 05 - sldt word ptr [rip + x]
+0f 05 xx xx xx xx - sldt word ptr [rip + x]
 0f 06 - sldt word ptr [rsi]
 0f 07 - sldt word ptr [rdi]
 
@@ -522,6 +522,6 @@
 0f 0c fd xx xx xx xx - str word ptr [rdi * 8 + x]
 0f 0c fe - str word ptr [rsi + rdi * 8]
 0f 0c ff - str word ptr [rdi + rdi * 8]
-0f 0d - str word ptr [rip + x]
+0f 0d xx xx xx xx - str word ptr [rip + x]
 0f 0e - str word ptr [rsi]
 0f 0f - str word ptr [rdi]
