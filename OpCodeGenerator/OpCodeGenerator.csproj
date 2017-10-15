@@ -84,7 +84,10 @@
     <Content Include="KnownOpCodes\04-07.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="KnownOpCodes\0f00.txt">
+    <Content Include="KnownOpCodes\0f0040-0f007f.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="KnownOpCodes\0f0000-0f003f.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
