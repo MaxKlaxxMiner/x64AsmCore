@@ -131,5 +131,37 @@ namespace OpCodeGenerator
         }
       }
     }
+
+    static string ReplaceFirstChars(string line, string newChars)
+    {
+      try
+      {
+        if (line.Trim() == "" || line.Trim()[0] == '#') return line;
+        string t = line;
+        return newChars + t.Remove(0, newChars.Length);
+      }
+      catch
+      {
+        Console.WriteLine("err: " + line);
+        return line;
+      }
+    }
+
+    /// <summary>
+    /// erstzt die ersten Zeichen in jeder Zeile (opcodes)
+    /// </summary>
+    /// <param name="inputFile">Datei, welche gelesen werden soll</param>
+    /// <param name="outputFile">Datei, welche mit neuen Instruktionen geschrieben werden soll</param>
+    /// <param name="newChars">neue Zeichen, welche mit der gleichen Länge ersetzt werden sollen</param>
+    public static void ReplaceFirstChars(string inputFile, string outputFile, string newChars)
+    {
+      using (var w = new StreamWriter(outputFile))
+      {
+        foreach (var r in File.ReadLines(inputFile))
+        {
+          w.WriteLine(ReplaceFirstChars(r, newChars));
+        }
+      }
+    }
   }
 }
