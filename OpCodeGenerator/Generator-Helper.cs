@@ -22,9 +22,23 @@ namespace OpCodeGenerator
     /// </summary>
     /// <param name="index">Index auf den Register (z.B. 2: "rdx")</param>
     /// <returns>fertige Adressierung</returns>
-    static string R64Addr(int index)
+    /// <param name="ext">optionale Zusatzinfos</param>
+    static string R64Addr(int index, AddrExt ext = AddrExt.None)
     {
-      return " [" + Asm.RegistersR64[index] + "]";
+      int constBytes = 0;
+      if (ext.HasFlag(AddrExt.C1)) { constBytes = 1; }
+      if (ext.HasFlag(AddrExt.C4)) { constBytes = 4; }
+
+      string t1 = Asm.RegistersR64[index];
+
+      string t2 = constBytes > 0 ? "x" : "";
+
+      string str = t1;
+      if (str != "" && t2 != "") str += " + ";
+      str += t2;
+      if (str == "") str = "0";
+
+      return " [" + str + "]";
     }
 
     /// <summary>
@@ -99,6 +113,16 @@ namespace OpCodeGenerator
     static string R8(int index)
     {
       return " " + Asm.RegistersR8[index];
+    }
+
+    /// <summary>
+    /// gibt einen 16-Bit Register zurück mit Leerzeichen am Anfang (z.B. " ax")
+    /// </summary>
+    /// <param name="index">Index auf den Register (z.B. 2: "dx")</param>
+    /// <returns>fertiger Register</returns>
+    static string R16(int index)
+    {
+      return " " + Asm.RegistersR16[index];
     }
 
     /// <summary>

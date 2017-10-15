@@ -17,7 +17,11 @@ namespace OpCodeGenerator
     /// <returns>Enumerable der Zeilen, welche gelesen wurden</returns>
     static IEnumerable<string> ReadKnownOpCodes()
     {
-      string[] files = { "00", "01", "02", "03", "04-07", "08", "09", "0a", "0b", "0c-0e", "0f00" };
+      string[] files = 
+      {
+        "00", "01", "02", "03", "04-07", "08", "09", "0a", "0b", "0c-0e",
+        "0f0000-0f003f", "0f0040-0f007f", "0f0080-0f00bf", "0f00c0-0f00ff"
+      };
       foreach (var file in files)
       {
         foreach (var line in File.ReadLines("KnownOpCodes/" + file + ".txt")) if (!string.IsNullOrWhiteSpace(line) && line.Trim()[0] != '#') yield return line.Trim();
@@ -29,7 +33,7 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 52500;
+    const int StartView = 55800;
 
     static void Main()
     {

@@ -57,7 +57,7 @@
     /// <summary>
     /// Namen der Assembler-Befehle, welche mit 0x0f beginnen
     /// </summary>
-    public static readonly string[] InstructionsF = 
+    public static readonly string[] InstructionsF =
     {
       "sldt", "str",
       "lldt", "ltr",
