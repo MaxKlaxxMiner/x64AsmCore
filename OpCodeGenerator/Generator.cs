@@ -358,9 +358,8 @@ namespace OpCodeGenerator
       var opCode = new byte[3];
       int pos = 1;
 
-      // ADD: 00 - 03
+      // --- ADD: 00 - 03 ---
       foreach (var line in OpInternal(opCode, pos, 0)) yield return line;
-
       // --- ADD al, const ---
       yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[0] + R8(0) + ", x";
       opCode[pos - 1]++;
@@ -374,8 +373,16 @@ namespace OpCodeGenerator
       yield return StrB(opCode, pos - 1) + "???";
       opCode[pos - 1]++;
 
-      // OR: 08 - 0b
+      // --- OR: 08 - 0b ---
       foreach (var line in OpInternal(opCode, pos, 1)) yield return line;
+      // --- OR al, const ---
+      yield return StrB(opCode, pos - 1, 1) + Asm.Instructions[1] + R8(0) + ", x";
+      opCode[pos - 1]++;
+      // --- OR eax, const ---
+      yield return StrB(opCode, pos - 1, 4) + Asm.Instructions[1] + R32(0) + ", x";
+      opCode[pos - 1]++;
+      // --- 0f - ??? ---
+      yield return StrB(opCode, pos - 1) + "???";
     }
   }
 }
