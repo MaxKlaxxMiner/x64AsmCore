@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Asm.cs" />
+    <Compile Include="DeAsm\AsmResult.cs" />
+    <Compile Include="DeAsm\DeAsm64.cs" />
+    <Compile Include="GeneratorV2.cs" />
     <Compile Include="Generator-Helper.cs" />
     <Compile Include="Generator.cs" />
     <Compile Include="Program.cs" />

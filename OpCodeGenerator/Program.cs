@@ -17,7 +17,7 @@ namespace OpCodeGenerator
     /// <returns>Enumerable der Zeilen, welche gelesen wurden</returns>
     static IEnumerable<string> ReadKnownOpCodes()
     {
-      string[] files = 
+      string[] files =
       {
         "00", "01", "02", "03", "04-07", "08", "09", "0a", "0b", "0c-0e",
         "0f0000-0f003f", "0f0040-0f007f", "0f0080-0f00bf", "0f00c0-0f00ff"
@@ -44,7 +44,8 @@ namespace OpCodeGenerator
       //return;
 
       var known = ReadKnownOpCodes().ToArray();
-      var gen = Generator.GenerateOpCodes().ToArray();
+      //var gen = Generator.GenerateOpCodes().ToArray();
+      var gen = GeneratorV2.GenerateOpCodes().ToArray();
       int count = Math.Min(known.Length, gen.Length);
 
       // --- bekannte OpCodes mit den generierten Version vergleichen und beim ersten Fehler stoppen
