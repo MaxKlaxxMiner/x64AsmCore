@@ -9,7 +9,7 @@ using System.Linq;
 
 namespace OpCodeGenerator
 {
-  class Program
+  static partial class Program
   {
     /// <summary>
     /// liest alle bekannten, von Hand geschriebenen OpCodes aus Textdateien herraus und gibt diese zurück
@@ -42,6 +42,9 @@ namespace OpCodeGenerator
       //TextHelper.ReplaceFirstOpcodes("tmp.txt", "tmp2.txt", "0b");
       //TextHelper.ReplaceFirstChars("KnownOpCodes/0f00.txt", "tmp.txt", "0f 00 ", 3);
       //return;
+
+      DeAsmTest();
+      return;
 
       var known = ReadKnownOpCodes().ToArray();
       //var gen = Generator.GenerateOpCodes().ToArray();

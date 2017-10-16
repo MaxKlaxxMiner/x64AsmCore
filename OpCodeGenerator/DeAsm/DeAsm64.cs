@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+// ReSharper disable MemberCanBePrivate.Global
 
 namespace OpCodeGenerator.DeAsm
 {
@@ -17,7 +18,7 @@ namespace OpCodeGenerator.DeAsm
     /// <param name="code">Byte-Array, wo sich der Code befindet</param>
     /// <param name="codeOffset">Startposition innerhalb der Arrays</param>
     /// <returns></returns>
-    public static AsmResult DeCodeAsm(byte[] code, uint codeOffset)
+    public static AsmResult Decode(byte[] code, uint codeOffset)
     {
       if (code == null || code.Length == 0) throw new ArgumentNullException("code");
       if (codeOffset >= code.Length) throw new ArgumentOutOfRangeException("codeOffset");
@@ -27,8 +28,40 @@ namespace OpCodeGenerator.DeAsm
       {
         ulong opcodeLo = *(ulong*)codeP;
         ulong opcodeHi = *(ulong*)(codeP + sizeof(ulong));
-        ulong insCode = DeCodeAsm(codeP);
+        ulong insCode = Decode(codeP);
         return new AsmResult(opcodeLo, opcodeHi, insCode);
+      }
+    }
+
+    /// <summary>
+    /// Klasse, um sich den aktuellen Dekodierungstatus zu merken
+    /// </summary>
+    sealed class DecodeStatus
+    {
+      /// <summary>
+      /// gibt an, ob die gesamte Instruktion als ungültig erkannt wurde
+      /// </summary>
+      public bool invalid;
+      /// <summary>
+      /// merkt sich die aktuell erkannte Instruktion
+      /// </summary>
+      public Ins.Instruction ins;
+    }
+
+    /// <summary>
+    /// dekodiert eine allgemeine Instruktion
+    /// </summary>
+    /// <param name="code">Zeiger auf die aktuell zu lesende Bytefolge</param>
+    /// <param name="maxRemain">maximale Anzahl der Bytes, welche noch verarbeitet werden dürfen</param>
+    /// <param name="status">aktueller Status der Dekodierung</param>
+    /// <returns>Anzahl der Bytes, welche vearbeitet wurden</returns>
+    static int DecodeInternal(byte* code, int maxRemain, DecodeStatus status)
+    {
+      switch (*code)
+      {
+        case 0x06: status.invalid = true; return 1;
+        case 0xcc: status.ins = Ins.Instruction.Int3; return 1;
+        default: throw new NotImplementedException("todo");
       }
     }
 
@@ -37,13 +70,21 @@ namespace OpCodeGenerator.DeAsm
     /// </summary>
     /// <param name="code">Zeiger auf den Opcode, welcher dekodiert werden soll</param>
     /// <returns>fertig dekodierte Instruktion</returns>
-    static ulong DeCodeAsm(byte* code)
+    public static ulong Decode(byte* code)
     {
-      ulong insCode = 0;
+      var status = new DecodeStatus();
+      int length = DecodeInternal(code, (int)Ins.MaxLength, status);
 
-      throw new NotImplementedException("todo");
+      if (status.invalid || status.ins == Ins.Instruction.Invalid)
+      {
+        return Ins.SetInstruction(Ins.SetLength(0, 1), Ins.Instruction.Invalid); // ungültige Codefolge erkannt
+      }
 
-      return insCode;
+      ulong insCodes = Ins.SetLength(0, (uint)length); // Länge der Instruktion setzen
+
+      insCodes = Ins.SetInstruction(insCodes, status.ins); // Instruktion selbst setzen
+
+      return insCodes; // fertig kodierten Instruktions-Wert zurück geben
     }
   }
 }

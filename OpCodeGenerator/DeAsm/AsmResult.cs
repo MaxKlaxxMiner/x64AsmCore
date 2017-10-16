@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 // ReSharper disable UnusedMember.Global
 // ReSharper disable NotAccessedField.Local
+// ReSharper disable MemberCanBePrivate.Global
 #endregion
 
 namespace OpCodeGenerator.DeAsm
@@ -77,6 +78,39 @@ namespace OpCodeGenerator.DeAsm
       this.opcodeLo = opcodeLo & MaskLo[len];
       this.opcodeHi = opcodeHi & MaskHi[len];
       this.insCodes = insCodes;
+    }
+
+    /// <summary>
+    /// gibt eine bestimmte Anzahl von Bytes in hexadezimale Schreibweise zurück und endet mit einem Bindestrich (z.B. "00 04 f4 - ")
+    /// </summary>
+    /// <param name="bytes">Bytes, welche ausgelesen werden sollen</param>
+    /// <param name="lastByte">zeig auf das letzte Byte in der Kette, welche ausgelesen werden sollen</param>
+    /// <param name="constBytes">optionale zusätzliche Bytes für eine direkte Konstante</param>
+    /// <returns>fertige Zeichenkette</returns>
+    static string StrB(byte[] bytes, int lastByte, int constBytes = 0)
+    {
+      return string.Join(" ", bytes.Take(lastByte + 1).Select(b => b.ToString("x2")).Concat(Enumerable.Range(0, constBytes).Select(i => "xx"))) + " - ";
+    }
+
+    /// <summary>
+    /// langsame Dekodierungs-Variante mit voller Schreibweise inkl. Opcodes
+    /// </summary>
+    /// <returns>fertige dekodierte Zeile</returns>
+    public string FullDecodeSlow()
+    {
+      uint len = Length;
+      if (len >= 8) throw new NotImplementedException();
+
+      return StrB(BitConverter.GetBytes(opcodeLo), (int)len - 1) + Ins.GetInstructionName(insCodes).ToLower();
+    }
+
+    /// <summary>
+    /// gibt den Inhalt als lesbare Zeichenfolge zurück
+    /// </summary>
+    /// <returns></returns>
+    public override string ToString()
+    {
+      return FullDecodeSlow();
     }
   }
 }
