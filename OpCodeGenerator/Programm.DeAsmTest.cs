@@ -19,10 +19,16 @@ namespace OpCodeGenerator
       {
         0x06, // ??? (invalid code)
         0xcc, // int3
+        0x00, 0xeb, // add bl, ch
       };
 
-      Console.WriteLine(DeAsm64.Decode(testOpcodes, 0).ToString()); // 06 - ???
-      Console.WriteLine(DeAsm64.Decode(testOpcodes, 1).ToString()); // cc - int3
+      uint ofs = 0;
+      while (ofs < testOpcodes.Length)
+      {
+        var res = DeAsm64.Decode(testOpcodes, ofs);
+        Console.WriteLine(res.ToString());
+        ofs += res.Length;
+      }
 
       // --- auf Tastendruck warten, falls mit VS im Debug-Modus gestartet wurde (Fenster würde sich sonst sofort schließen) ---
       Console.WriteLine();

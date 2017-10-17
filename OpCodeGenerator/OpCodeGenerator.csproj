@@ -48,8 +48,11 @@
     <Compile Include="Asm.cs" />
     <Compile Include="DeAsm\AsmResult.cs" />
     <Compile Include="DeAsm\DeAsm64.cs" />
+    <Compile Include="DeAsm\Ins.ParamType.cs" />
     <Compile Include="DeAsm\Ins.Instruction.cs" />
     <Compile Include="DeAsm\Ins.Length.cs" />
+    <Compile Include="DeAsm\Instruction.cs" />
+    <Compile Include="DeAsm\ParamType.cs" />
     <Compile Include="GeneratorV2.cs" />
     <Compile Include="Generator-Helper.cs" />
     <Compile Include="Generator.cs" />

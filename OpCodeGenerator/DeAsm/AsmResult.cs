@@ -92,6 +92,37 @@ namespace OpCodeGenerator.DeAsm
       return string.Join(" ", bytes.Take(lastByte + 1).Select(b => b.ToString("x2")).Concat(Enumerable.Range(0, constBytes).Select(i => "xx"))) + " - ";
     }
 
+    string DecodeParam(ParamType paramType, uint paramData)
+    {
+      switch (paramType)
+      {
+        case ParamType.Reg8: return Asm.RegistersR8[paramData];
+        default: throw new NotImplementedException("todo: " + paramType);
+      }
+    }
+
+    /// <summary>
+    /// dekodiert die Parameter (sofern vorhanden) und gibt diese zurück (mit Leerzeichen am Anfang)
+    /// </summary>
+    /// <returns>lesbare Parameter</returns>
+    string DecodeSlowParams()
+    {
+      var p1 = Ins.GetParam1Type(insCodes);
+      var p2 = Ins.GetParam2Type(insCodes);
+
+      if (p1 == ParamType.None) return ""; // keine Parameter vorhanden
+      var d1 = Ins.GetParam1Data(insCodes);
+
+      string tmp = " " + DecodeParam(p1, d1);
+      if (p2 !=  ParamType.None) // zweiter Parameter vorhanden?
+      {
+        var d2 = Ins.GetParam2Data(insCodes);
+        tmp += ", " + DecodeParam(p2, d2);
+      }
+
+      return tmp;
+    }
+
     /// <summary>
     /// langsame Dekodierungs-Variante mit voller Schreibweise inkl. Opcodes
     /// </summary>
@@ -101,7 +132,7 @@ namespace OpCodeGenerator.DeAsm
       uint len = Length;
       if (len >= 8) throw new NotImplementedException();
 
-      return StrB(BitConverter.GetBytes(opcodeLo), (int)len - 1) + Ins.GetInstructionName(insCodes).ToLower();
+      return StrB(BitConverter.GetBytes(opcodeLo), (int)len - 1) + Ins.GetInstructionName(insCodes).ToLower() + DecodeSlowParams();
     }
 
     /// <summary>

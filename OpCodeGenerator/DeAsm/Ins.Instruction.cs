@@ -3,7 +3,6 @@ using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 // ReSharper disable MemberCanBePrivate.Global
-// ReSharper disable UnusedMember.Global
 
 namespace OpCodeGenerator.DeAsm
 {
@@ -13,29 +12,14 @@ namespace OpCodeGenerator.DeAsm
   public static partial class Ins
   {
     /// <summary>
-    /// 1 Bit (0 - 1) - eigentliche Instruktion
+    /// 2 Bit (0 - 3) - eigentliche Instruktion
     /// </summary>
-    const int InsInstruction = 1;
+    const int InsInstruction = 2;
 
     /// <summary>
     /// berechnetes Bit-Offset
     /// </summary>
     const int InsInstructionOfs = InsLengthOfs + InsLength;
-
-    /// <summary>
-    /// Enum aller möglichen Instruktionen
-    /// </summary>
-    public enum Instruction
-    {
-      /// <summary>
-      /// ??? - Invalid Instruction
-      /// </summary>
-      Invalid = 0,
-      /// <summary>
-      /// INT3 = Call Interrupt 3 (Debug Break Point)
-      /// </summary>
-      Int3
-    }
 
     /// <summary>
     /// generiert alle Namen der Instruktionen
@@ -47,6 +31,7 @@ namespace OpCodeGenerator.DeAsm
       {
         { Instruction.Invalid, "???" },
         { Instruction.Int3, "INT3" },
+        { Instruction.Add, "ADD" }
       };
 
       int max = dict.Max(d => (int)d.Key);
@@ -78,7 +63,7 @@ namespace OpCodeGenerator.DeAsm
     /// <returns>Name der Instruktion oder "null", wenn nicht bekannt</returns>
     public static string GetInstructionName(ulong insCodes)
     {
-      return GetInstructionName(GetInstruction(insCodes));
+      return GetName(GetInstruction(insCodes));
     }
 
     /// <summary>
@@ -86,7 +71,7 @@ namespace OpCodeGenerator.DeAsm
     /// </summary>
     /// <param name="instruction">Instruktion deren Name zurück gegeben werden soll</param>
     /// <returns>Name der Instruktion oder "null", wenn nicht bekannt</returns>
-    public static string GetInstructionName(Instruction instruction)
+    public static string GetName(Instruction instruction)
     {
       int index = (int)instruction;
       if ((uint)index >= InstructionNames.Length) return null;
