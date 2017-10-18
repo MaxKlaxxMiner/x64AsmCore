@@ -1,5 +1,6 @@
 ﻿#region # using *.*
 // ReSharper disable once RedundantUsingDirective
+using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
 // ReSharper disable MemberCanBePrivate.Global
@@ -10,9 +11,18 @@ namespace RefScanner
 {
   public sealed class RefPriOpcd
   {
+    public readonly byte value;
+    public readonly int procStart;
+
     public RefPriOpcd(XElement xml)
     {
+      value = xml.ParseHex("value", (byte)0);
+      procStart = xml.ParseHex("proc_start", 0);
+    }
 
+    public override string ToString()
+    {
+      return (new { value = value.ToString("X2"), procStart }).ToString();
     }
   }
 }

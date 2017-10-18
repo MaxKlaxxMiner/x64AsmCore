@@ -35,8 +35,8 @@ namespace RefScanner
     static void Main(string[] args)
     {
       var xdoc = XDocument.Load(GetRefFileName());
-      var oneByte = new RefOneByte(xdoc.Root.Element("one-byte"));
-      var twoByte = new RefTwoByte(xdoc.Root.Element("two-byte"));
+      var oneByte = xdoc.Root.Element("one-byte").Descendants("pri_opcd").Select(x => new RefPriOpcd(x)).ToArray();
+      var twoByte = xdoc.Root.Element("two-byte").Descendants("pri_opcd").Select(x => new RefPriOpcd(x)).ToArray();
     }
   }
 }
