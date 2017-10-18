@@ -44,7 +44,7 @@ namespace RefScanner
     public readonly string procStart; // ignored: post & lat_step
     public readonly string procEnd;
     public readonly RefSyntax[] syntax;
-    public readonly string instrExt;
+    public readonly InstrExt instrExt;
     public readonly string[] grps;
     public readonly string testF;
     public readonly string modifF;    // ignored: cond
@@ -91,7 +91,20 @@ namespace RefScanner
       procStart = xml.GetValue("proc_start");
       procEnd = xml.GetValue("proc_end");
       syntax = xml.Descendants("syntax").Select(x => new RefSyntax(x)).ToArray();
-      instrExt = xml.GetValue("instr_ext");
+      switch (xml.GetValue("instr_ext"))
+      {
+        case null: instrExt = InstrExt.None; break;
+        case "mmx": instrExt = InstrExt.Mmx; break;
+        case "sse1": instrExt = InstrExt.Sse1; break;
+        case "sse2": instrExt = InstrExt.Sse2; break;
+        case "sse3": instrExt = InstrExt.Sse3; break;
+        case "ssse3": instrExt = InstrExt.Ssse3; break;
+        case "sse41": instrExt = InstrExt.Sse41; break;
+        case "sse42": instrExt = InstrExt.Sse42; break;
+        case "vmx": instrExt = InstrExt.Vmx; break;
+        case "smx": instrExt = InstrExt.Smx; break;
+        default: throw new Exception("unknown: " + xml.GetValue("instr_ext"));
+      }
       grps = xml.Descendants("grp1").Select(x => x.Value).Concat(xml.Descendants("grp2").Select(x => x.Value)).Concat(xml.Descendants("grp3").Select(x => x.Value)).ToArray();
       testF = xml.GetValue("test_f");
       modifF = xml.GetValue("modif_f");
