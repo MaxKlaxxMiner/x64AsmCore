@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RefEntry.cs" />
+    <Compile Include="RefParam.cs" />
     <Compile Include="RefSyntax.cs" />
     <Compile Include="RefPriOpcd.cs" />
     <Compile Include="XExtensions.cs" />

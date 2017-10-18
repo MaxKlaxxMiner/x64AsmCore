@@ -38,7 +38,7 @@ namespace RefScanner
       var oneByte = xdoc.Root.Element("one-byte").Descendants("pri_opcd").Select(x => new RefPriOpcd(x)).ToArray();
       var twoByte = xdoc.Root.Element("two-byte").Descendants("pri_opcd").Select(x => new RefPriOpcd(x)).ToArray();
 
-      var fullEntries = oneByte.SelectMany(x => x.entries).Concat(twoByte.SelectMany(x => x.entries)).ToArray();
+      var fullParams = oneByte.SelectMany(x => x.entries.SelectMany(c => c.syntax.SelectMany(i => i.dst).Concat(c.syntax.SelectMany(i => i.src)))).Concat(twoByte.SelectMany(x => x.entries.SelectMany(c => c.syntax.SelectMany(i => i.dst).Concat(c.syntax.SelectMany(i => i.src))))).ToArray();
 
       int stop = 0;
     }
