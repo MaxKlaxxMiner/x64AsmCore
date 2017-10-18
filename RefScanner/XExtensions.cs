@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
 namespace RefScanner
 {
   public static class XExtensions
   {
-    static string GetValue(this XElement xel, string name)
+    public static string GetValue(this XElement xel, string name)
     {
       var attr = xel.Attribute(name);
       if (attr != null) return attr.Value;
@@ -29,6 +26,22 @@ namespace RefScanner
     {
       int result;
       return int.TryParse(xel.GetValue(name), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out result) ? result : alternate;
+    }
+
+    public static int? ParseInt(this XElement xel, string name)
+    {
+      int result;
+      return int.TryParse(xel.GetValue(name), NumberStyles.Integer, CultureInfo.InvariantCulture, out result) ? result : (int?)null;
+    }
+
+    public static bool? ParseYesNo(this XElement xel, string name)
+    {
+      string val = xel.GetValue(name);
+      if (val == null) return null;
+      if (val == "yes") return true;
+      if (val == "no") return false;
+      Debug.Fail("yes/no ? \"" + val + "\"");
+      return null;
     }
   }
 }
