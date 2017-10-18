@@ -45,6 +45,9 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefTwoByte.cs" />
+    <Compile Include="RefOneByte.cs" />
+    <Compile Include="RefPriOpcd.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
