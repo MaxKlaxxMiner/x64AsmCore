@@ -22,6 +22,12 @@ namespace RefScanner
       return byte.TryParse(xel.GetValue(name), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out result) ? result : alternate;
     }
 
+    public static byte? ParseHex(this XElement xel, string name)
+    {
+      byte result;
+      return byte.TryParse(xel.GetValue(name), NumberStyles.HexNumber, CultureInfo.InvariantCulture, out result) ? result : (byte?)null;
+    }
+
     public static int ParseHex(this XElement xel, string name, int alternate)
     {
       int result;

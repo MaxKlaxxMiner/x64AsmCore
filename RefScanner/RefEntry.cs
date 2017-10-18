@@ -1,5 +1,6 @@
 ﻿#region # using *.*
 // ReSharper disable RedundantUsingDirective
+using System;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
@@ -37,6 +38,25 @@ namespace RefScanner
     public readonly string partAlias;
     public readonly string docPartAliasRef;
 
+    public readonly byte? pref;
+    public readonly int? opcdExt;
+    public readonly byte? secOpcd;    // ignored: escape
+    public readonly string procStart; // ignored: post & lat_step
+    public readonly string procEnd;
+    public readonly RefSyntax[] syntax;
+    public readonly string instrExt;
+    public readonly string[] grps;
+    public readonly string testF;
+    public readonly string modifF;    // ignored: cond
+    public readonly string defF;      // ignored: cond
+    public readonly string undefF;
+    public readonly string fVals;
+    public readonly string modifFFpu;
+    public readonly string defFFpu;
+    public readonly string undefFFpu;
+    public readonly string fValsFpu;
+    public readonly string note;
+
     public RefEntry(XElement xml)
     {
       direction = xml.ParseInt("direction");
@@ -64,6 +84,35 @@ namespace RefScanner
       mod = xml.GetValue("mod");
       partAlias = xml.GetValue("part_alias");
       docPartAliasRef = xml.GetValue("doc_part_alias_ref");
+
+      pref = xml.ParseHex("pref");
+      opcdExt = xml.ParseInt("opcd_ext");
+      secOpcd = xml.ParseHex("sec_opcd");
+      procStart = xml.GetValue("proc_start");
+      procEnd = xml.GetValue("proc_end");
+      syntax = xml.Descendants("syntax").Select(x => new RefSyntax(x)).ToArray();
+      instrExt = xml.GetValue("instr_ext");
+      grps = xml.Descendants("grp1").Select(x => x.Value).Concat(xml.Descendants("grp2").Select(x => x.Value)).Concat(xml.Descendants("grp3").Select(x => x.Value)).ToArray();
+      testF = xml.GetValue("test_f");
+      modifF = xml.GetValue("modif_f");
+      defF = xml.GetValue("def_f");
+      undefF = xml.GetValue("undef_f");
+      fVals = xml.GetValue("f_vals");
+      modifFFpu = xml.GetValue("modif_f_fpu");
+      defFFpu = xml.GetValue("def_f_fpu");
+      undefFFpu = xml.GetValue("undef_f_fpu");
+      fValsFpu = xml.GetValue("f_vals_fpu");
+      if (xml.Element("note") != null && xml.Element("note").Element("brief") != null)
+      {
+        note = xml.Element("note").ToString(SaveOptions.DisableFormatting).Replace("<note>", "").Replace("</note>", "").Replace("<brief>", "").Replace("</brief>", "\r\n")
+                  .Replace("<det>", "").Replace("</det>", "").Replace("<!--1.11 Packed -->", "")
+                  .Replace("<sub>2</sub>", "2 ").Replace("<sub>10</sub>", "10 ").Replace("<sub>e</sub>", "e ").Replace("<sup>x</sup>", "^x ")
+                  .Trim();
+        if (note.Contains("<"))
+        {
+          throw new Exception("xml-char found -> replace it");
+        }
+      }
     }
 
     public override string ToString()
@@ -94,6 +143,26 @@ namespace RefScanner
       if (mod != null) res += ", mod: " + mod;
       if (partAlias != null) res += ", partAlias: " + partAlias;
       if (docPartAliasRef != null) res += ", docPartAliasRef: " + docPartAliasRef;
+
+      if (pref != null) res += ", pref: " + ((byte)pref).ToString("X2");
+      if (opcdExt != null) res += ", opcdExt: " + opcdExt;
+      if (secOpcd != null) res += ", secOpcd: " + ((byte)secOpcd).ToString("X2");
+      if (procStart != null) res += ", procStart: " + procStart;
+      if (procEnd != null) res += ", procEnd: " + procStart;
+      if (syntax.Length != 0) res += ", syntax: RefSyntax[" + syntax.Length + "]";
+      if (instrExt != null) res += ", instrExt: " + instrExt;
+      if (grps.Length != 0) res += ", grps: {" + string.Join(", ", grps) + "}";
+      if (testF != null) res += ", testF: " + testF;
+      if (modifF != null) res += ", modifF: " + modifF;
+      if (defF != null) res += ", defF: " + defF;
+      if (undefF != null) res += ", undefF: " + undefF;
+      if (fVals != null) res += ", fVals: " + fVals;
+      if (modifFFpu != null) res += ", modifFFpu: " + modifFFpu;
+      if (defFFpu != null) res += ", defFFpu: " + defFFpu;
+      if (undefFFpu != null) res += ", undefFFpu: " + undefFFpu;
+      if (fValsFpu != null) res += ", fValsFpu: " + fValsFpu;
+      if (note != null) res += ", note: " + note;
+
       return res.TrimStart(',', ' ');
     }
   }
