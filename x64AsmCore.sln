@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpCodeGenerator", "OpCodeGenerator\OpCodeGenerator.csproj", "{B03029C4-E5C8-4C1B-BCAE-AD9D1A624457}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefScanner", "RefScanner\RefScanner.csproj", "{88D29300-79A4-4825-913C-CB02A5590CDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B03029C4-E5C8-4C1B-BCAE-AD9D1A624457}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B03029C4-E5C8-4C1B-BCAE-AD9D1A624457}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B03029C4-E5C8-4C1B-BCAE-AD9D1A624457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88D29300-79A4-4825-913C-CB02A5590CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88D29300-79A4-4825-913C-CB02A5590CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88D29300-79A4-4825-913C-CB02A5590CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88D29300-79A4-4825-913C-CB02A5590CDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
