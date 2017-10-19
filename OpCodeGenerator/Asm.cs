@@ -67,6 +67,6 @@
     /// <summary>
     /// Bezeichnung der Größe des Elementes, welches im Speicher verarbeitet werden soll
     /// </summary>
-    public static readonly string[] MemType = { " byte ptr", " word ptr", " dword ptr", " qword ptr", "tword ptr" };
+    public static readonly string[] MemType = { " byte ptr", " word ptr", " dword ptr", " qword ptr" };
   }
 }

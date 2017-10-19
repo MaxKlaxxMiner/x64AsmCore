@@ -91,6 +91,31 @@ namespace OpCodeGenerator
       return null;
     }
 
+    static string MemAddr(byte[] opCode, int pos, out int cbytes, int fixConst = 0)
+    {
+      int b = opCode[pos];
+      int p1 = b & 7;
+      int p2 = b >> 3 & 7;
+      int px = b >> 6;
+      cbytes = fixConst;
+
+      string r;
+      if (p1 == 5 && cbytes == 0)
+      {
+        r = Asm.RegistersR64[p2] + " * " + (1 << px) + " + x";
+        cbytes = 4;
+      }
+      else
+      {
+        r = Asm.RegistersR64[p1] + " + " + Asm.RegistersR64[p2] + " * " + (1 << px);
+      }
+      r = r.Replace("rsp * 1", "").Replace("rsp * 2", "").Replace("rsp * 4", "").Replace("rsp * 8", "");
+      r = r.Replace(" * 1", "");
+      r = r.Trim(' ', '+');
+
+      return "[" + r + (fixConst != 0 ? " + x" : "") + "]";
+    }
+
     static IEnumerable<string> Generate(byte[] opCode, int pos, RefSyntax syntax, RefEntry entry, RefPriOpcd pri)
     {
       if (syntax.mnem == null || syntax.dst.Length != 1 || syntax.src.Length != 1) throw new NotImplementedException();
@@ -135,25 +160,9 @@ namespace OpCodeGenerator
                 for (int b2 = 0; b2 < 256; b2++)
                 {
                   opCode[pos] = (byte)b2;
-                  int pp1 = b2 & 7;
-                  int pp2 = b2 >> 3 & 7;
-                  int ppx = b2 >> 6;
-                  int cbytes = fixConst;
-
-                  if (pp1 == 5 && cbytes == 0)
-                  {
-                    r1 = Asm.RegistersR64[pp2] + " * " + (1 << ppx) + " + x";
-                    cbytes = 4;
-                  }
-                  else
-                  {
-                    r1 = Asm.RegistersR64[pp1] + " + " + Asm.RegistersR64[pp2] + " * " + (1 << ppx);
-                  }
-                  r1 = r1.Replace("rsp * 1", "").Replace("rsp * 2", "").Replace("rsp * 4", "").Replace("rsp * 8", "");
-                  r1 = r1.Replace(" * 1", "");
-                  r1 = r1.Trim(' ', '+');
-
-                  yield return Generator.StrB(opCode, pos, cbytes) + mnem.ToLower() + Para("[" + r1 + (fixConst != 0 ? " + x" : "") + "]", r2, swap);
+                  int cbytes;
+                  r1 = MemAddr(opCode, pos, out cbytes, fixConst);
+                  yield return Generator.StrB(opCode, pos, cbytes) + mnem.ToLower() + Para(r1, r2, swap);
                 }
                 pos--;
               } break;
@@ -175,6 +184,20 @@ namespace OpCodeGenerator
       }
     }
 
+    static IEnumerable<string> GenerateOpCodes0F(byte[] opCode, int pos, RefPriOpcd[] twoBytes)
+    {
+      foreach (var twoByte in twoBytes)
+      {
+        opCode[pos++] = twoByte.value;
+        foreach (var entry in twoByte.entries)
+        {
+          yield return Generator.StrB(opCode, pos);
+        }
+        pos--;
+        yield break;
+      }
+    }
+
     /// <summary>
     /// generiert alle OpCodes
     /// </summary>
@@ -184,6 +207,7 @@ namespace OpCodeGenerator
       var opCode = new byte[15];
 
       var oneBytes = RefPriOpcd.ReadElements();
+      var twoBytes = RefPriOpcd.ReadElements(true);
 
       foreach (var oneByte in oneBytes)
       {
@@ -198,7 +222,11 @@ namespace OpCodeGenerator
             yield return Generator.StrB(opCode, pos - 1) + "???";
             continue;
           }
-          if (oneByte.value == 0x0f) break;
+          if (oneByte.value == 0x0f)
+          {
+            foreach (var line in GenerateOpCodes0F(opCode, pos, twoBytes)) yield return line;
+            break;
+          }
           throw new NotImplementedException();
         }
         foreach (var syntax in entry.syntax)
