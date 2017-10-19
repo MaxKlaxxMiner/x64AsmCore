@@ -33,7 +33,7 @@ namespace OpCodeGenerator
     /// </summary>
     const int SamplePreview = 10;
 
-    const int StartView = 55800;
+    const int StartView = 51000;
 
     static void Main()
     {
@@ -61,8 +61,8 @@ namespace OpCodeGenerator
           Console.WriteLine();
           Console.WriteLine("Different found:");
           Console.WriteLine();
-          Console.WriteLine("  [known] " + known[i]);
           Console.WriteLine("    [gen] " + gen[i]);
+          Console.WriteLine("  [known] " + known[i]);
           break;
         }
       }

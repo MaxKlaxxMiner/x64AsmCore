@@ -12,7 +12,7 @@ namespace OpCodeGenerator
     /// <param name="lastByte">zeig auf das letzte Byte in der Kette, welche ausgelesen werden sollen</param>
     /// <param name="constBytes">optionale zusätzliche Bytes für eine direkte Konstante</param>
     /// <returns>fertige Zeichenkette</returns>
-    static string StrB(byte[] bytes, int lastByte, int constBytes = 0)
+    public static string StrB(byte[] bytes, int lastByte, int constBytes = 0)
     {
       return string.Join(" ", bytes.Take(lastByte + 1).Select(b => b.ToString("x2")).Concat(Enumerable.Range(0, constBytes).Select(i => "xx"))) + " - ";
     }
