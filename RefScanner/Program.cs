@@ -10,37 +10,11 @@ namespace RefScanner
 {
   class Program
   {
-    /// <summary>
-    /// gibt den Pfad zur x86reference.xml zurück oder wirft eine Exception, wenn nicht gefunden
-    /// </summary>
-    static string GetRefFileName()
-    {
-      const string SearchFile = "x86reference.xml";
-      for (int i = 0; i < 5; i++)
-      {
-        string fileName = new string('#', i).Replace("#", "../") + SearchFile;
-        if (File.Exists(fileName)) return fileName;
-      }
-      Console.ForegroundColor = ConsoleColor.Yellow;
-      Console.WriteLine();
-      Console.WriteLine("  File not found: " + SearchFile);
-      Console.WriteLine();
-      Console.WriteLine("  You can download it from Github:");
-      Console.WriteLine();
-      Console.WriteLine("  https://raw.githubusercontent.com/Barebit/x86reference/master/x86reference.xml");
-      Console.WriteLine();
-      throw new FileNotFoundException();
-    }
 
     static void Main(string[] args)
     {
-      var xdoc = XDocument.Load(GetRefFileName());
-      var oneByte = xdoc.Root.Element("one-byte").Descendants("pri_opcd").Select(x => new RefPriOpcd(x)).ToArray();
-      var twoByte = xdoc.Root.Element("two-byte").Descendants("pri_opcd").Select(x => new RefPriOpcd(x)).ToArray();
-
-      var fullParams = oneByte.SelectMany(x => x.entries.SelectMany(c => c.syntax.SelectMany(i => i.dst).Concat(c.syntax.SelectMany(i => i.src)))).Concat(twoByte.SelectMany(x => x.entries.SelectMany(c => c.syntax.SelectMany(i => i.dst).Concat(c.syntax.SelectMany(i => i.src))))).ToArray();
-
-      int stop = 0;
+      var oneByte = RefPriOpcd.ReadElements();
+      var twoByte = RefPriOpcd.ReadElements(true);
     }
   }
 }

@@ -53,6 +53,7 @@
     <Compile Include="DeAsm\Ins.Length.cs" />
     <Compile Include="DeAsm\Instruction.cs" />
     <Compile Include="DeAsm\ParamType.cs" />
+    <Compile Include="GeneratorRef.cs" />
     <Compile Include="GeneratorV2.cs" />
     <Compile Include="Generator-Helper.cs" />
     <Compile Include="Generator.cs" />
@@ -107,6 +108,12 @@
     <Content Include="KnownOpCodes\0f0000-0f003f.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RefScanner\RefScanner.csproj">
+      <Project>{88d29300-79a4-4825-913c-cb02a5590cdd}</Project>
+      <Name>RefScanner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -43,12 +43,13 @@ namespace OpCodeGenerator
       //TextHelper.ReplaceFirstChars("KnownOpCodes/0f00.txt", "tmp.txt", "0f 00 ", 3);
       //return;
 
-      DeAsmTest();
-      return;
+      //DeAsmTest();
+      //return;
 
       var known = ReadKnownOpCodes().ToArray();
       //var gen = Generator.GenerateOpCodes().ToArray();
-      var gen = GeneratorV2.GenerateOpCodes().ToArray();
+      //var gen = GeneratorV2.GenerateOpCodes().ToArray();
+      var gen = GeneratorRef.GenerateOpCodes().ToArray();
       int count = Math.Min(known.Length, gen.Length);
 
       // --- bekannte OpCodes mit den generierten Version vergleichen und beim ersten Fehler stoppen
